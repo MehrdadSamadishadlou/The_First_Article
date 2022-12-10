@@ -1,0 +1,127 @@
+---
+title: "The First Draft"
+authors:
+  - name: "Mehrdad Samadishadlou"
+    address: "Medical Nanotechnology gruop, Tabriz University of Medical Sciences, Tabriz, Iran"
+date: "`r Sys.Date()`"
+link-citation: yes
+bibliography: For Article Refrence.bib
+output:
+  bookdown::pdf_book:
+  bookdown::word_document2: default
+#    base_format: rticles::bioinformatics_article
+---
+
+```{r setup, include=FALSE, cache.rebuild=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(knitr, captioner, bundesligR, stringr)
+```
+
+
+``` {r , echo=F}
+# What to do next:
+
+# Generating information related to the machine learning first layer using welcome file.
+
+```
+
+# Materials and Methods
+
+## Microarray data collection
+
+Microarray datasets were obtained from the Gene Expression Omnibus (GEO) database ([https://www.ncbi.nlm.nih.gov/geo/](https://www.ncbi.nlm.nih.gov/geo/)). In order to come by sufficient classification power for MI samples and others, the sample size of the dataset should be relatively large. Therefore, GSE59867 and GSE56609 were selected as train set and GSE62646 and GSE54475 as validation set for both DEGs and pathway analyse as well as machine learning section. All datasets have been conducted using Affymetrix Human Gene 1.0 ST Array (GPL6244) platform. Only healthy, stable CAD and early stage MI samples were selected from these datasets for further analysis. The basic information for the four GEO datasets evaluated in the current study is provided in Table 1. 
+
+
+|                | Platform | Healthy Control | CAD Control | MI  | Reference |
+|----------------|----------|-----------------|-------------|-----|-----------|
+| Training Set   |          |                 |             |     |           |
+| GSE59867       | GPL6244  | \-              | 46          | 111 | [@67]     |
+| GSE56609       | GPL6244  | 46              | \-          | \-  | [@09]     |
+| Test Set |          |                 |             |     |           |
+| GSE62646       | GPL6244  | \-              | 14          | 28  | [@46]     |
+| GSE54475       | GPL6244  | 5               | \-          | \-  | [@75]     |
+
+: Basic information of the 4 GEO microarray datasets.
+
+## Pre-processing
+
+Raw data (CEL files) of the four datasets were downloaded from the GEO and preprocessed using the fRMA package [@fRMA]. fRMA allows to preprocess individual microarray samples and combine them consistently for analysis. For each dataset, background correction is performed and then it is quantile normalized based on the reference distribution. During summarization, batch effects are removed and variances of the gene expressions are estimated by taking into account these probe-specific effects. For those multiple probe sets matched to the identical gene, the mean log fold change was retained. This way fRMA can be seen as a batch effect removal technique for different datasets produced using identical microarray platform. Thus, In order to ensure about batch effect removal, the principal component analysis and the relative log expression of all samples were plotted before and after fRMA [@BER].
+
+## Differential expression analysis
+
+The barcode algorithm proposed by McCall et al. [@Barcode] transforms the actual expression values into binary barcode values. Huge sets of samples were collected and normalized using fRMA for several platforms. The distribution of the expressed and non-expressed observed intensities for each gene is estimated using these normalized sets. Genes are deemed expressed (and their value coded to 1) or unexpressed (and their value coded to 0) according to the following equation:
+
+$$
+\hat{x}_{ij} = \left\{
+  \begin{array}{ll}
+    1 & \mbox{if } x_{ij} >= \mu^{ne} + C \times \sigma^{ne} \\
+    0 & \mbox{otherwise}
+  \end{array}
+\right.
+$$ where $x_{ij}$ is the normalized intensity of gene $i$ in sample $j$, $C$ is a user-defined parameter, $\sigma^{ne}$ is the standard deviation of the non-expressed distribution and $\mu^{ne}$ is the mean of the non-expressed distribution. The barcode representation of a sample is a vector of ones and zeros denoting which genes are estimated to be expressed (ones) and unexpressed (zeros). The barcode algorithm was implemented by the barcode function in the R fRMA package, and the default value of $C$ was used.
+
+To determine if the expressed ratios differed in the MI group versus the healthy control group, Fisher's exact test for individual genes was carried out upon the barcode values. Genes with a false discovery rate (FDR) of $< 0.05$, which was calculated through the Benjamini-Hochberg (BH) procedure to adjust for multiple testing issue, were considered as differentially expressed genes.
+
+## Functional and pathway enrichment analyses
+
+Using the R clusterProfilter package, the Kyoto Encyclopedia of Genes and Genomes (KEGG) pathway enrichment analysis and Gene Ontology (GO) functional annotation were carried out on the differentially expressed genes. The GO analysis included biological process (BP), cellular component (CC) and molecular function (MF) categories. An adjusted P < 0.05 was considered to indicate a statistically significant difference. In these analyses, all default parameters were used.
+
+## Identification of hub genes
+
+The online Search Tool for the Retrieval of Interacting Genes (STRING) database [(http://string-db.org/)](http://string-db.org/) [50] was used to obtain the predicted interactions for the DEGs. The protein–protein interaction (PPI) network of the DEGs was visualized with Cytoscape software (Version 3.9.1, [http://www.cytoscape.org/](http://www.cytoscape.org/)). The CytoHubba plugin in Cytoscape features 12 different algorithms to analyse PPI network topology: ?? Maximal Clique Centrality (MCC), Density of Maximum Neighborhood Component (DMNC), Maximum Neighborhood Component (MNC), Degree, Component (EPC), BottleNeck, EcCentricity, Closeness, Radiality, Betweenness, Stress and ClusteringCoefficient [51]. The outputs of these algorithms can be integrated to identify hub genes.??
+
+## Machine Learning
+
+The machine learning analysis was performed using Python software, ver. 3.9, numpy [@numpy], pandas [@pandas] and Scikit-Learn packages [@scikit-learn]. In all ML analysis, the train datasets where divided into a train and a development set by 0.7:0.3 ratio.
+
+A two layer architecture has been deployed to the data in order to maximize the prediction values. The first layer will predict whether a sample is healthy or not, and the second layer will separates MI from CAD in the samples which were predicted as not healthy in the first layer. To this end, a distinct ML model was trained for each layer.
+
+### First layer: seperating healthy and not healthy samples
+
+Different SVM models using linear, polynomial, and RBF kernels were trained using single miRNAs and different combinations of them. The receiver operating characteristic (ROC) curve were generated for them and area under curves (AUC) were calculated. The best combination were selected based on AUC, accuracy and ??.
+
+### Second layer: seperating MI and CAD samples
+
+In order to investigate, whether a single miRNAs could predict the presence of MI with good sensitivity and specificity or not, a simple SVM with linear kernel model has been trained using each differentially expressed miRNA and the ROC curve were generated. Moreover, we tested combination of miRNAs to evaluate their ability to improve the models predictive values. The miRNA combination with the highest AUC has been used to train different algorithms for the sake of finding the model with the best diagnosing capability. To do so, SVM (with linear, polynomial, and RBF kernels), Logistic Regression (LR), Random Forests (RF), k-Nearest Neighbor (kNN), Multi-layer Perceptron (MLP), Gradient Boosting (GB), XGBoost (XGB) and Decision Tree (DT) has been trained using the expression profile of the best combination miRNAs. All models were trained with their pre-set parameters with 10-fold cross-validation. 
+
+Criteria for choosing the best model was the highest accuracy on development set between the models with train accuracy of $>0.95$. The best model was hypertuned with scikit-opt package [@scikitopt] to get the best predictive performance. After finding hypertunning the best model based on the train and development sets, the model performance has been evaluated on the two unseen test datasets (GSE62646 and GSE54475). 
+
+# Results and Discussion
+
+## Pre-processing
+
+The PCA plot of the samples were shown in fig\@ref(fig:PCA). As it is clear, there is a complete separation between healthy samples and CAD and MI samples in primary data. Moreover,  there is a relative separation between samples with the same disease status in different datasets, which could be considered as a sign of batch effect [@BER]. After pre-processing data with fRMA algorithm, the separation between healthy samples and CAD and MI samples still remain, but the separation between samples with the same disease status has been removed, as a result of batch effect removal.
+
+The RLE plot presented in fig\@ref(fig:PCA) also validates batch effect removal. For an efficient batch effect removal method, the individual boxplots will be all distributed around 0 in RLE plot, and inter-quantile distances would be grater than 0.1 [@BER]. The mentioned criteria is not met in primary data, but has been met after conducting fRMA algorithm.
+
+```{r PCA, echo=F, out.width="100%", fig.cap="PCA and RLE plot for all samples before and after fRMA."}
+knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/DEG and DEM/PCA and RLE.png")
+```
+
+## Differential expression analysis
+```{r , echo=F}
+DEGs <- read.table("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/DEG and DEM/Train/MI/DEGs MI-Healthy train.txt", check.names = F)
+```
+
+According to the cutoff criterion of $FDR < 0.05$, there are `r dim(DEGs)[1]-1` DEGs between the MI patients and the healthy controls. Among them, `r sum(DEGs$V4 == 'TRUE')` are over-expressed in MI, and `r sum(DEGs$V4 == 'FALSE')` are down-expressed in MI compared to the healthy controls.
+
+## Gene ontology (GO) and Kyoto Encyclopedia of Genes and Genomes (KEGG) enrichment analyses of the DEGs.
+
+To explore the biological classification of the DEGs, we performed GO and KEGG pathway enrichment analyses. Many biological functions enriched with the DEGs were associated with the immune cells, as expected. GO enrichment analysis in the cellular component (CC) category suggested that the robust DEGs were enriched in “secretory granule membrane” and “sazurophil granule” (fig\@ref(fig:enrich)A). In the biological process (BP) category, the robust DEGs were enriched in “mononuclear cell differentiation”, “lymphocyte differentiation”, "leukocyte activation involved in immune response", and "lymphocyte activation involved in immune response” (fig\@ref(fig:enrich)B). In the molecular function (MF) category, the robust DEGs were involved in “cadherin binding” and “MHC class I protein binding” (fig\@ref(fig:enrich)C). KEGG pathway analysis indicated that the robust DEGs were related to the following pathways: “Chemokine signaling pathway”, “Lipid and atherosclerosis”, “Hematopoietic cell lineage” and “Chronic myeloid leukemia” (fig\@ref(fig:enrich)D). The above results suggested that the abnormal expression of the DEGs may ??.
+
+```{r enrich, echo=F, out.width="100%", fig.cap="Gene Ontology (GO) and Kyoto Encyclopedia of Genes and Genomes (KEGG) pathways enriched with the DEGs. (A) Biological process terms enriched with the DEGs. (B) Cellular component terms enriched with the DEGs. (C) Molecular function terms enriched with the DEGs. (D) KEGG analysis of the DEGs. The respective pathway involved in MI was identified by using the KEGG pathway database."}
+knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/DEG and DEM/Train/MI/enrichment.pdf")
+```
+
+## Machine Learning
+
+Among all DEGs, just hsa-miR-186, hsa-miR-32, and hsa-miR-21 are differntially expressed miRNAs. The expression profile of these three miRNAs are presented in fig\@ref(fig:expression). The ROC curves of each miRNA is presented in 
+
+```{r expression, echo=F, out.width="100%", fig.cap="Barplot of differentially expressed miRNAs expression values."}
+knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/ML/Expressionforall.pdf")
+```
+
+# Refrences
+
+
