@@ -46,7 +46,7 @@ Microarray datasets were obtained from the Gene Expression Omnibus (GEO) databas
 
 ## Pre-processing
 
-Raw data (CEL files) of the four datasets were downloaded from the GEO and preprocessed using the fRMA package [@fRMA]. fRMA allows to preprocess individual microarray samples and combine them consistently for analysis. For each dataset, background correction is performed and then it is quantile normalized based on the reference distribution. During summarization, batch effects are removed and variances of the gene expressions are estimated by taking into account these probe-specific effects. For those multiple probe sets matched to the identical gene, the mean log fold change was retained. This way fRMA can be seen as a batch effect removal technique for different datasets produced using identical microarray platform. Thus, In order to ensure about batch effect removal, the principal component analysis and the relative log expression of all samples were plotted before and after fRMA [@BER].
+Raw data (CEL files) of the four datasets were downloaded from the GEO and preprocessed using the fRMA package [@fRMA]. fRMA allows to preprocess individual microarray samples and combine them consistently for analysis. For each dataset, background correction is performed and then it is quantile normalized based on the reference distribution. During summarization, batch effects are removed and variances of the gene expressions are estimated by taking into account these probe-specific effects. For those multiple probe sets matched to the identical gene, the mean log fold change was retained. This way fRMA can be seen as a batch effect removal technique for different datasets produced using identical microarray platform. Thus, In order to ensure about batch effect removal, the principal component analysis and the relative log expression of train samples were plotted before and after fRMA [@BER].
 
 ## Differential expression analysis
 
@@ -91,12 +91,12 @@ Criteria for choosing the best model was the highest accuracy on development set
 
 ## Pre-processing
 
-The PCA plot of the samples were shown in fig\@ref(fig:PCA). As it is clear, there is a complete separation between healthy samples and CAD and MI samples in primary data. Moreover,  there is a relative separation between samples with the same disease status in different datasets, which could be considered as a sign of batch effect [@BER]. After pre-processing data with fRMA algorithm, the separation between healthy samples and CAD and MI samples still remain, but the separation between samples with the same disease status has been removed, as a result of batch effect removal.
+The PCA plot of the train samples were shown in fig\@ref(fig:PCA). As it is clear, there is a complete separation between healthy samples and CAD and MI samples in primary data. Moreover,  there is a relative separation between samples with the same disease status in different datasets, which could be considered as a sign of batch effect [@BER]. After pre-processing data with fRMA algorithm, the separation between healthy samples and CAD and MI samples still remain, but the separation between samples with the same disease status has been removed, as a result of batch effect removal.
 
 The RLE plot presented in fig\@ref(fig:PCA) also validates batch effect removal. For an efficient batch effect removal method, the individual boxplots will be all distributed around 0 in RLE plot, and inter-quantile distances would be grater than 0.1 [@BER]. The mentioned criteria is not met in primary data, but has been met after conducting fRMA algorithm.
 
 ```{r PCA, echo=F, out.width="100%", fig.cap="PCA and RLE plot for all samples before and after fRMA."}
-knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/DEG and DEM/PCA and RLE.png")
+knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/DEG and DEM/PCA and RLE of trains.pdf")
 ```
 
 ## Differential expression analysis
