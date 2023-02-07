@@ -103,9 +103,9 @@ The set of microRNAs selected for differentiating MI and CAD samples also used t
 
 ## Pre-processing
 
-The PCA plot of the train samples were shown in fig\@ref(fig:PCA). As it is clear, there is a complete separation between healthy samples and CAD and MI samples in primary data which also remains after conducting fRMA on the data.
+The PCA plot of the train samples were shown in Fig\@ref(fig:PCA). As it is clear, there is a complete separation between healthy samples and CAD and MI samples in primary data which also remains after conducting fRMA on the data.
 
-The RLE plot presented in fig\@ref(fig:PCA) validates batch effect removal. For an efficient batch effect removal method, the individual boxplots will be all distributed around 0 in RLE plot, and inter-quantile distances would be grater than 0.1 [@BER]. The mentioned criteria is not met in primary data, but has been met after conducting fRMA algorithm.
+The RLE plot presented in Fig\@ref(fig:PCA) validates batch effect removal. For an efficient batch effect removal method, the individual boxplots will be all distributed around 0 in RLE plot, and inter-quantile distances would be grater than 0.1 [@BER]. The mentioned criteria is not met in primary data, but has been met after conducting fRMA algorithm.
 
 ```{r PCA, echo=F, out.width="100%", fig.cap="PCA and RLE plot for all samples before and after fRMA."}
 knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/DEG and DEM/Pics/PCA and RLE of trains.pdf")
@@ -135,13 +135,13 @@ According to the cutoff criterion of $FDR < 0.05$, there are `r dim(M_H)[1]` DEG
 
 To explore the biological classification of the DEGs, we performed GO and KEGG pathway enrichment analyses on MI-healthy and CAD-healthy DEGs. For both set of DEGs, many biological functions enriched were associated with the immune cells, as expected.
 
-For MI versus healthy samples, GO enrichment analysis in the biological process (BP) category, suggested that the DEGs were enriched in "immune response-regulating signaling pathway", "lymphocyte differentiation", "immune response-regulating cell surface receptor signaling pathway", and "leukocyte activation involved in immune response" (fig\@ref(fig:MIHEnrich)A). In the cellular component (CC) category the DEGs were enriched in "secretory granule membrane", "azurophil granule", "ficolin-1-rich granule", "tertiary granule", and "ficolin-1-rich granule membrane" (fig\@ref(fig:MIHEnrich)B).  In the molecular function (MF) category, the DEGs were involved in "cadherin binding" and "MHC class I protein binding" (fig\@ref(fig:MIHEnrich)C). KEGG pathway analysis indicated that the DEGs were related to the following pathways: "Chemokine signaling pathway", "Lipid and atherosclerosis", and "Hematopoietic cell lineage" (fig\@ref(fig:MIHEnrich)D).
+For MI versus healthy samples, GO enrichment analysis in the biological process (BP) category, suggested that the DEGs were enriched in "immune response-regulating signaling pathway", "lymphocyte differentiation", "immune response-regulating cell surface receptor signaling pathway", and "leukocyte activation involved in immune response" (Fig\@ref(fig:MIHEnrich)A). In the cellular component (CC) category the DEGs were enriched in "secretory granule membrane", "azurophil granule", "ficolin-1-rich granule", "tertiary granule", and "ficolin-1-rich granule membrane" (Fig\@ref(fig:MIHEnrich)B).  In the molecular function (MF) category, the DEGs were involved in "cadherin binding" and "MHC class I protein binding" (Fig\@ref(fig:MIHEnrich)C). KEGG pathway analysis indicated that the DEGs were related to the following pathways: "Chemokine signaling pathway", "Lipid and atherosclerosis", and "Hematopoietic cell lineage" (Fig\@ref(fig:MIHEnrich)D).
 
 ```{r MIHEnrich, echo=F, out.width="95%", fig.cap="Gene Ontology (GO) and Kyoto Encyclopedia of Genes and Genomes (KEGG) pathways enriched with the MI and healthy DEGs. (A) Biological process terms. (B) Cellular component terms. (C) Molecular function terms. (D) KEGG analysis."}
 knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/DEG and DEM/Pics/enrich MI-Healthy.pdf")
 ```
 
-The enrichment results for DEGs of CAD versus healthy samples are as follows. In the biological process (BP) category, GO enrichment suggested that the DEGs were enriched in "positive regulation of defense response", "positive regulation of innate immune response", "mononuclear cell differentiation", and "positive regulation of response to external stimulus" (fig\@ref(fig:CADHEnrich)A). In the cellular component (CC) category the DEGs were enriched in "azurophil granule", "ficolin-1-rich granule", and "ficolin-1-rich granule membrane" (fig\@ref(fig:CADHEnrich)B).  In the molecular function (MF) category, the DEGs were involved in "lipoprotein particle receptor binding" and "NF-$\kappa$B binding" (fig\@ref(fig:CADHEnrich)C). KEGG pathway analysis indicated that the  DEGs were related to the following pathways: "Chemokine signaling pathway", "Lipid and atherosclerosis", and "Hematopoietic cell lineage" (fig\@ref(fig:CADHEnrich)D).
+The enrichment results for DEGs of CAD versus healthy samples are as follows. In the biological process (BP) category, GO enrichment suggested that the DEGs were enriched in "positive regulation of defense response", "positive regulation of innate immune response", "mononuclear cell differentiation", and "positive regulation of response to external stimulus" (Fig\@ref(fig:CADHEnrich)A). In the cellular component (CC) category the DEGs were enriched in "azurophil granule", "ficolin-1-rich granule", and "ficolin-1-rich granule membrane" (Fig\@ref(fig:CADHEnrich)B).  In the molecular function (MF) category, the DEGs were involved in "lipoprotein particle receptor binding" and "NF-$\kappa$B binding" (Fig\@ref(fig:CADHEnrich)C). KEGG pathway analysis indicated that the  DEGs were related to the following pathways: "Chemokine signaling pathway", "Lipid and atherosclerosis", and "Hematopoietic cell lineage" (Fig\@ref(fig:CADHEnrich)D).
 
 ```{r CADHEnrich, echo=F, out.width="95%", fig.cap="Gene Ontology (GO) and Kyoto Encyclopedia of Genes and Genomes (KEGG) pathways enriched with the CAD and healthy DEGs. (A) Biological process terms. (B) Cellular component terms. (C) Molecular function terms. (D) KEGG analysis."}
 knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/DEG and DEM/Pics/enrich CAD-Healthy.pdf")
@@ -152,7 +152,7 @@ knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinforma
 
 ### microRNAs in DEGs
 
-Among all DEGs, just hsa-miR-186, hsa-miR-32, and hsa-miR-21 are differntially expressed miRNAs. The expression profile of these three miRNAs are presented in fig\@ref(fig:DEMexp). The ROC curves of each miRNA for each layer is presented in fig\@ref(fig:miRROC). As it is clear from the fig\@ref(fig:miRROC)A, all these three microRNAs has an acceptable performance fro separating healthy and not-healthy samples. AUC for hsa-miR-21, hsa-miR-32, and hsa-miR-186 is 0.99, 1, and 0.91 respectively. Also the accuracy of each microRNA for classifying the samples to healthy and not-healthy groups on test set using a simple logistic regression model is 0.92, 0.98, and 0.89 for hsa-miR-21, hsa-miR-32, and hsa-miR-186 respectively. Moreover, In fig\@ref(fig:miRROC)B the ROC curve of each microRNA for classifying MI and CAD samples were presented. For  hsa-miR-21, hsa-miR-32, and hsa-miR-186 AUC on test set is 0.85; 0.7; and 0.82, and accuracy on test set is 0.78; 0.67; and 0.74.
+Among all DEGs, just hsa-miR-186, hsa-miR-32, and hsa-miR-21 are differntially expressed miRNAs. The expression profile of these three miRNAs are presented in Fig\@ref(fig:DEMexp). The ROC curves of each miRNA for each layer is presented in Fig\@ref(fig:miRROC). As it is clear from the Fig\@ref(fig:miRROC)A, all these three microRNAs has an acceptable performance fro separating healthy and not-healthy samples. AUC for hsa-miR-21, hsa-miR-32, and hsa-miR-186 is 0.99, 1, and 0.91 respectively. Also the accuracy of each microRNA for classifying the samples to healthy and not-healthy groups on test set using a simple logistic regression model is 0.92, 0.98, and 0.89 for hsa-miR-21, hsa-miR-32, and hsa-miR-186 respectively. Moreover, In Fig\@ref(fig:miRROC)B the ROC curve of each microRNA for classifying MI and CAD samples were presented. For  hsa-miR-21, hsa-miR-32, and hsa-miR-186 AUC on test set is 0.85; 0.7; and 0.82, and accuracy on test set is 0.78; 0.67; and 0.74.
 
 ```{r DEMexp, echo=F, out.width="50%", fig.align='center', fig.cap="Expression profile of hsa-miR-186, hsa-miR-21, and hsa-miR32 in Healthy, CAD, and MI samples."}
 knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/ML/Pics/DEGs healthy not-healthy/DEMs Expression.pdf")
@@ -166,16 +166,20 @@ knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinforma
 
 #### First layer for healthy not-healthy seperation:
 
-Although single microRNAs have acceptable performance, but their prediction value can improve even more using them as a set. The ROC curve for the SVM model with rbf kernel trained with all three microRNAs is presented in fig\@ref(fig:DEMROC)A. The model has better performance in classification than single microRNAs.The AUC for the model is 1, and its accuracy on test set is 1 as well.
+Although single microRNAs have acceptable performance, but their prediction value can improve even more using them as a set. The ROC curve for the SVM model with rbf kernel trained with all three microRNAs is presented in Fig\@ref(fig:DEMROC)A. The model has better performance in classification than single microRNAs.The AUC for the model is 1, and its accuracy on test set is 1 as well. The confusion matrix for the model is presented in Fig\@ref(fig:DEMCF)A.
 
 
 ```{r DEMROC, echo=F, out.width="95%", fig.align='center', fig.cap="ROC curve for microRNAs in DEGs on test set classification for (A) healthy and not-healthy samples and (B) CAD and MI samples."}
 knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/ML/Pics/DEMs ROCs h not h cad mi.pdf")
 ```
 
+```{r DEMCF, echo=F, out.width="90%", fig.align='center', fig.cap="Confusion matrix on the test set for (A) An SVM model with RBF kernel for healthy and not-healthy samples classification. and (B) An SVM model with linear kernel for CAD and MI samples classification."}
+knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/ML/Pics/DEMs Conf. matrix.pdf")
+```
+
 #### Second layer for separating MI samples from CAD:
 
-Different models has been trained using expression values of three differentially microRNAs. The models 10-fold cross-validate AUC and accuracy on the test set is reported on fig\@ref(fig:DEMmodels). The best model from both AUC and accuracy point-of-view is an SVM model with linear kernel. The AUC and accuracy for this model with its preset values is 0.93 and 0.82 respectively. The model is hyper-tuned for C and gamma hyperparameters, and therefore the model showed a better performance. The ROC curve of the hyper-tuned model as the best model is presented in fig\@ref(fig:DEMROC)B. For this model the AUC reached to 0.95 and the accuracy improved to 0.85. Moreover, the sensitivity and specificity for the model is 0.91 and 0.71 respectively.
+Different models has been trained using expression values of three differentially microRNAs. The models 10-fold cross-validate AUC and accuracy on the test set is reported on Fig\@ref(fig:DEMmodels). The best model from both AUC and accuracy point-of-view is an SVM model with linear kernel. The AUC and accuracy for this model with its preset values is 0.93 and 0.82 respectively. The model is hyper-tuned for C and gamma hyperparameters, and therefore the model showed a better performance. The ROC curve of the hyper-tuned model as the best model is presented in Fig\@ref(fig:DEMROC)B. For this model the AUC reached to 0.95 and the accuracy improved to 0.85. Moreover, the sensitivity and specificity for the model on the test set is 0.91 and 0.71 respectively. The confusion matrix for the hyper-tuned model is illustrated in Fig\@ref(fig:DEMCF)B.
 
 
 ```{r DEMmodels, echo=F, out.width="65%", fig.align='center', fig.cap="Area under curve (AUC) and accuracy of different models trained with three microRNAs in DEGs on the test set."}
@@ -186,11 +190,11 @@ knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinforma
 
 #### Second layer; MI form CAD:
 
-After calculating AUC for each microRNA, they are sorted and their performance as a set were investigated. The metric for finding the best set was AUC. The diagram for AUC against the number of microRNAs in the set is presented in fig\@ref(fig:AUCset). As it is clear, the AUC increase until  the number of microRNAs in the set reaches tho 6 and after that it drops. The AUC for separating MI samples from CAD using these microRNAs is 0.93.
-The microRNAs in the set are has-miR-29A, has-miR-197, has-miR-142, has-miR-21, has-miR-155, and has-miR-320C1. The expression values of these microRNAs in healthy, CAD, and MI samples is presented in  fig\@ref(fig:AUCexp). 
+After calculating AUC for each microRNA, they are sorted and their performance as a set were investigated. The metric for finding the best set was AUC. The diagram for AUC against the number of microRNAs in the set is presented in Fig\@ref(fig:AUCset). As it is clear, the AUC increase until  the number of microRNAs in the set reaches tho 6 and after that it drops. The AUC for separating MI samples from CAD using these microRNAs is 0.93.
+The microRNAs in the set are has-miR-29A, has-miR-197, has-miR-142, has-miR-21, has-miR-155, and has-miR-320C1. The expression values of these microRNAs in healthy, CAD, and MI samples is presented in  Fig\@ref(fig:AUCexp). The ROC curve of the selected microRNAs for MI and CAD samples classification is illustrated in Fig\@ref(fig:miRROC)B.
 
 ```{r AUCset, echo=F, out.width="65%", fig.align='center', fig.cap="Area under curve (AUC) for sets containing increasing number of microRNAs with the highest individual AUC in MI/CAD separation."}
-knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/ML/Pics/AUC for mirs.pdf")
+knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/ML/Pics/AUC for cad mi mirs.pdf")
 ```
 
 
@@ -198,7 +202,11 @@ knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinforma
 knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/ML/Pics/ExpressionforAUC.pdf")
 ```
 
-For finding the most model for training the best set, different models were trained using their pre-set values. Their AUC and accuracy results on the test set is presented in fig\@ref(fig:AUCmodels). The best model from AUC point of view is the LR and from accuracy point-of-view is the SVM model with polynomial kernel. For LR model the AUC and accuracy were 0.92 and 0.81; and for SVM model with polynomial kernel the values were 0.91 and 0.84 respectively. Both models were hyper-tuned and ROC curve for their best performance presented in fig\@ref(fig:AUCROC)A and B. The AUC and accuracy for LR model increased to 0.94 and 0.88 respectively; And for SVM model with polynomial kernel these values increased to 0.95 and 0.88 respectively. The sensitivity for LR and SVM models are 1 and 0.97; and the specificity for them is 0.57 and 0.64, respectively.
+For finding the most model for training the best set, different models were trained using their pre-set values. Their AUC and accuracy results on the test set is presented in Fig\@ref(fig:AUCmodels). The best model from AUC point of view is the LR and from accuracy point-of-view is the SVM model with polynomial kernel. For LR model the AUC and accuracy were 0.92 and 0.81; and for SVM model with polynomial kernel the values were 0.91 and 0.84 respectively. Both models were hyper-tuned and ROC curve for their best performance presented in Fig\@ref(fig:AUCROC)A and B. The AUC and accuracy for LR model increased to 0.94 and 0.88 respectively; And for SVM model with polynomial kernel these values increased to 0.95 and 0.88 respectively. The sensitivity for LR and SVM models are 1 and 0.97; and the specificity for them is 0.57 and 0.64, respectively. The confusiom matrix for both models is illustrated in Fig\@ref(fig:AUCCF)A and B.
+
+```{r AUCCF, echo=F, out.width="90%", fig.align='center', fig.cap="Confusion matrix on the test set for (A) Logistic regression model for CAD and MI samples classification. (B) SVM with polynomial kernel for CAD and MI samples classification. (C) SVM with RBF kernel for healthy and not-healthy samples classification."}
+knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/ML/Pics/AUC Conf. matrix.pdf")
+```
 
 
 ```{r AUCmodels, echo=F, out.width="65%", fig.align='center', fig.cap="Area under curve (AUC) and accuracy of different models trained with three microRNAs in DEGs on the test set."}
@@ -210,5 +218,8 @@ knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinforma
 knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/ML/Pics/AUC best model ROCs.pdf")
 ```
 
+#### First layer: 
+
+Using the microRNAs set selected for classification of MI and CAD samples, an SVM model with RBF kernel has been trained for separating healthy from not-healthy samples. The ROC curve for the model is presented in Fig\@ref(fig:AUCROC)C and confusion matrix is illustrated in Fig\@ref(fig:AUCCF)C. Both AUC and accuracy for the model on the test set is equal to 1.
 
 # Refrences

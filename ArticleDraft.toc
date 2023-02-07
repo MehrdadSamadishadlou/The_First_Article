@@ -17,7 +17,8 @@
 \contentsline {subsection}{\numberline {2.4}Machine Learning}{5}{subsection.2.4}%
 \contentsline {subsubsection}{\numberline {2.4.1}microRNAs in DEGs}{5}{subsubsection.2.4.1}%
 \contentsline {paragraph}{\numberline {2.4.1.1}First layer for healthy not-healthy seperation:}{8}{paragraph.2.4.1.1}%
-\contentsline {paragraph}{\numberline {2.4.1.2}Second layer for separating MI samples from CAD:}{8}{paragraph.2.4.1.2}%
-\contentsline {subsubsection}{\numberline {2.4.2}AUC approach}{9}{subsubsection.2.4.2}%
-\contentsline {paragraph}{\numberline {2.4.2.1}Second layer; MI form CAD:}{9}{paragraph.2.4.2.1}%
-\contentsline {section}{Refrences}{9}{section*.2}%
+\contentsline {paragraph}{\numberline {2.4.1.2}Second layer for separating MI samples from CAD:}{10}{paragraph.2.4.1.2}%
+\contentsline {subsubsection}{\numberline {2.4.2}AUC approach}{10}{subsubsection.2.4.2}%
+\contentsline {paragraph}{\numberline {2.4.2.1}Second layer; MI form CAD:}{10}{paragraph.2.4.2.1}%
+\contentsline {paragraph}{\numberline {2.4.2.2}First layer:}{12}{paragraph.2.4.2.2}%
+\contentsline {section}{Refrences}{12}{section*.2}%
