@@ -1,15 +1,23 @@
 \contentsline {section}{\numberline {1}Materials and Methods}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Microarray data collection}{1}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Pre-processing}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.2}Pre-processing}{1}{subsection.1.2}%
 \contentsline {subsection}{\numberline {1.3}Differential expression analysis}{2}{subsection.1.3}%
 \contentsline {subsection}{\numberline {1.4}Functional and pathway enrichment analyses}{2}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}Identification of hub genes}{2}{subsection.1.5}%
-\contentsline {subsection}{\numberline {1.6}Machine Learning}{3}{subsection.1.6}%
-\contentsline {subsubsection}{\numberline {1.6.1}First layer: seperating healthy and not healthy samples}{3}{subsubsection.1.6.1}%
-\contentsline {subsubsection}{\numberline {1.6.2}Second layer: seperating MI and CAD samples}{3}{subsubsection.1.6.2}%
-\contentsline {section}{\numberline {2}Results and Discussion}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Pre-processing}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {1.5}Machine Learning}{2}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}microRNAs in DEGs}{3}{subsubsection.1.5.1}%
+\contentsline {paragraph}{\numberline {1.5.1.1}First layer for seperating healthy and not-healthy samples:}{3}{paragraph.1.5.1.1}%
+\contentsline {paragraph}{\numberline {1.5.1.2}Second layer for seperating MI and CAD samples:}{3}{paragraph.1.5.1.2}%
+\contentsline {subsubsection}{\numberline {1.5.2}microRNAs with the highest AUC-ROC}{3}{subsubsection.1.5.2}%
+\contentsline {paragraph}{\numberline {1.5.2.1}Second layer for separating MI and CAD:}{3}{paragraph.1.5.2.1}%
+\contentsline {paragraph}{\numberline {1.5.2.2}First layer for finding healthy and not-healthy samples:}{3}{paragraph.1.5.2.2}%
+\contentsline {section}{\numberline {2}Results and Discussion}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Pre-processing}{4}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Differential expression analysis}{5}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Gene ontology (GO) and Kyoto Encyclopedia of Genes and Genomes (KEGG) enrichment analyses of the DEGs.}{5}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Machine Learning}{5}{subsection.2.4}%
-\contentsline {section}{Refrences}{5}{section*.2}%
+\contentsline {subsubsection}{\numberline {2.4.1}microRNAs in DEGs}{5}{subsubsection.2.4.1}%
+\contentsline {paragraph}{\numberline {2.4.1.1}First layer for healthy not-healthy seperation:}{8}{paragraph.2.4.1.1}%
+\contentsline {paragraph}{\numberline {2.4.1.2}Second layer for separating MI samples from CAD:}{8}{paragraph.2.4.1.2}%
+\contentsline {subsubsection}{\numberline {2.4.2}AUC approach}{9}{subsubsection.2.4.2}%
+\contentsline {paragraph}{\numberline {2.4.2.1}Second layer; MI form CAD:}{9}{paragraph.2.4.2.1}%
+\contentsline {section}{Refrences}{9}{section*.2}%

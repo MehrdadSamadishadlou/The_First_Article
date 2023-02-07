@@ -18,8 +18,7 @@ if (!require("pacman")) install.packages("pacman")
 pacman::p_load(knitr, captioner, bundesligR, stringr)
 ```
 
-
-``` {r , echo=F}
+```{r , echo=F}
 # What to do next:
 
 # Generating information related to the machine learning first layer using welcome file.
@@ -30,23 +29,19 @@ pacman::p_load(knitr, captioner, bundesligR, stringr)
 
 ## Microarray data collection
 
-Microarray datasets were obtained from the Gene Expression Omnibus (GEO) database ([https://www.ncbi.nlm.nih.gov/geo/](https://www.ncbi.nlm.nih.gov/geo/)). In order to come by sufficient classification power for MI samples and others, the sample size of the dataset should be relatively large. Therefore, GSE59867 and GSE56609 were selected as train set and GSE62646 and GSE54475 as validation set for both DEGs and pathway analyse as well as machine learning section. All datasets have been conducted using Affymetrix Human Gene 1.0 ST Array (GPL6244) platform. Only healthy, stable CAD and early stage MI samples were selected from these datasets for further analysis. The basic information for the four GEO datasets evaluated in the current study is provided in Table 1. 
+Microarray datasets were obtained from the Gene Expression Omnibus (GEO) database (<https://www.ncbi.nlm.nih.gov/geo/>). In order to come by sufficient classification power between MI samples and others, the sample size of the dataset should be relatively large. Therefore, GSE59867 for MI and CAD samples, and GSE56609, GSE54475, and GSE23832 for healthy samples were selected. All datasets have been conducted using Affymetrix Human Gene 1.0 ST Array (GPL6244) platform. Only healthy, stable CAD and early stage MI samples were selected from these datasets for further analysis. The basic information for the four GEO datasets evaluated in the current study is provided in Table 1.
 
+|          | Platform | Healthy Control | CAD Control | MI  | Reference |
+|----------|----------|-----------------|-------------|-----|-----------|
+| GSE59867 | GPL6244  | \-              | 46          | 111 | [@67]     |
+| GSE56609 | GPL6244  | 46              | \-          | \-  | [@09]     |
+| GSE54475 | GPL6244  | 5               | \-          | \-  | [@75]     |
 
-|                | Platform | Healthy Control | CAD Control | MI  | Reference |
-|----------------|----------|-----------------|-------------|-----|-----------|
-| Training Set   |          |                 |             |     |           |
-| GSE59867       | GPL6244  | \-              | 46          | 111 | [@67]     |
-| GSE56609       | GPL6244  | 46              | \-          | \-  | [@09]     |
-| Test Set |          |                 |             |     |           |
-| GSE62646       | GPL6244  | \-              | 14          | 28  | [@46]     |
-| GSE54475       | GPL6244  | 5               | \-          | \-  | [@75]     |
-
-: Basic information of the 4 GEO microarray datasets.
+: Basic information of the 3 GEO microarray datasets.
 
 ## Pre-processing
 
-Raw data (CEL files) of the four datasets were downloaded from the GEO and preprocessed using the fRMA package [@fRMA]. fRMA allows to preprocess individual microarray samples and combine them consistently for analysis. For each dataset, background correction is performed and then it is quantile normalized based on the reference distribution. During summarization, batch effects are removed and variances of the gene expressions are estimated by taking into account these probe-specific effects. For those multiple probe sets matched to the identical gene, the mean log fold change was retained. This way fRMA can be seen as a batch effect removal technique for different datasets produced using identical microarray platform. Thus, In order to ensure about batch effect removal, the principal component analysis and the relative log expression of train samples were plotted before and after fRMA [@BER].
+Raw data (CEL files) of the four datasets were downloaded from the GEO and preprocessed using the fRMA package [@fRMA]. fRMA allows to preprocess individual microarray samples and combine them consistently for analysis. For each dataset, background correction is performed using RMA algorithm and then it is quantile normalized based on the reference distribution. During summarization, batch effects are removed and variances of the gene expressions are estimated by taking into account these probe-specific effects. For those multiple probe sets matched to the identical gene, the mean log fold change was retained. This way fRMA can be seen as a batch effect removal technique for different datasets produced using identical microarray platform. Thus, In order to ensure about batch effect removal, the principal component analysis and the relative log expression of train samples were plotted before and after fRMA [@BER].
 
 ## Differential expression analysis
 
@@ -63,65 +58,157 @@ $$ where $x_{ij}$ is the normalized intensity of gene $i$ in sample $j$, $C$ is 
 
 To determine if the expressed ratios differed in the MI group versus the healthy control group, Fisher's exact test for individual genes was carried out upon the barcode values. Genes with a false discovery rate (FDR) of $< 0.05$, which was calculated through the Benjamini-Hochberg (BH) procedure to adjust for multiple testing issue, were considered as differentially expressed genes.
 
+Also, the same procedure were conducted on CAD versus healthy controls as well as MI versus CAD group to find the DEGs in between them.
+
 ## Functional and pathway enrichment analyses
 
-Using the R clusterProfilter package, the Kyoto Encyclopedia of Genes and Genomes (KEGG) pathway enrichment analysis and Gene Ontology (GO) functional annotation were carried out on the differentially expressed genes. The GO analysis included biological process (BP), cellular component (CC) and molecular function (MF) categories. An adjusted P < 0.05 was considered to indicate a statistically significant difference. In these analyses, all default parameters were used.
-
-## Identification of hub genes
-
-The online Search Tool for the Retrieval of Interacting Genes (STRING) database [(http://string-db.org/)](http://string-db.org/) [50] was used to obtain the predicted interactions for the DEGs. The protein–protein interaction (PPI) network of the DEGs was visualized with Cytoscape software (Version 3.9.1, [http://www.cytoscape.org/](http://www.cytoscape.org/)). The CytoHubba plugin in Cytoscape features 12 different algorithms to analyse PPI network topology: ?? Maximal Clique Centrality (MCC), Density of Maximum Neighborhood Component (DMNC), Maximum Neighborhood Component (MNC), Degree, Component (EPC), BottleNeck, EcCentricity, Closeness, Radiality, Betweenness, Stress and ClusteringCoefficient [51]. The outputs of these algorithms can be integrated to identify hub genes.??
+Using the R clusterProfilter package, the Kyoto Encyclopedia of Genes and Genomes (KEGG) pathway enrichment analysis and Gene Ontology (GO) functional annotation were carried out on the differentially expressed genes. The GO analysis included biological process (BP), cellular component (CC) and molecular function (MF) categories. An adjusted P \< 0.05 was considered to indicate a statistically significant difference. Enrichment were counducted on the MI-healthy and CAD-healthy DEGs. In these analyses, all default parameters were used.
 
 ## Machine Learning
 
-The machine learning analysis was performed using Python software, ver. 3.9, numpy [@numpy], pandas [@pandas] and Scikit-Learn packages [@scikit-learn]. In all ML analysis, the train datasets where divided into a train and a development set by 0.7:0.3 ratio.
+The machine learning analysis was performed using Python software, ver. 3.9, numpy [@numpy], pandas [@pandas] and Scikit-Learn packages [@scikit-learn]. In all ML analysis, the datasets where divided into train and test set by 0.7:0.3 ratio and the reported results are the average of a 10-fold cross-validation.  
 
-A two layer architecture has been deployed to the data in order to maximize the prediction values. The first layer will predict whether a sample is healthy or not, and the second layer will separates MI from CAD in the samples which were predicted as not healthy in the first layer. To this end, a distinct ML model was trained for each layer.
+In the first step, different models has been trained on all microRNAs in DEGs. Moreover, since the number of microRNAs in DEGs are limited, in order to reaching the highest predicting value, different models also trained on microRNAs selected by their individual AUC-ROC. These approach can provide an informative comparison between the predictive capabilities of set of microRNAs selected with two different above-mentioned approaches.
 
-### First layer: seperating healthy and not healthy samples
 
-Different SVM models using linear, polynomial, and RBF kernels were trained using single miRNAs and different combinations of them. The receiver operating characteristic (ROC) curve were generated for them and area under curves (AUC) were calculated. The best combination were selected based on AUC, accuracy and ??.
+### microRNAs in DEGs
 
-### Second layer: seperating MI and CAD samples
+In this approach a two layer architecture has been deployed to the data in order to maximize the prediction values. The first layer will predict whether a sample is healthy or not, and the second layer will separates MI from CAD in the samples which were predicted as not healthy in the first layer. To this end, a distinct ML model was trained for each layer. Since there are limited numbers of microRNAs in DEGs both layers where trained with all microRNAs available. For both layers the receiver operating characteristic (ROC) curve were generated and area under curves (AUC) were calculated for each microRNAs in DEGs for further comparison with the models performance.
 
-In order to investigate, whether a single miRNAs could predict the presence of MI with good sensitivity and specificity or not, a simple SVM with linear kernel model has been trained using each differentially expressed miRNA and the ROC curve were generated. Moreover, we tested combination of miRNAs to evaluate their ability to improve the models predictive values. The miRNA combination with the highest AUC has been used to train different algorithms for the sake of finding the model with the best diagnosing capability. To do so, SVM (with linear, polynomial, and RBF kernels), Logistic Regression (LR), Random Forests (RF), k-Nearest Neighbor (kNN), Multi-layer Perceptron (MLP), Gradient Boosting (GB), XGBoost (XGB) and Decision Tree (DT) has been trained using the expression profile of the best combination miRNAs. All models were trained with their pre-set parameters with 10-fold cross-validation. 
+#### First layer for seperating healthy and not-healthy samples:
 
-Criteria for choosing the best model was the highest accuracy on development set between the models with train accuracy of $>0.95$. The best model was hypertuned with scikit-opt package [@scikitopt] to get the best predictive performance. After finding hypertunning the best model based on the train and development sets, the model performance has been evaluated on the two unseen test datasets (GSE62646 and GSE54475). 
+An SVM models using RBF kernels were hyper-tunned and trained using all microRNAs in DEGs. In order to handle the imbalance number of samples in groups (51 for healthy and 157 for not-healthy group), sample weight for not-healthy samples were set to 0.5.
+
+#### Second layer for seperating MI and CAD samples:
+
+For the sake of reaching the highest classification performance using the set of three microRNAs different models were investigated. To do so, SVM (with linear, polynomial, and RBF kernels), Logistic Regression (LR), Random Forests (RF), k-Nearest Neighbor (kNN), Gradient Boosting (GB), XGBoost (XGB) and Decision Tree (DT) has been trained using the expression profile of the miRNAs. All models were trained with their pre-set parameters with 10-fold cross-validation.
+
+Criteria for choosing the best model was the highest accuracy and AUC on the test set. The best model was hyper-tuned with scikit-opt package [@scikitopt] to get the best predictive performance.
+
+### microRNAs with the highest AUC-ROC
+
+Like the previous approach, two different models will be trained. The first layer for classifying samples to healthy and not-healthy and the second layer for separating MI and CAD samples. However, for keeping the number of microRNAs as low as possible microRNAs will be selected from the second layer (which are the microRNAs with the best performance in MI/CAD separation) and then thier performance will be evaluated in the first layer. 
+
+#### Second layer for separating MI and CAD:
+
+AUC-ROC of all microRNAs for classifying MI and CAD samples has been calculated. For finding the number of microRNAs with the highest predictive values, the microRNAs with the highest individual AUC-ROC is adding to the set one-by-one and the AUC-ROC for the set is calculated. The set with the highest AUC-ROC has been selected as the set for the following steps.
+
+The selected number of microRNAs has been used to train different algorithms for the sake of finding the best model. As previous approach, SVM (with linear, polynomial, and RBF kernels), Logistic Regression (LR), Random Forests (RF), k-Nearest Neighbor (kNN), Gradient Boosting (GB), XGBoost (XGB) and Decision Tree (DT) has been trained using the expression profile of the selected miRNAs set. All models were trained with their pre-set parameters with 10-fold cross-validation. The models with the highest AUC-ROC and accuracy on the test set were selected and hyper-tuned with scikit-opt package [@scikitopt].
+
+#### First layer for finding healthy and not-healthy samples:
+
+The set of microRNAs selected for differentiating MI and CAD samples also used to diagnose not-healthy samples and the ROC curve were ploted for each microRNA. Moreover, expression values of the microRNAs in the set were used to train an SVM model with RBF kernel and its ROc curve were plotted also.
 
 # Results and Discussion
 
 ## Pre-processing
 
-The PCA plot of the train samples were shown in fig\@ref(fig:PCA). As it is clear, there is a complete separation between healthy samples and CAD and MI samples in primary data. Moreover,  there is a relative separation between samples with the same disease status in different datasets, which could be considered as a sign of batch effect [@BER]. After pre-processing data with fRMA algorithm, the separation between healthy samples and CAD and MI samples still remain, but the separation between samples with the same disease status has been removed, as a result of batch effect removal.
+The PCA plot of the train samples were shown in fig\@ref(fig:PCA). As it is clear, there is a complete separation between healthy samples and CAD and MI samples in primary data which also remains after conducting fRMA on the data.
 
-The RLE plot presented in fig\@ref(fig:PCA) also validates batch effect removal. For an efficient batch effect removal method, the individual boxplots will be all distributed around 0 in RLE plot, and inter-quantile distances would be grater than 0.1 [@BER]. The mentioned criteria is not met in primary data, but has been met after conducting fRMA algorithm.
+The RLE plot presented in fig\@ref(fig:PCA) validates batch effect removal. For an efficient batch effect removal method, the individual boxplots will be all distributed around 0 in RLE plot, and inter-quantile distances would be grater than 0.1 [@BER]. The mentioned criteria is not met in primary data, but has been met after conducting fRMA algorithm.
 
 ```{r PCA, echo=F, out.width="100%", fig.cap="PCA and RLE plot for all samples before and after fRMA."}
-knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/DEG and DEM/PCA and RLE of trains.pdf")
+knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/DEG and DEM/Pics/PCA and RLE of trains.pdf")
 ```
 
 ## Differential expression analysis
+
 ```{r , echo=F}
-DEGs <- read.table("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/DEG and DEM/Train/MI/DEGs MI-Healthy train.txt", check.names = F)
+M_H <- read.table("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/DEG and DEM/Fisher results/DEGs MI-Healthy.txt", check.names = F)
+
+M_C <- read.table("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/DEG and DEM/Fisher results/DEGs MI-CAD.txt", check.names = F)
+  
+C_H <- read.table("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/DEG and DEM/Fisher results/DEGs CAD-Healthy.txt", check.names = F)
 ```
 
-According to the cutoff criterion of $FDR < 0.05$, there are `r dim(DEGs)[1]-1` DEGs between the MI patients and the healthy controls. Among them, `r sum(DEGs$V4 == 'TRUE')` are over-expressed in MI, and `r sum(DEGs$V4 == 'FALSE')` are down-expressed in MI compared to the healthy controls.
+According to the cutoff criterion of $FDR < 0.05$, there are `r dim(M_H)[1]` DEGs between the MI patients and the healthy controls. Among them, `r sum(M_H$logFC > 0)` are up-regulated in MI, and `r sum(M_H$logFC < 0)` are down-regulated in MI compared to the healthy controls. For CAD and healthy groups there are `r dim(C_H)[1]` DEGs, `r sum(C_H$logFC > 0)` of them were up-regulated and `r sum(C_H$logFC < 0)` of them were down-regulated in CAD samples in comparison with healthy samples. For MI and CAD group the number of DEGs are `r dim(M_C)[1]`, and the number of up- and down-regulated genes in MI samples in comparison with CAD samples are `r sum(M_C$logFC > 0)` and `r sum(M_C$logFC < 0)`, respectively. All these data is summarized in table 2.
+
+|                 | No. of DEGs     | no. of up-regulated DEGs | no. of down-regulated DEGs | microRNAs                           |
+|---------------|---------------|---------------|---------------|---------------|
+| MI vs. Healthy  | `r dim(M_H)[1]` | `r sum(M_H$logFC > 0)`   | `r sum(M_H$logFC < 0)`     | hsa-miR-186, hsa-miR-21, hsa-miR-32 |
+| CAD vs. Healthy | `r dim(C_H)[1]` | `r sum(C_H$logFC > 0)`   | `r sum(C_H$logFC < 0)`     | hsa-miR-186, hsa-miR-21, hsa-miR-32 |
+| MI vs. CAD      | `r dim(M_C)[1]` | `r sum(M_C$logFC > 0)`   | `r sum(M_C$logFC < 0)`     | hsa-miR-186                         |
+
+: Total DEGs and name of microRNAs in DEGs.
 
 ## Gene ontology (GO) and Kyoto Encyclopedia of Genes and Genomes (KEGG) enrichment analyses of the DEGs.
 
-To explore the biological classification of the DEGs, we performed GO and KEGG pathway enrichment analyses. Many biological functions enriched with the DEGs were associated with the immune cells, as expected. GO enrichment analysis in the cellular component (CC) category suggested that the robust DEGs were enriched in “secretory granule membrane” and “sazurophil granule” (fig\@ref(fig:enrich)A). In the biological process (BP) category, the robust DEGs were enriched in “mononuclear cell differentiation”, “lymphocyte differentiation”, "leukocyte activation involved in immune response", and "lymphocyte activation involved in immune response” (fig\@ref(fig:enrich)B). In the molecular function (MF) category, the robust DEGs were involved in “cadherin binding” and “MHC class I protein binding” (fig\@ref(fig:enrich)C). KEGG pathway analysis indicated that the robust DEGs were related to the following pathways: “Chemokine signaling pathway”, “Lipid and atherosclerosis”, “Hematopoietic cell lineage” and “Chronic myeloid leukemia” (fig\@ref(fig:enrich)D). The above results suggested that the abnormal expression of the DEGs may ??.
+To explore the biological classification of the DEGs, we performed GO and KEGG pathway enrichment analyses on MI-healthy and CAD-healthy DEGs. For both set of DEGs, many biological functions enriched were associated with the immune cells, as expected.
 
-```{r enrich, echo=F, out.width="100%", fig.cap="Gene Ontology (GO) and Kyoto Encyclopedia of Genes and Genomes (KEGG) pathways enriched with the DEGs. (A) Biological process terms enriched with the DEGs. (B) Cellular component terms enriched with the DEGs. (C) Molecular function terms enriched with the DEGs. (D) KEGG analysis of the DEGs. The respective pathway involved in MI was identified by using the KEGG pathway database."}
-knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/DEG and DEM/Train/MI/enrichment.pdf")
+For MI versus healthy samples, GO enrichment analysis in the biological process (BP) category, suggested that the DEGs were enriched in "immune response-regulating signaling pathway", "lymphocyte differentiation", "immune response-regulating cell surface receptor signaling pathway", and "leukocyte activation involved in immune response" (fig\@ref(fig:MIHEnrich)A). In the cellular component (CC) category the DEGs were enriched in "secretory granule membrane", "azurophil granule", "ficolin-1-rich granule", "tertiary granule", and "ficolin-1-rich granule membrane" (fig\@ref(fig:MIHEnrich)B).  In the molecular function (MF) category, the DEGs were involved in "cadherin binding" and "MHC class I protein binding" (fig\@ref(fig:MIHEnrich)C). KEGG pathway analysis indicated that the DEGs were related to the following pathways: "Chemokine signaling pathway", "Lipid and atherosclerosis", and "Hematopoietic cell lineage" (fig\@ref(fig:MIHEnrich)D).
+
+```{r MIHEnrich, echo=F, out.width="95%", fig.cap="Gene Ontology (GO) and Kyoto Encyclopedia of Genes and Genomes (KEGG) pathways enriched with the MI and healthy DEGs. (A) Biological process terms. (B) Cellular component terms. (C) Molecular function terms. (D) KEGG analysis."}
+knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/DEG and DEM/Pics/enrich MI-Healthy.pdf")
 ```
+
+The enrichment results for DEGs of CAD versus healthy samples are as follows. In the biological process (BP) category, GO enrichment suggested that the DEGs were enriched in "positive regulation of defense response", "positive regulation of innate immune response", "mononuclear cell differentiation", and "positive regulation of response to external stimulus" (fig\@ref(fig:CADHEnrich)A). In the cellular component (CC) category the DEGs were enriched in "azurophil granule", "ficolin-1-rich granule", and "ficolin-1-rich granule membrane" (fig\@ref(fig:CADHEnrich)B).  In the molecular function (MF) category, the DEGs were involved in "lipoprotein particle receptor binding" and "NF-$\kappa$B binding" (fig\@ref(fig:CADHEnrich)C). KEGG pathway analysis indicated that the  DEGs were related to the following pathways: "Chemokine signaling pathway", "Lipid and atherosclerosis", and "Hematopoietic cell lineage" (fig\@ref(fig:CADHEnrich)D).
+
+```{r CADHEnrich, echo=F, out.width="95%", fig.cap="Gene Ontology (GO) and Kyoto Encyclopedia of Genes and Genomes (KEGG) pathways enriched with the CAD and healthy DEGs. (A) Biological process terms. (B) Cellular component terms. (C) Molecular function terms. (D) KEGG analysis."}
+knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/DEG and DEM/Pics/enrich CAD-Healthy.pdf")
+```
+
 
 ## Machine Learning
 
-Among all DEGs, just hsa-miR-186, hsa-miR-32, and hsa-miR-21 are differntially expressed miRNAs. The expression profile of these three miRNAs are presented in fig\@ref(fig:expression). The ROC curves of each miRNA is presented in 
+### microRNAs in DEGs
 
-```{r expression, echo=F, out.width="100%", fig.cap="Barplot of differentially expressed miRNAs expression values."}
-knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/ML/Expressionforall.pdf")
+Among all DEGs, just hsa-miR-186, hsa-miR-32, and hsa-miR-21 are differntially expressed miRNAs. The expression profile of these three miRNAs are presented in fig\@ref(fig:DEMexp). The ROC curves of each miRNA for each layer is presented in fig\@ref(fig:miRROC). As it is clear from the fig\@ref(fig:miRROC)A, all these three microRNAs has an acceptable performance fro separating healthy and not-healthy samples. AUC for hsa-miR-21, hsa-miR-32, and hsa-miR-186 is 0.99, 1, and 0.91 respectively. Also the accuracy of each microRNA for classifying the samples to healthy and not-healthy groups on test set using a simple logistic regression model is 0.92, 0.98, and 0.89 for hsa-miR-21, hsa-miR-32, and hsa-miR-186 respectively. Moreover, In fig\@ref(fig:miRROC)B the ROC curve of each microRNA for classifying MI and CAD samples were presented. For  hsa-miR-21, hsa-miR-32, and hsa-miR-186 AUC on test set is 0.85; 0.7; and 0.82, and accuracy on test set is 0.78; 0.67; and 0.74.
+
+```{r DEMexp, echo=F, out.width="50%", fig.align='center', fig.cap="Expression profile of hsa-miR-186, hsa-miR-21, and hsa-miR32 in Healthy, CAD, and MI samples."}
+knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/ML/Pics/DEGs healthy not-healthy/DEMs Expression.pdf")
 ```
 
+
+```{r miRROC, echo=F, out.width="95%", fig.align='center', fig.cap="ROC curve for single microRNAs on test set classification for (A) healthy and not-healthy samples and (B) CAD and MI samples."}
+knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/ML/Pics/miRs ROCs.pdf")
+```
+
+
+#### First layer for healthy not-healthy seperation:
+
+Although single microRNAs have acceptable performance, but their prediction value can improve even more using them as a set. The ROC curve for the SVM model with rbf kernel trained with all three microRNAs is presented in fig\@ref(fig:DEMROC)A. The model has better performance in classification than single microRNAs.The AUC for the model is 1, and its accuracy on test set is 1 as well.
+
+
+```{r DEMROC, echo=F, out.width="95%", fig.align='center', fig.cap="ROC curve for microRNAs in DEGs on test set classification for (A) healthy and not-healthy samples and (B) CAD and MI samples."}
+knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/ML/Pics/DEMs ROCs h not h cad mi.pdf")
+```
+
+#### Second layer for separating MI samples from CAD:
+
+Different models has been trained using expression values of three differentially microRNAs. The models 10-fold cross-validate AUC and accuracy on the test set is reported on fig\@ref(fig:DEMmodels). The best model from both AUC and accuracy point-of-view is an SVM model with linear kernel. The AUC and accuracy for this model with its preset values is 0.93 and 0.82 respectively. The model is hyper-tuned for C and gamma hyperparameters, and therefore the model showed a better performance. The ROC curve of the hyper-tuned model as the best model is presented in fig\@ref(fig:DEMROC)B. For this model the AUC reached to 0.95 and the accuracy improved to 0.85. Moreover, the sensitivity and specificity for the model is 0.91 and 0.71 respectively.
+
+
+```{r DEMmodels, echo=F, out.width="65%", fig.align='center', fig.cap="Area under curve (AUC) and accuracy of different models trained with three microRNAs in DEGs on the test set."}
+knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/ML/Pics/Models DEGs mirs.pdf")
+```
+
+### AUC approach
+
+#### Second layer; MI form CAD:
+
+After calculating AUC for each microRNA, they are sorted and their performance as a set were investigated. The metric for finding the best set was AUC. The diagram for AUC against the number of microRNAs in the set is presented in fig\@ref(fig:AUCset). As it is clear, the AUC increase until  the number of microRNAs in the set reaches tho 6 and after that it drops. The AUC for separating MI samples from CAD using these microRNAs is 0.93.
+The microRNAs in the set are has-miR-29A, has-miR-197, has-miR-142, has-miR-21, has-miR-155, and has-miR-320C1. The expression values of these microRNAs in healthy, CAD, and MI samples is presented in  fig\@ref(fig:AUCexp). 
+
+```{r AUCset, echo=F, out.width="65%", fig.align='center', fig.cap="Area under curve (AUC) for sets containing increasing number of microRNAs with the highest individual AUC in MI/CAD separation."}
+knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/ML/Pics/AUC for mirs.pdf")
+```
+
+
+```{r AUCexp, echo=F, out.width="90%", fig.align='center', fig.cap="Expression profile of has-miR-29A, has-miR-197, has-miR-142, has-miR-21, has-miR-155, and has-miR-320C1 in Healthy, CAD, and MI samples."}
+knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/ML/Pics/ExpressionforAUC.pdf")
+```
+
+For finding the most model for training the best set, different models were trained using their pre-set values. Their AUC and accuracy results on the test set is presented in fig\@ref(fig:AUCmodels). The best model from AUC point of view is the LR and from accuracy point-of-view is the SVM model with polynomial kernel. For LR model the AUC and accuracy were 0.92 and 0.81; and for SVM model with polynomial kernel the values were 0.91 and 0.84 respectively. Both models were hyper-tuned and ROC curve for their best performance presented in fig\@ref(fig:AUCROC)A and B. The AUC and accuracy for LR model increased to 0.94 and 0.88 respectively; And for SVM model with polynomial kernel these values increased to 0.95 and 0.88 respectively. The sensitivity for LR and SVM models are 1 and 0.97; and the specificity for them is 0.57 and 0.64, respectively.
+
+
+```{r AUCmodels, echo=F, out.width="65%", fig.align='center', fig.cap="Area under curve (AUC) and accuracy of different models trained with three microRNAs in DEGs on the test set."}
+knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/ML/Pics/Models AUC mirs.pdf")
+```
+
+
+```{r AUCROC, echo=F, out.width="95%", fig.align='center', fig.cap="ROC curve for the set of microRNAs selected by AUC on test set classification. (A) Logistic regression model for CAD and MI samples classification. (B) SVM with polynomial kernel for CAD and MI samples classification. (C) SVM with RBF kernel for healthy and not-healthy samples classification."}
+knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/ML/Pics/AUC best model ROCs.pdf")
+```
+
+
 # Refrences
-
-
