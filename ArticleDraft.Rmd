@@ -41,11 +41,11 @@ Microarray datasets were obtained from the Gene Expression Omnibus (GEO) databas
 
 ## Pre-processing
 
-Raw data (CEL files) of all datasets were downloaded from the GEO and pre-processed using the fRMA package [@fRMA]. fRMA allows to preprocess individual microarray samples and combine them consistently for analysis. For each dataset, background correction was performed using RMA algorithm and then it was quantile normalized based on the reference distribution. During summarization, batch effects were removed and variances of the gene expressions were estimated by taking into account these probe-specific effects. For those multiple probe sets matched to the identical gene, the mean log fold change was retained. This way fRMA can be seen as a batch effect removal technique for different datasets that were produced identical microarray platform. Thus, to become ensure about batch effect removal, the principal component analysis and the relative log expression of train samples were plotted before and after fRMA [@BER].
+Raw data (CEL files) of all datasets were downloaded from the GEO and pre-processed using the fRMA package [@fRMA]. fRMA allows to preprocess individual microarray samples and combine them consistently for analysis. For each dataset, background correction was performed using the RMA algorithm and then it was quantile normalized based on the reference distribution. During summarization, batch effects were removed and variances of the gene expressions were estimated by taking into account these probe-specific effects. For those multiple probe sets matched to the identical gene, the mean log fold change was retained. This way, fRMA can be seen as a batch effect removal technique for different datasets that produced identical microarray platforms. Thus, to become sure about batch effect removal, the principal component analysis and the relative log expression of train samples were plotted before and after fRMA [@BER].
 
 ## Differential expression analysis
 
-The barcode algorithm proposed by McCall et al. [@Barcode] transforms the actual expression values into binary barcode values. Huge sets of samples were collected and normalized using fRMA for several platforms. The distribution of the expressed and non-expressed observed intensities for each gene is estimated using these normalized sets. Genes are deemed expressed (and their value coded to 1) or unexpressed (and their value coded to 0) according to the following equation:
+The barcode algorithm proposed by McCall et al. [@Barcode] transforms the actual expression values into binary barcode values. Huge sets of samples were collected and normalized using fRMA for several platforms. The distribution of the expressed and unexpressed observed intensities for each gene is estimated using these normalized sets. Genes are deemed expressed (and their value coded to 1) or unexpressed (and their value coded to 0) according to the following equation:
 
 $$
 \hat{x}_{ij} = \left\{
@@ -59,49 +59,49 @@ $$
 where $x_{ij}$ is the normalized intensity of gene $i$ in sample $j$, $C$ is a user-defined parameter, $\sigma^{ne}$ is the standard deviation of the non-expressed distribution and $\mu^{ne}$ is the mean of the non-expressed distribution. The barcode representation of a sample is a vector of ones and zeros denoting which genes are estimated to be expressed (ones) and unexpressed (zeros). The barcode algorithm was implemented by the barcode function in the R fRMA package, and the default value of $C$ was used.
 
 
-To determine if the expressed ratios differed in the MI group versus the healthy control group, Fisher's exact test for individual genes was carried out upon the barcode values. Genes with a false discovery rate (FDR) of $< 0.05$, which was calculated through the Benjamini-Hochberg (BH) procedure to adjust for multiple testing issue, were considered as differentially expressed genes.
+To determine if the expressed ratios differed in the MI group versus the healthy control group, Fisher's exact test for individual genes was carried out upon the barcode values. Genes with a false discovery rate (FDR) of $< 0.05$, which was calculated through the Benjamini-Hochberg (BH) procedure to adjust for multiple testing issues, were considered as differentially expressed genes.
 
-The same procedure were conducted on CAD versus healthy controls as well as MI versus CAD group to find the DEGs in between them.
+The same procedures were conducted on CAD versus healthy controls as well as MI versus CAD group to find the DEGs in between them.
 
 ## Functional and pathway enrichment analyses
 
-Using the R clusterProfilter package, the Kyoto Encyclopedia of Genes and Genomes (KEGG) pathway enrichment analysis and Gene Ontology (GO) functional annotation were carried out on the differentially expressed genes. The GO analysis included biological process (BP), cellular component (CC) and molecular function (MF) categories. An adjusted P \< 0.05 was considered to indicate a statistically significant difference. Enrichment were conducted on the MI-healthy and CAD-healthy DEGs. In these analyses, all default parameters were used.
+Using the R clusterProfilter package, the Kyoto Encyclopedia of Genes and Genomes (KEGG) pathway enrichment analysis and Gene Ontology (GO) functional annotation were carried out on the differentially expressed genes. The GO analysis included biological process (BP), cellular component (CC) and molecular function (MF) categories. An adjusted P \< 0.05 was considered to indicate a statistically significant difference. Enrichments were conducted on the MI-healthy and CAD-healthy DEGs. In these analyses, all default parameters were used.
 
 ## Machine Learning
 
-The machine learning analysis was performed using Python software, ver. 3.9, numpy [@numpy], pandas [@pandas] and Scikit-Learn packages [@scikit-learn]. When ever hyper-tuning was needed the scikit-opt package [@scikitopt] was used. In all ML analysis, the datasets were divided into train and test set by 0.7:0.3 ratio and all reported results are the average of a 10-fold cross-validation.  
+The machine learning analysis was performed using Python software, ver. 3.9, numpy [@numpy], pandas [@pandas] and Scikit-Learn packages [@scikit-learn]. Whenever hyper-tuning was needed the scikit-opt package [@scikitopt] was used. In all ML analysis, the datasets were divided into train and test sets by 0.7:0.3 ratio and all reported results are the average of a 10-fold cross-validation.  
 
-Two different approaches were used for selecting microRNAs to train models with. The first approach was using the microRNAs that are differentially expressed. In the second approach microRNAs were selected by their individual AUC-ROC. Having the result of these two different approaches can provide an informative comparison between the predictive capabilities of set of microRNAs selected with different logic.
+Two different approaches were used for selecting microRNAs to train models with. The first approach was using the microRNAs that are differentially expressed. In the second approach microRNAs were selected by their individual AUC-ROC. Having the result of these two different approaches can provide an informative comparison between the predictive capabilities of a set of microRNAs selected with different logic.
 
 
 ### microRNAs in DEGs
 
-In this approach a two layer architecture was deployed to the data in order to maximize the prediction values. The first layer predicted whether a sample is healthy or not, and the second layer was separated MI from CAD in the samples which were predicted as not healthy in the first layer. To this end, a distinct ML model was trained for each layer. Since there are limited numbers of microRNAs in DEGs both layers where trained with all of them. For further comparison with the models performance ROC curve of each microRNA for classifying healthy and not-healthy, as well as CAD and MI was generated using a simple Logistic Regression model.
+In this approach a two layer architecture was deployed to the data in order to maximize the prediction values. The first layer predicted whether a sample is healthy or not, and the second layer separated MI from CAD in the samples which were predicted as not healthy in the first layer. To this end, a distinct ML model was trained for each layer. Since there are limited numbers of microRNAs in DEGs both layers were trained with all of them. For further comparison with the models performance ROC curve of each microRNA for classifying healthy and not-healthy, as well as CAD and MI was generated using a simple Logistic Regression model.
 
 
 #### First layer for seperating healthy and not-healthy samples:
 
-An SVM model using RBF kernels were hyper-tunned and trained using all microRNAs in DEGs. In order to handle the imbalance number of samples in groups (51 for healthy and 157 for not-healthy group), sample weight for not-healthy samples were set to 0.5.
+An SVM model using RBF kernels was hyper-tunned and trained using all microRNAs in DEGs. In order to handle the imbalance in the number of samples  (51 for healthy and 157 for not-healthy group), sample weight for not-healthy samples was set to 0.5.
 
 #### Second layer for seperating MI and CAD samples:
 
 For the sake of reaching the highest classification performance using the set of microRNAs, different models were investigated. To do so, SVM (with linear, polynomial, and RBF kernels), Logistic Regression (LR), Random Forests (RF), k-Nearest Neighbor (kNN), Gradient Boosting (GB), XGBoost (XGB) and Decision Tree (DT) models were trained. All models were trained with their pre-set parameters with 10-fold cross-validation.
 
-Criteria for choosing the best model was the highest accuracy and AUC on the test set. The best model was hyper-tuned with scikit-opt package [@scikitopt] in order to get the best predictive performance.
+Criteria for choosing the best model was the highest accuracy and AUC on the test set. The best model was hyper-tuned with the scikit-opt package [@scikitopt] in order to get the best predictive performance.
 
 ### microRNAs with the highest AUC-ROC
 
-Like the previous approach, a two layers strategy was conducted. The first layer for classifying samples to healthy and not-healthy and the second layer for separating MI and CAD samples. However, for keeping the number of microRNAs as low as possible microRNAs will be selected from the second layer (which are the microRNAs with the best performance in MI/CAD separation) and then their performance were evaluated in the first layer. 
+Like the previous approach, a two layers strategy was conducted. The first layer for classifying samples to healthy and not-healthy and the second layer for separating MI and CAD samples. However, to keep the number of microRNAs as low as possible microRNAs will be selected from the second layer (which are the microRNAs with the best performance in MI/CAD separation) and then their performance will be evaluated in the first layer.
 
-AUC-ROC of all microRNAs for classifying MI and CAD samples has been calculated. For finding the number of microRNAs with the highest predictive values, the microRNAs with the highest individual AUC-ROC is adding to the set one-by-one and the AUC-ROC for the set is calculated. The set with the highest AUC-ROC has been selected as the set for the following steps. The ROC curves for each selected microRNA for separating healthy samples from not-healthy and MIs from CADs were also plotted for further comparison.
+AUC-ROC of all microRNAs for classifying MI and CAD samples has been calculated. For finding the number of microRNAs with the highest predictive values, the microRNAs with the highest individual AUC-ROC are added to the set one-by-one and the AUC-ROC for the set is calculated. The set with the highest AUC-ROC has been selected as the set for the following steps. The ROC curves for each selected microRNA for separating healthy samples from not-healthy and MIs from CADs were also plotted for further comparison.
 
 #### First layer for finding healthy and not-healthy samples:
 
-An SVM model with RBF kernel were trained with the selected set of microRNAs. Moreover, the model was hyper-tuned for finding the hyper-parameters with the best AUC and accuracy. The ROC curve and confusion matrix for the best model was reported.
+An SVM model with RBF kernel was trained with the selected set of microRNAs. Moreover, the model was hyper-tuned for finding the hyper-parameters with the best AUC and accuracy. The ROC curve and confusion matrix for the best model was reported.
 
 #### Second layer for separating MI and CAD:
 
-The selected number of microRNAs was used to train different algorithms for finding the best model. As previous approach, SVM (with linear, polynomial, and RBF kernels), LR, RF, kNN, GB, XGB and DT were trained. All models were trained with their pre-set parameters with 10-fold cross-validation. The models with the highest AUC-ROC and accuracy on the test set were selected and hyper-tuned with scikit-opt package [@scikitopt]. The ROC curve and confusion matrix for the best model was reported.
+The selected number of microRNAs was used to train different algorithms for finding the best model. As the previous approach, SVM (with linear, polynomial, and RBF kernels), LR, RF, kNN, GB, XGB and DT were trained. All models were trained with their pre-set parameters with 10-fold cross-validation. The models with the highest AUC-ROC and accuracy on the test set were selected and hyper-tuned with the scikit-opt package [@scikitopt]. The ROC curve and confusion matrix for the best model was reported.
 
 
 # Results and Discussion
@@ -110,7 +110,7 @@ The selected number of microRNAs was used to train different algorithms for find
 
 The PCA plot of the train samples were shown in Fig\@ref(fig:PCA). As it is clear, there was a complete separation between healthy samples and CAD and MI samples in primary data which also remains after conducting fRMA on the data.
 
-The RLE plot presented in Fig\@ref(fig:PCA) validates batch effect removal. For an efficient batch effect removal method, the individual boxplots will be all distributed around 0 in RLE plot, and inter-quantile distances would be greater than 0.1 [@BER]. The mentioned criteria was not met in primary data, but was met after conducting fRMA algorithm.
+The RLE plot presented in Fig\@ref(fig:PCA) validates batch effect removal. For an efficient batch effect removal method, the individual boxplots will be all distributed around 0 in the RLE plot, and inter-quantile distances would be greater than 0.1 [@BER]. The mentioned criteria was not met in primary data, but was met after conducting fRMA algorithm.
 
 ```{r PCA, echo=F, out.width="100%", fig.cap="PCA and RLE plot for all samples before and after fRMA."}
 knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/DEG and DEM/Pics/PCA and RLE of trains.pdf")
@@ -134,7 +134,7 @@ According to the cutoff criterion of $FDR < 0.05$, there were `r dim(M_H)[1]` DE
 | CAD vs. Healthy | `r dim(C_H)[1]` | `r sum(C_H$logFC > 0)`   | `r sum(C_H$logFC < 0)`     | hsa-miR-186, hsa-miR-21, hsa-miR-32 |
 | MI vs. CAD      | `r dim(M_C)[1]` | `r sum(M_C$logFC > 0)`   | `r sum(M_C$logFC < 0)`     | hsa-miR-186                         |
 
-: Total DEGs and name of differentially expressed microRNAs.
+: Total DEGs and differentially expressed microRNAs.
 
 ## Gene ontology (GO) and Kyoto Encyclopedia of Genes and Genomes (KEGG) enrichment analyses of the DEGs.
 
@@ -156,7 +156,7 @@ knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinforma
 
 ### microRNAs in DEGs
 
-Among all DEGs, just hsa-miR-186, hsa-miR-32, and hsa-miR-21 were differntially expressed miRNAs. The expression profile of these three miRNAs was presented in Fig\@ref(fig:DEMexp). Also, The ROC curves of each miRNA for each layer was presented in Fig\@ref(fig:miRROC). AUC for hsa-miR-21, hsa-miR-32, and hsa-miR-186 was 0.99, 1, and 0.91 respectively using a simple logistic regression model (Fig\@ref(fig:miRROC)A). Using the same model the accuracy of each microRNA for classifying the samples to healthy and not-healthy groups on test set was 0.92, 0.98, and 0.89 for hsa-miR-21, hsa-miR-32, and hsa-miR-186 respectively. Moreover, In Fig\@ref(fig:miRROC)B the ROC curve of each microRNA for classifying MI and CAD samples were presented. For  hsa-miR-21, hsa-miR-32, and hsa-miR-186 AUC on test set was 0.85; 0.7; and 0.82, and accuracy on test set was 0.78; 0.67; and 0.74.
+Among all DEGs, just hsa-miR-186, hsa-miR-32, and hsa-miR-21 were differentially expressed miRNAs. The expression profile of these three miRNAs was presented in Fig\@ref(fig:DEMexp). Also, The ROC curves of each miRNA for each layer was presented in Fig\@ref(fig:miRROC). AUC for hsa-miR-21, hsa-miR-32, and hsa-miR-186 was 0.99, 1, and 0.91 respectively using a simple logistic regression model (Fig\@ref(fig:miRROC)A). Using the same model the accuracy of each microRNA for classifying the samples to healthy and not-healthy groups on test set was 0.92, 0.98, and 0.89 for hsa-miR-21, hsa-miR-32, and hsa-miR-186 respectively. Moreover, In Fig\@ref(fig:miRROC)B the ROC curve of each microRNA for classifying MI and CAD samples were presented. For  hsa-miR-21, hsa-miR-32, and hsa-miR-186 AUC on test set was 0.85; 0.7; and 0.82, and accuracy on test set was 0.78; 0.67; and 0.74.
 
 ```{r DEMexp, echo=F, out.width="50%", fig.align='center', fig.cap="Expression profile of hsa-miR-186, hsa-miR-21, and hsa-miR32 in Healthy, CAD, and MI samples."}
 knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/ML/Pics/DEGs healthy not-healthy/DEMs Expression.pdf")
@@ -183,7 +183,7 @@ knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinforma
 
 #### Second layer for separating MI samples from CAD:
 
-Different models were trained using expression values of three differentially microRNAs. The models 10-fold cross-validate AUC and accuracy on the test set were reported on Fig\@ref(fig:DEMmodels). The best model from both AUC and accuracy point-of-view was the SVM model with linear kernel. The AUC and accuracy for this model with its preset values was 0.93 and 0.82 respectively. The model was hyper-tuned for C and gamma hyperparameters, and therefore the model showed a better performance. The ROC curve of the hyper-tuned model was presented in Fig\@ref(fig:DEMROC)B. For this model the AUC reached to 0.95 and the accuracy improved to 0.85. Moreover, the sensitivity and specificity for the model on the test set was 0.91 and 0.71 respectively. The confusion matrix for the hyper-tuned model is illustrated in Fig\@ref(fig:DEMCF)B.
+Different models were trained using expression values of three differentially microRNAs. The models 10-fold cross-validated AUC and accuracy on the test set were reported on Fig\@ref(fig:DEMmodels). The best model from both AUC and accuracy point-of-view was the SVM model with linear kernel. The AUC and accuracy for this model with its preset values was 0.93 and 0.82 respectively. The model was hyper-tuned for C and gamma hyperparameters, and therefore the model showed a better performance. The ROC curve of the hyper-tuned model was presented in Fig\@ref(fig:DEMROC)B. For this model the AUC reached to 0.95 and the accuracy improved to 0.85. Moreover, the sensitivity and specificity for the model on the test set was 0.91 and 0.71 respectively. The confusion matrix for the hyper-tuned model is illustrated in Fig\@ref(fig:DEMCF)B.
 
 
 ```{r DEMmodels, echo=F, out.width="65%", fig.align='center', fig.cap="Area under curve (AUC) and accuracy of different models trained with three microRNAs in DEGs on the test set."}
@@ -192,7 +192,7 @@ knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinforma
 
 ### AUC approach
 
-After calculating each microRNA's AUC for classifying MI and CAD samples, they were sorted and their performance as a set were investigated. The metric of choice for finding the best set was AUC. As shown in Fig\@ref(fig:AUCset), the AUC increased until  the number of microRNAs in the set reached tho 6 and after that it droped. The AUC for separating MI samples from CAD using these microRNAs was 0.93.
+After calculating each microRNA's AUC for classifying MI and CAD samples, they were sorted and their performance as a set were investigated. The metric of choice for finding the best set was AUC. As shown in Fig\@ref(fig:AUCset), the AUC increased until  the number of microRNAs in the set reached tho 6 and after that it dropped. The AUC for separating MI samples from CAD using these microRNAs was 0.93.
 The microRNAs in the set were has-miR-29A, has-miR-197, has-miR-142, has-miR-21, has-miR-155, and has-miR-320C1. The expression values of these microRNAs in healthy, CAD, and MI samples is presented in  Fig\@ref(fig:AUCexp). The ROC curve of the selected microRNAs for MI and CAD samples classification is illustrated in Fig\@ref(fig:miRROC)B.
 
 ```{r AUCset, echo=F, out.width="65%", fig.align='center', fig.cap="Area under curve (AUC) for sets containing increasing number of microRNAs with the highest individual AUC in MI/CAD separation."}
@@ -206,7 +206,7 @@ knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinforma
 
 #### First layer: 
 
-Using the selected set, an SVM model with RBF kernel was trained for separating healthy from not-healthy samples. The ROC curve for the model is presented in Fig\@ref(fig:AUCROC)A and confusion matrix is illustrated in Fig\@ref(fig:AUCCF)A. Both AUC and accuracy for the model on the test set was equal to 1.
+Using the selected set, an SVM model with RBF kernel was trained for separating healthy from not-healthy samples. The ROC curve for the model is presented in Fig\@ref(fig:AUCROC)A and the confusion matrix is illustrated in Fig\@ref(fig:AUCCF)A. Both AUC and accuracy for the model on the test set was equal to 1.
 
 ```{r AUCROC, echo=F, out.width="95%", fig.align='center', fig.cap="ROC curve for the set of microRNAs selected by AUC on test set classification. (A) SVM with RBF kernel for healthy and not-healthy samples classification. (B) Logistic regression model for CAD and MI samples classification. (C) SVM with polynomial kernel for CAD and MI samples classification. "}
 knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/ML/Pics/AUC best model ROCs.pdf")
@@ -219,7 +219,7 @@ knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinforma
 
 #### Second layer; MI form CAD:
 
-For finding the best model for training the best set, different models were trained using their pre-set values. Their AUC and accuracy results on the test set is presented in Fig\@ref(fig:AUCmodels). The best model from AUC point-of-view was the LR and from accuracy point-of-view was the SVM model with polynomial kernel. For LR model the AUC and accuracy were 0.92 and 0.81; and for SVM model with polynomial kernel the values were 0.91 and 0.84 respectively. Both models were hyper-tuned and ROC curve for their best performance presented in Fig\@ref(fig:AUCROC)B and C. The AUC and accuracy for LR model increased to 0.94 and 0.88 respectively; And for SVM model with polynomial kernel these values increased to 0.95 and 0.88 respectively. The sensitivity for LR and SVM models were 1 and 0.97; and the specificity for them were 0.57 and 0.64, respectively. The confusion matrix for both models is illustrated in Fig\@ref(fig:AUCCF)B andC.
+For finding the best model for training the best set, different models were trained using their pre-set values. Their AUC and accuracy results on the test set is presented in Fig\@ref(fig:AUCmodels). The best model from AUC point-of-view was the LR and from accuracy point-of-view was the SVM model with polynomial kernel. For the LR model the AUC and accuracy were 0.92 and 0.81; and for the SVM model with polynomial kernel the values were 0.91 and 0.84 respectively. Both models were hyper-tuned and ROC curve for their best performance presented in Fig\@ref(fig:AUCROC)B and C. The AUC and accuracy for LR model increased to 0.94 and 0.88 respectively; And for SVM model with polynomial kernel these values increased to 0.95 and 0.88 respectively. The sensitivity for LR and SVM models were 1 and 0.97; and the specificity for them were 0.57 and 0.64, respectively. The confusion matrix for both models is illustrated in Fig\@ref(fig:AUCCF)B and C.
 
 
 ```{r AUCmodels, echo=F, out.width="65%", fig.align='center', fig.cap="Area under curve (AUC) and accuracy of different models trained with three microRNAs in DEGs on the test set."}
