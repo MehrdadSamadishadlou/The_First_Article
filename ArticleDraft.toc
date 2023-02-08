@@ -8,8 +8,8 @@
 \contentsline {paragraph}{\numberline {1.5.1.1}First layer for seperating healthy and not-healthy samples:}{3}{paragraph.1.5.1.1}%
 \contentsline {paragraph}{\numberline {1.5.1.2}Second layer for seperating MI and CAD samples:}{3}{paragraph.1.5.1.2}%
 \contentsline {subsubsection}{\numberline {1.5.2}microRNAs with the highest AUC-ROC}{3}{subsubsection.1.5.2}%
-\contentsline {paragraph}{\numberline {1.5.2.1}Second layer for separating MI and CAD:}{3}{paragraph.1.5.2.1}%
-\contentsline {paragraph}{\numberline {1.5.2.2}First layer for finding healthy and not-healthy samples:}{3}{paragraph.1.5.2.2}%
+\contentsline {paragraph}{\numberline {1.5.2.1}First layer for finding healthy and not-healthy samples:}{3}{paragraph.1.5.2.1}%
+\contentsline {paragraph}{\numberline {1.5.2.2}Second layer for separating MI and CAD:}{3}{paragraph.1.5.2.2}%
 \contentsline {section}{\numberline {2}Results and Discussion}{4}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Pre-processing}{4}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Differential expression analysis}{5}{subsection.2.2}%
@@ -17,8 +17,8 @@
 \contentsline {subsection}{\numberline {2.4}Machine Learning}{5}{subsection.2.4}%
 \contentsline {subsubsection}{\numberline {2.4.1}microRNAs in DEGs}{5}{subsubsection.2.4.1}%
 \contentsline {paragraph}{\numberline {2.4.1.1}First layer for healthy not-healthy seperation:}{8}{paragraph.2.4.1.1}%
-\contentsline {paragraph}{\numberline {2.4.1.2}Second layer for separating MI samples from CAD:}{10}{paragraph.2.4.1.2}%
+\contentsline {paragraph}{\numberline {2.4.1.2}Second layer for separating MI samples from CAD:}{8}{paragraph.2.4.1.2}%
 \contentsline {subsubsection}{\numberline {2.4.2}AUC approach}{10}{subsubsection.2.4.2}%
-\contentsline {paragraph}{\numberline {2.4.2.1}Second layer; MI form CAD:}{10}{paragraph.2.4.2.1}%
-\contentsline {paragraph}{\numberline {2.4.2.2}First layer:}{12}{paragraph.2.4.2.2}%
-\contentsline {section}{Refrences}{12}{section*.2}%
+\contentsline {paragraph}{\numberline {2.4.2.1}First layer:}{10}{paragraph.2.4.2.1}%
+\contentsline {paragraph}{\numberline {2.4.2.2}Second layer; MI form CAD:}{10}{paragraph.2.4.2.2}%
+\contentsline {section}{Refrences}{14}{section*.2}%
