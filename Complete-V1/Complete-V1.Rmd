@@ -1,17 +1,50 @@
 ---
 title: Machine Learning Deriven Set of microRNAs as a Novel Biomarker for Myocardial Infarction Diagnosis
-authors:
-  - name: "Mehrdad Samadishadlou"
-    address: "Medical Nanotechnology gruop, Tabriz University of Medical Sciences, Tabriz, Iran"
-date: "`r Sys.Date()`"
-link-citation: yes
-bibliography: [For Article Refrence.bib, discussion.bib, Introduction.bib]
+#titlerunning: Short form of title (if too long for head)
+authorrunning: M. Samadishadlou et al.
+#thanks: | 
+#    Grants or other notes about the article that should go on the front 
+#    page should be placed here. General acknowledgments should be placed at the
+#    end of the article.
+
+authors: 
+- name: Mehrdad Samadishadlou
+  address: Medical Nanotechnology gruop, Tabriz University of Medical Sciences, Tabriz, Iran
+  email: samadishadlou@tbzmed.ac.ir
+  
+- name: Reza Rahbarghazi
+  address: Medical Nanotechnology gruop, Tabriz University of Medical Sciences, Tabriz, Iran
+  email: rahbarghazir@tbzmed.ac.ir
+  
+- name: Farhad Bani
+  address: Medical Nanotechnology gruop, Tabriz University of Medical Sciences, Tabriz, Iran
+  email: bainf@tbzmed.ac.ir
+
+keywords:
+- microRNA
+- Machine Learning
+- Myocardial Infarction
+
+#PACS: 
+#- PAC1
+#- superPAC
+    
+#MSC:
+#- MSC code 1
+#- MSC code 2
+
+always_allow_html: true
+
 abstract: |
   MicroRNAs (miRNAs) play a crucial role in regulating adaptive and maladaptive responses in cardiovascular diseases, making them attractive targets for potential therapeutics. However, their potential as novel biomarkers for diagnosing cardiovascular diseases needs to be evaluated systematically. In this study, we aimed to identify a key set of miRNA biomarkers using integrated bioinformatics and machine learning analysis. We combined and analyzed three gene expression datasets from the Gene Expression Omnibus (GEO) database, which contained peripheral blood mononuclear cells samples from individuals with myocardial infarction (MI), stable coronary artery disease (CAD), and healthy. Additionally, we selected a set of miRNAs based on their area under the curve of the receiver operating characteristic (AUC-ROC) for separating CAD/MI samples. We designed a two-layer architecture for sample classification, with the first layer isolating healthy samples from not-healthy ones, and the second layer classifying stable CAD and MI samples. We trained different machine learning models using both biomarker sets and evaluated their performance on a test set. We identified miR-21, miR-186, and miR-32 as the only miRNAs in the differentially expressed genes, and a set included miR-21, miR-155, miR-142, miR-197, miR-29A, and miR-320C1 as the optimum set of miRNA selected by their AUC-ROC. Both biomarker sets were able to distinguish healthy from not-healthy samples with complete accuracy. The best performance for classification of CAD and MI was achieved with an SVM model trained using the biomarker set selected by AUC-ROC, with an AUC of 0.95 and an accuracy of 0.88. Our study demonstrates that miRNA signatures derived from peripheral blood could serve as valuable novel biomarkers for cardiovascular diseases.
-output: 
-  bookdown::pdf_book:
-  bookdown::word_document2: default
-always_allow_html: true
+
+
+output:
+  rticles::springer_article
+    
+bibliography: [ForArticleRefrence.bib, discussion.bib, Introduction.bib]
+biblio-style: spmpsci
+# bibstyle options spbasic(default), spphys, spmpsci
 ---
 
 ```{r setup, include=FALSE, cache.rebuild=TRUE}
@@ -38,7 +71,7 @@ In this study, we aimed to identify potential miRNA biomarkers for MI patients b
 
 Microarray datasets were obtained from the Gene Expression Omnibus (GEO) database (<https://www.ncbi.nlm.nih.gov/geo/>). To obtain sufficient classification power between MI, healthy and CAD samples, a relatively large sample size was required. Therefore, GSE59867 for MI and CAD samples, and GSE56609 and GSE54475 for healthy samples were selected. All samples were produced using Affymetrix Human Gene 1.0 ST Array (GPL6244) platform. Only healthy, stable CAD and early-stage MI samples were selected from these datasets for further analyses. The basic information for the three datasets evaluated in the current study is provided in Table \@ref(tab:datasets).
 
-```{r, datasets, echo=FALSE}
+```{r datasets, echo=FALSE}
 df <- data.frame(Dataset = c("GSE59867", "GSE56609", "GSE54475"),
                  Platform = c("GPL6244", "GPL6244", "GPL6244"),
                  Healthy = c("-", 46, 5),
@@ -116,7 +149,7 @@ knitr::include_graphics("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinforma
 
 ## Differential expression analysis
 
-```{r , DEGstab, echo=F}
+```{r DEGstab, echo=F}
 M_H <- read.table("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/DEG and DEM/Fisher results/DEGs MI-Healthy.txt", check.names = F)
 
 M_C <- read.table("/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Article Materials/DEG and DEM/Fisher results/DEGs MI-CAD.txt", check.names = F)
@@ -282,4 +315,12 @@ Data indicated that miR-197 is also significantly up-regulated in both CAD/healt
 
 In summary, we derived a set of miRNA biomarkers by comparing MI samples to both healthy and CAD samples. We found that the SVM model performed best in both the first layer, which separated healthy and not-healthy samples, and the second layer, which classified MI/CAD samples. The set of miRNAs selected based on their AUC values had slightly better performance in the second layer. Overall, our two-layer structure achieved a weighted accuracy of 0.91. This demonstrates the potential for combining bioinformatics and machine learning techniques to identify novel biomarkers and gain a deeper understanding of myocardial infarction.
 
+
 # References
+
+
+\begin{align}
+a^2+b^2=c^2
+\end{align}
+
+

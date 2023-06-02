@@ -1,26 +1,27 @@
-\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
-\contentsline {section}{\numberline {2}Materials and Methods}{2}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Microarray data collection}{2}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Pre-processing}{2}{subsection.2.2}%
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {section}{\numberline {2}Materials and Methods}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Microarray data collection}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Pre-processing}{3}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Differential expression analysis}{3}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Functional and pathway enrichment analyses}{3}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Machine Learning}{3}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.4}Functional and pathway enrichment analyses}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}ML procedure}{4}{subsection.2.5}%
 \contentsline {subsubsection}{\numberline {2.5.1}miRNAs in DEGs}{4}{subsubsection.2.5.1}%
-\contentsline {paragraph}{\numberline {2.5.1.1}First layer for seperating healthy and not-healthy samples:}{4}{paragraph.2.5.1.1}%
+\contentsline {paragraph}{\numberline {2.5.1.1}First layer for isolation of healthy and not-healthy samples:}{4}{paragraph.2.5.1.1}%
 \contentsline {paragraph}{\numberline {2.5.1.2}Second layer for seperating MI and CAD samples:}{4}{paragraph.2.5.1.2}%
 \contentsline {subsubsection}{\numberline {2.5.2}miRNAs with the highest AUC-ROC}{4}{subsubsection.2.5.2}%
-\contentsline {paragraph}{\numberline {2.5.2.1}First layer for finding healthy and not-healthy samples:}{4}{paragraph.2.5.2.1}%
-\contentsline {paragraph}{\numberline {2.5.2.2}Second layer for separating MI and CAD:}{4}{paragraph.2.5.2.2}%
-\contentsline {section}{\numberline {3}Results}{4}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Pre-processing}{4}{subsection.3.1}%
+\contentsline {paragraph}{\numberline {2.5.2.1}First layer for the detection of healthy and not-healthy samples:}{5}{paragraph.2.5.2.1}%
+\contentsline {paragraph}{\numberline {2.5.2.2}Second layer for separating MI and CAD:}{5}{paragraph.2.5.2.2}%
+\contentsline {section}{\numberline {3}Results}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Pre-processing}{5}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Differential expression analysis}{5}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Gene ontology (GO) and Kyoto Encyclopedia of Genes and Genomes (KEGG) enrichment analyses of the DEGs.}{7}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.3}Gene ontology (GO) and Kyoto Encyclopedia of Genes and Genomes (KEGG) enrichment analyses of the DEGs.}{5}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Machine Learning}{8}{subsection.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1}miRNAs in DEGs}{8}{subsubsection.3.4.1}%
-\contentsline {paragraph}{\numberline {3.4.1.1}First layer for healthy not-healthy seperation:}{10}{paragraph.3.4.1.1}%
+\contentsline {paragraph}{\numberline {3.4.1.1}First layer for healthy not-healthy isolation:}{10}{paragraph.3.4.1.1}%
 \contentsline {paragraph}{\numberline {3.4.1.2}Second layer for separating MI samples from CAD:}{10}{paragraph.3.4.1.2}%
-\contentsline {subsubsection}{\numberline {3.4.2}AUC approach}{11}{subsubsection.3.4.2}%
-\contentsline {paragraph}{\numberline {3.4.2.1}First layer:}{11}{paragraph.3.4.2.1}%
-\contentsline {paragraph}{\numberline {3.4.2.2}Second layer; MI form CAD:}{15}{paragraph.3.4.2.2}%
-\contentsline {section}{\numberline {4}Discussion}{15}{section.4}%
-\contentsline {section}{Refrences}{17}{section*.2}%
+\contentsline {subsubsection}{\numberline {3.4.2}AUC approach}{12}{subsubsection.3.4.2}%
+\contentsline {paragraph}{\numberline {3.4.2.1}First layer for isolation of healthy and not-healthy samples}{12}{paragraph.3.4.2.1}%
+\contentsline {paragraph}{\numberline {3.4.2.2}Second layer for isolation of MI samples from CAD samples}{12}{paragraph.3.4.2.2}%
+\contentsline {section}{\numberline {4}Discussion}{14}{section.4}%
+\contentsline {section}{\numberline {5}Conclusion}{19}{section.5}%
+\contentsline {section}{References}{19}{section*.2}%

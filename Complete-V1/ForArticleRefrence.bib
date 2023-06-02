@@ -1,0 +1,242 @@
+
+@article{BER,
+	title = {Batch effect removal methods for microarray gene expression data integration: a survey},
+	volume = {14},
+	issn = {1467-5463, 1477-4054},
+	shorttitle = {Batch effect removal methods for microarray gene expression data integration},
+	url = {https://academic.oup.com/bib/article-lookup/doi/10.1093/bib/bbs037},
+	doi = {10.1093/bib/bbs037},
+	abstract = {Genomic data integration is a key goal to be achieved towards large-scale genomic data analysis. This process is very challenging due to the diverse sources of information resulting from genomics experiments. In this work, we review methods designed to combine genomic data recorded from microarray gene expression (MAGE) experiments. It has been acknowledged that the main source of variation between different MAGE datasets is due to the Downloaded from https://academic.oup.com/bib/article/14/4/469/191565 by guest on 01 September 2022 Corresponding author. Cosmin Lazar, Como, Vrije Universiteit Brussel, Pleinlaanz, 1050 Brussels, Belgium. E-mail: vlazar@vub.ac.be.},
+	language = {en},
+	number = {4},
+	urldate = {2022-09-01},
+	journal = {Briefings in Bioinformatics},
+	author = {Lazar, C. and Meganck, S. and Taminau, J. and Steenhoff, D. and Coletta, A. and Molter, C. and Weiss-Solis, D. Y. and Duque, R. and Bersini, H. and Nowe, A.},
+	month = jul,
+	year = {2013},
+	keywords = {Bioinformatics, Batch Effect, fRMA, Barcodes},
+	pages = {469--490},
+	file = {bbs037.pdf:/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Articles/bbs037.pdf:application/pdf},
+}
+
+@article{tian_gene_2021,
+	title = {Gene expression barcode values reveal a potential link between {Parkinson}’s disease and gastric cancer},
+	volume = {13},
+	issn = {1945-4589},
+	url = {https://www.aging-us.com/lookup/doi/10.18632/aging.202623},
+	doi = {10.18632/aging.202623},
+	abstract = {Gastric cancer is a disease that develops from the lining of the stomach, whereas Parkinson’s disease is a longterm degenerative disorder of the central nervous system that mainly affects the motor system. Although these two diseases seem to be distinct from each other, increasing evidence suggests that they might be linked. To explore the linkage between these two diseases, differentially expressed genes between the diseased people and their normal controls were identified using the barcode algorithm. This algorithm transforms actual gene expression values into barcode values comprised of 1’s (expressed genes) and 0’s (silenced genes). Once the overlapped differentially expressed genes were identified, their biological relevance was investigated. Thus, using the gene expression profiles and bioinformatics methods, we demonstrate that Parkinson’s disease and gastric cancer are indeed linked. This research may serve as a pilot study, and it will stimulate more research to investigate the relationship between gastric cancer and Parkinson’s disease from the perspective of gene profiles and their functions.},
+	language = {en},
+	number = {4},
+	urldate = {2022-09-01},
+	journal = {Aging},
+	author = {Tian, Suyan and Zhao, Shishun and Tang, Mingbo and Wang, Chi},
+	month = feb,
+	year = {2021},
+	keywords = {covered, Bioinformatics, Batch Effect, fRMA, Barcodes},
+	pages = {6171--6181},
+	file = {aging-13-202623.pdf:/Users/mehrdad/Projects/TBZ.Med/PhD. Project/Bioinformatics and ML/Articles/aging-13-202623.pdf:application/pdf},
+}
+
+@article{mccall_frma_2012,
+	title = {{fRMA} {ST}: frozen robust multiarray analysis for {Affymetrix} {Exon} and {Gene} {ST} arrays},
+	volume = {28},
+	issn = {1367-4803, 1460-2059},
+	shorttitle = {{fRMA} {ST}},
+	url = {https://academic.oup.com/bioinformatics/article-lookup/doi/10.1093/bioinformatics/bts588},
+	doi = {10.1093/bioinformatics/bts588},
+	abstract = {Summary: Frozen robust multiarray analysis (fRMA) is a single-array preprocessing algorithm that retains the advantages of multiarray algorithms and removes certain batch effects by downweighting probes that have high between-batch residual variance. Here, we extend the fRMA algorithm to two new microarray platforms—Affymetrix Human Exon and Gene 1.0 ST—by modifying the fRMA probe-level model and extending the frma package to work with oligo ExonFeatureSet and GeneFeatureSet objects.},
+	language = {en},
+	number = {23},
+	urldate = {2022-09-10},
+	journal = {Bioinformatics},
+	author = {McCall, M. N. and Jaffee, H. A. and Irizarry, R. A.},
+	month = dec,
+	year = {2012},
+	pages = {3153--3154},
+	file = {bts588.pdf:/Users/mehrdad/Projects/TBZ.Med/PhD. Project/References/Bioinformatics/bts588.pdf:application/pdf},
+}
+
+@article{fRMA,
+	title = {Frozen robust multiarray analysis ({fRMA})},
+	volume = {11},
+	issn = {1465-4644, 1468-4357},
+	url = {https://academic.oup.com/biostatistics/article-lookup/doi/10.1093/biostatistics/kxp059},
+	doi = {10.1093/biostatistics/kxp059},
+	abstract = {Robust multiarray analysis (RMA) is the most widely used preprocessing algorithm for Affymetrix and Nimblegen gene expression microarrays. RMA performs background correction, normalization, and summarization in a modular way. The last 2 steps require multiple arrays to be analyzed simultaneously. The ability to borrow information across samples provides RMA various advantages. For example, the summarization step fits a parametric model that accounts for probe effects, assumed to be fixed across arrays, and improves outlier detection. Residuals, obtained from the fitted model, permit the creation of useful quality metrics. However, the dependence on multiple arrays has 2 drawbacks: (1) RMA cannot be used in clinical settings where samples must be processed individually or in small batches and (2) data sets preprocessed separately are not comparable. We propose a preprocessing algorithm, frozen RMA (fRMA), which allows one to analyze microarrays individually or in small batches and then combine the data for analysis. This is accomplished by utilizing information from the large publicly available microarray databases. In particular, estimates of probe-specific effects and variances are precomputed and frozen. Then, with new data sets, these are used in concert with information from the new arrays to normalize and summarize the data. We find that fRMA is comparable to RMA when the data are analyzed as a single batch and outperforms RMA when analyzing multiple batches. The methods described here are implemented in the R package fRMA and are currently available for download from the software section of http://rafalab.jhsph.edu.},
+	language = {en},
+	number = {2},
+	urldate = {2022-09-10},
+	journal = {Biostatistics},
+	author = {McCall, M. N. and Bolstad, B. M. and Irizarry, R. A.},
+	month = apr,
+	year = {2010},
+	pages = {242--253},
+	file = {kxp059.pdf:/Users/mehrdad/Projects/TBZ.Med/PhD. Project/References/Bioinformatics/kxp059.pdf:application/pdf},
+}
+
+@article{Barcode,
+	title = {The {Gene} {Expression} {Barcode}: leveraging public data repositories to begin cataloging the human and murine transcriptomes},
+	volume = {39},
+	issn = {0305-1048, 1362-4962},
+	shorttitle = {The {Gene} {Expression} {Barcode}},
+	url = {https://academic.oup.com/nar/article-lookup/doi/10.1093/nar/gkq1259},
+	doi = {10.1093/nar/gkq1259},
+	abstract = {Various databases have harnessed the wealth of publicly available microarray data to address biological questions ranging from across-tissue differential expression to homologous gene expression. Despite their practical value, these databases rely on relative measures of expression and are unable to address the most fundamental question—which genes are expressed in a given cell type. The Gene Expression Barcode is the first database to provide reliable absolute measures of expression for most annotated genes for 131 human and 89 mouse tissue types, including diseased tissue. This is made possible by a novel algorithm that leverages information from the GEO and ArrayExpress public repositories to build statistical models that permit converting data from a single microarray into expressed/unexpressed calls for each gene. For selected platforms, users may upload data and obtain results in a matter of seconds. The raw data, curated annotation, and code used to create our resource are also available at http://rafalab .jhsph.edu/barcode.},
+	language = {en},
+	number = {suppl\_1},
+	urldate = {2022-09-12},
+	journal = {Nucleic Acids Research},
+	author = {McCall, Matthew N. and Uppal, Karan and Jaffee, Harris A. and Zilliox, Michael J. and Irizarry, Rafael A.},
+	month = jan,
+	year = {2011},
+	pages = {D1011--D1015},
+	file = {gkq1259.pdf:/Users/mehrdad/Projects/TBZ.Med/PhD. Project/References/Bioinformatics/gkq1259.pdf:application/pdf},
+}
+
+@article{67,
+	title = {Gene expression profiling reveals potential prognostic biomarkers associated with the progression of heart failure},
+	volume = {7},
+	issn = {1756-994X},
+	doi = {10.1186/s13073-015-0149-z},
+	abstract = {BACKGROUND: Heart failure (HF) is the most common cause of morbidity and mortality in developed countries. Here, we identify biologically relevant transcripts that are significantly altered in the early phase of myocardial infarction and are associated with the development of post-myocardial infarction HF.
+METHODS: We collected peripheral blood samples from patients with ST-segment elevation myocardial infarction (STEMI): n = 111 and n = 41 patients from the study and validation groups, respectively. Control groups comprised patients with a stable coronary artery disease and without a history of myocardial infarction. Based on plasma NT-proBNP level and left ventricular ejection fraction parameters the STEMI patients were divided into HF and non-HF groups. Microarrays were used to analyze mRNA levels in peripheral blood mononuclear cells (PBMCs) isolated from the study group at four time points and control group. Microarray results were validated by RT-qPCR using whole blood RNA from the validation group.
+RESULTS: Samples from the first three time points (admission, discharge, and 1 month after AMI) were compared with the samples from the same patients collected 6 months after AMI (stable phase) and with the control group. The greatest differences in transcriptional profiles were observed on admission and they gradually stabilized during the follow-up. We have also identified a set of genes the expression of which on the first day of STEMI differed significantly between patients who developed HF after 6 months of observation and those who did not. RNASE1, FMN1, and JDP2 were selected for further analysis and their early up-regulation was confirmed in HF patients from both the study and validation groups. Significant correlations were found between expression levels of these biomarkers and clinical parameters. The receiver operating characteristic (ROC) curves indicated a good prognostic value of the genes chosen.
+CONCLUSIONS: This study demonstrates an altered gene expression profile in PBMCs during acute myocardial infarction and through the follow-up. The identified gene expression changes at the early phase of STEMI that differentiated the patients who developed HF from those who did not could serve as a convenient tool contributing to the prognosis of heart failure.},
+	language = {eng},
+	number = {1},
+	journal = {Genome Medicine},
+	author = {Maciejak, Agata and Kiliszek, Marek and Michalak, Marcin and Tulacz, Dorota and Opolski, Grzegorz and Matlak, Krzysztof and Dobrzycki, Slawomir and Segiet, Agnieszka and Gora, Monika and Burzynska, Beata},
+	year = {2015},
+	pmid = {25984239},
+	pmcid = {PMC4432772},
+	keywords = {GSE59867, Dataset Article},
+	pages = {26},
+}
+
+@article{46,
+	title = {Altered {Gene} {Expression} {Pattern} in {Peripheral} {Blood} {Mononuclear} {Cells} in {Patients} with {Acute} {Myocardial} {Infarction}},
+	volume = {7},
+	issn = {1932-6203},
+	url = {https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3503717/},
+	doi = {10.1371/journal.pone.0050054},
+	abstract = {Background
+Despite a substantial progress in diagnosis and therapy, acute myocardial infarction (MI) is a major cause of mortality in the general population. A novel insight into the pathophysiology of myocardial infarction obtained by studying gene expression should help to discover novel biomarkers of MI and to suggest novel strategies of therapy. The aim of our study was to establish gene expression patterns in leukocytes from acute myocardial infarction patients.
+
+Methods and Results
+Twenty-eight patients with ST-segment elevation myocardial infarction (STEMI) were included. The blood was collected on the 1st day of myocardial infarction, after 4–6 days, and after 6 months. Control group comprised 14 patients with stable coronary artery disease, without history of myocardial infarction. Gene expression analysis was performed with Affymetrix Human Gene 1.0 ST microarrays and GCS3000 TG system. Lists of genes showing altered expression levels (fold change {\textgreater}1.5, p{\textless}0.05) were submitted to Ingenuity Pathway Analysis. Gene lists from each group were examined for canonical pathways and molecular and cellular functions. Comparing acute phase of MI with the same patients after 6 months (stable phase) and with control group we found 24 genes with changed expression. In canonical analysis three pathways were highlighted: signaling of PPAR (peroxisome proliferator-activated receptor), IL-10 and IL-6 (interleukin 10 and 6).
+
+Conclusions
+In the acute phase of STEMI, dozens of genes from several pathways linked with lipid/glucose metabolism, platelet function and atherosclerotic plaque stability show altered expression. Up-regulation of SOCS3 and FAM20 genes in the first days of myocardial infarction is observed in the vast majority of patients.},
+	number = {11},
+	urldate = {2022-10-02},
+	journal = {PLoS ONE},
+	author = {Kiliszek, Marek and Burzynska, Beata and Michalak, Marcin and Gora, Monika and Winkler, Aleksandra and Maciejak, Agata and Leszczynska, Agata and Gajda, Ewa and Kochanowski, Janusz and Opolski, Grzegorz},
+	month = nov,
+	year = {2012},
+	pmid = {23185530},
+	pmcid = {PMC3503717},
+	keywords = {Dataset Article, GSE62646},
+	pages = {e50054},
+}
+
+@article{75,
+	title = {Vitamin {C} supplementation modulates gene expression in peripheral blood mononuclear cells specifically upon an inflammatory stimulus: a pilot study in healthy subjects},
+	volume = {9},
+	issn = {1555-8932},
+	shorttitle = {Vitamin {C} supplementation modulates gene expression in peripheral blood mononuclear cells specifically upon an inflammatory stimulus},
+	url = {https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4026433/},
+	doi = {10.1007/s12263-014-0390-x},
+	abstract = {In order to study the effects of vitamin C supplementation on gene expression and compare its action between physiological and inflammatory conditions, a pilot study was set up utilizing microarray and qPCR technologies. Five healthy volunteers were supplemented with 1 g vitamin C (Redoxon®) per day for five consecutive days. Peripheral blood mononuclear cells (PBMNC) were isolated before and just after the last supplementation, and RNA was isolated for the Affymetrix gene 1.0 ST chip analysis. PBMNC were also, ex vivo, treated with LPS, and gene expression was quantified by means of a “Human NFkB Signaling” qPCR array. Only a very moderate effect on the baseline gene expression modulation was associated with vitamin C supplementation. However, in spite of the limited number of subjects analyzed, vitamin C supplementation resulted in a markedly different modulation of gene expression upon the inflammatory stimulus, specifically at the level of the MyD88-dependent pathway and of the anti-inflammatory cytokine IL-10 synthesis. This study suggests that vitamin C supplementation in healthy subjects, not selected according to a specific genetic profile, consuming an adequate amount of vitamin C, and having a satisfactory vitamin C plasma concentration at the baseline, does not result in a significant modification of gene expression profile. Under this satisfactory micronutrient status, supplementation of vitamin C is “buffered” within a homeostatic physiological equilibrium. Differently, following a second “hit” constituted of an inflammatory stimulus such as LPS, able to trigger a critical burst to the normal physiological state, the higher availability of ascorbic acid emerges, and results in a significant modulation of cell response.},
+	number = {3},
+	urldate = {2022-10-02},
+	journal = {Genes \& Nutrition},
+	author = {Canali, Raffaella and Natarelli, Lucia and Leoni, Guido and Azzini, Elena and Comitato, Raffaella and Sancak, Oezgur and Barella, Luca and Virgili, Fabio},
+	month = mar,
+	year = {2014},
+	pmid = {24604612},
+	pmcid = {PMC4026433},
+	keywords = {Dataset Article, GSE54475},
+	pages = {390},
+}
+
+@article{09,
+	title = {Body mass index mediates inflammatory response to acute dietary challenges},
+	volume = {59},
+	issn = {16134125},
+	url = {https://onlinelibrary.wiley.com/doi/10.1002/mnfr.201500184},
+	doi = {10.1002/mnfr.201500184},
+	language = {en},
+	number = {11},
+	urldate = {2022-10-19},
+	journal = {Molecular Nutrition \& Food Research},
+	author = {Matone, Alice and O'Grada, Colm M. and Dillon, Eugene T. and Morris, Ciara and Ryan, Miriam F. and Walsh, Marianne and Gibney, Eileen R. and Brennan, Lorraine and Gibney, Michael J. and Morine, Melissa J. and Roche, Helen M.},
+	month = nov,
+	year = {2015},
+	pages = {2279--2292},
+	file = {matone2015.pdf:/Users/mehrdad/Projects/TBZ.Med/PhD. Project/References/Bioinformatics/matone2015.pdf:application/pdf},
+}
+
+
+@Article{numpy,
+ title         = {Array programming with {NumPy}},
+ author        = {Charles R. Harris and K. Jarrod Millman and St{\'{e}}fan J.
+                 van der Walt and Ralf Gommers and Pauli Virtanen and David
+                 Cournapeau and Eric Wieser and Julian Taylor and Sebastian
+                 Berg and Nathaniel J. Smith and Robert Kern and Matti Picus
+                 and Stephan Hoyer and Marten H. van Kerkwijk and Matthew
+                 Brett and Allan Haldane and Jaime Fern{\'{a}}ndez del
+                 R{\'{i}}o and Mark Wiebe and Pearu Peterson and Pierre
+                 G{\'{e}}rard-Marchant and Kevin Sheppard and Tyler Reddy and
+                 Warren Weckesser and Hameer Abbasi and Christoph Gohlke and
+                 Travis E. Oliphant},
+ year          = {2020},
+ month         = sep,
+ journal       = {Nature},
+ volume        = {585},
+ number        = {7825},
+ pages         = {357--362},
+ doi           = {10.1038/s41586-020-2649-2},
+ publisher     = {Springer Science and Business Media {LLC}},
+ url           = {https://doi.org/10.1038/s41586-020-2649-2}
+}
+
+
+@InProceedings{ pandas,
+  author    = { {W}es {M}c{K}inney },
+  title     = { {D}ata {S}tructures for {S}tatistical {C}omputing in {P}ython },
+  booktitle = { {P}roceedings of the 9th {P}ython in {S}cience {C}onference },
+  pages     = { 56 - 61 },
+  year      = { 2010 },
+  editor    = { {S}t\'efan van der {W}alt and {J}arrod {M}illman },
+  doi       = { 10.25080/Majora-92bf1922-00a }
+}
+
+
+@article{scikit-learn,
+ title={Scikit-learn: Machine Learning in {P}ython},
+ author={Pedregosa, F. and Varoquaux, G. and Gramfort, A. and Michel, V.
+         and Thirion, B. and Grisel, O. and Blondel, M. and Prettenhofer, P.
+         and Weiss, R. and Dubourg, V. and Vanderplas, J. and Passos, A. and
+         Cournapeau, D. and Brucher, M. and Perrot, M. and Duchesnay, E.},
+ journal={Journal of Machine Learning Research},
+ volume={12},
+ pages={2825--2830},
+ year={2011}
+}
+
+
+@software{scikitopt,
+  author       = {Head, Tim and
+                  Kumar, Manoj and
+                  Nahrstaedt, Holger and
+                  Louppe, Gilles and
+                  Shcherbatyi, Iaroslav},
+  title        = {scikit-optimize/scikit-optimize},
+  month        = oct,
+  year         = 2021,
+  publisher    = {Zenodo},
+  version      = {v0.9.0},
+  doi          = {10.5281/zenodo.5565057},
+  url          = {https://doi.org/10.5281/zenodo.5565057}
+}
