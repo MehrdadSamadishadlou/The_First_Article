@@ -133,30 +133,30 @@ Sciences, Tabriz, Iran \\
 MicroRNAs (miRNAs) play a crucial role in regulating adaptive and
 maladaptive responses in cardiovascular diseases, making them attractive
 targets for potential therapeutics. However, their potential as novel
-biomarkers for diagnosing cardiovascular diseases needs to be evaluated
-systematically. In this study, we aimed to identify a key set of miRNA
+biomarkers for diagnosing cardiovascular diseases requires systematic
+evaluation. In this study, we aimed to identify a key set of miRNA
 biomarkers using integrated bioinformatics and machine learning
 analysis. We combined and analyzed three gene expression datasets from
-the Gene Expression Omnibus (GEO) database, which contained peripheral
-blood mononuclear cells samples from individuals with myocardial
-infarction (MI), stable coronary artery disease (CAD), and healthy.
-Additionally, we selected a set of miRNAs based on their area under the
-curve of the receiver operating characteristic (AUC-ROC) for separating
-CAD/MI samples. We designed a two-layer architecture for sample
-classification, with the first layer isolating healthy samples from
-not-healthy ones, and the second layer classifying stable CAD and MI
-samples. We trained different machine learning models using both
-biomarker sets and evaluated their performance on a test set. We
-identified miR-21, miR-186, and miR-32 as the only miRNAs in the
-differentially expressed genes, and a set included miR-21, miR-155,
-miR-142, miR-197, miR-29A, and miR-320C1 as the optimum set of miRNA
-selected by their AUC-ROC. Both biomarker sets were able to distinguish
-healthy from not-healthy samples with complete accuracy. The best
-performance for classification of CAD and MI was achieved with an SVM
-model trained using the biomarker set selected by AUC-ROC, with an AUC
-of 0.95 and an accuracy of 0.88. Our study demonstrates that miRNA
-signatures derived from peripheral blood could serve as valuable novel
-biomarkers for cardiovascular diseases.
+the Gene Expression Omnibus (GEO) database, which contains peripheral
+blood mononuclear cell samples from individuals with myocardial
+infarction (MI), stable coronary artery disease (CAD), and healthy
+individuals. Additionally, we selected a set of miRNAs based on their
+area under the curve of the receiver operating characteristic curve
+(AUC-ROC) to separate the CAD/MI samples. We designed a two-layer
+architecture for sample classification, with the first layer isolating
+healthy samples from not-healthy ones, and the second layer classifying
+stable CAD and MI samples. We trained different machine learning models
+using both biomarker sets and evaluated their performance on a test set.
+We identified miR-21, miR-186, and miR-32 as the only miRNAs among the
+differentially expressed genes, and a set including miR-186, miR-21,
+miR-197, miR-29A, and miR-296 as the optimum set of miRNAs selected by
+their AUC-ROC. Both biomarker sets could distinguish healthy from
+not-healthy samples with complete accuracy. The best performance for the
+classification of CAD and MI was achieved with an SVM model trained
+using the biomarker set selected by AUC-ROC, with an AUC-ROC of 0.95,
+and an accuracy of 0.88. Our study demonstrated that miRNA signatures
+derived from peripheral blood could serve as valuable novel biomarkers
+for cardiovascular diseases.
 \\
 \keywords{
         microRNA \and
@@ -187,29 +187,30 @@ Over the last 50 years, numerous attempts have been collected to use
 biomarkers to facilitate diagnosis, assess risk, follow-up therapy, and
 determine therapeutic efficacy in CVDs candidates. Based on the released
 guidelines, cardiac troponins (cTns) are used as a highly-sensitive and
-accurate approach for the detection of myocardial ischemia. Despite the
-inherent advantages, the high-rate sensitivity of cTn-based assays has
-also led to more false positive results (Thygesen et al. 2018), which do
+accurate approach for the detection of MI. Despite the inherent
+advantages, the high-rate sensitivity of cTn-based assays has also led
+to more false positive results (Thygesen et al. 2018), which do
 necessitate the advent and development of new modalities with
-pathological values. To improve diagnostic value upon existing CVD
+pathological values. To improve diagnostic value upon existing MI
 biomarkers, the combination of complementary biological markers, such as
-microRNAs (miRNAs) and other genetic factors, is proposed. Previous data
-support the notion that miRNAs exhibit the great potential to be used as
-alternative biomarkers in CVD detection and follow-up (Schulte et al.
-2020). It is suggested that miRNAs possess 18-22 nucleotides and can
-play a crucial role in the regulation of gene expression. Evidence point
-to the fact that miRNAs are involved in the pathogenesis of cardiac
-tissue injury and be as theranostics in terms of CVDs. These elements
-can easily circulate in biofluids with both diagnostic as well as
-prognostic values (Schulte, Karakas, and Zeller 2017). Several
-biological activities such as angiogenesis, cardiomyocyte growth and
-contractility, lipid metabolism, plaque formation, and cardiac rhythm
-are regulated by miRNAs (Kalayinia et al. 2021). It is postulated that
-the function and diagnostic properties of miRNAs are beyond the
-myocardium in CVD patients. To be specific, the expression of miRNAs can
-vary in different biofluids and cell components such as serum and
-peripheral blood mononuclear cells (PBMCs) (Soler-Botija, Gálvez-Montón,
-and Bayés-Genís 2019).
+microRNAs (miRNAs) and other genetic factors, is proposed. Previous
+researches support the notion that miRNAs exhibit the great potential to
+be used as alternative biomarkers in CVDs detection and follow-up
+(Schulte et al. 2020). It is suggested that miRNAs possess 18-22
+nucleotides and can play a crucial role in the regulation of gene
+expression. Evidence point to the fact that miRNAs are involved in the
+pathogenesis of cardiac tissue injury and could be considered as
+theranostics targets in terms of CVDs. These elements can easily
+circulate in biofluids with both diagnostic as well as prognostic values
+(Schulte, Karakas, and Zeller 2017). Several biological activities such
+as angiogenesis, cardiomyocyte growth and contractility, lipid
+metabolism, plaque formation, and cardiac rhythm are regulated by miRNAs
+(Kalayinia et al. 2021). It is postulated that the function and
+diagnostic properties of miRNAs are beyond the myocardium in CVD
+patients. To be specific, the expression of miRNAs can vary in different
+biofluids and cell components such as serum and peripheral blood
+mononuclear cells (PBMCs) (Soler-Botija, Gálvez-Montón, and Bayés-Genís
+2019).
 
 PBMCs are a fraction of white blood cells (WBCs), including monocytes,
 lymphocytes, macrophages, and other cells belonging to the immune system
@@ -221,8 +222,8 @@ kinds of disorders. PBMCs could recapitulate the conditions of the
 target tissues, thus, providing a highly sensitive and specific source
 of biomarkers (Mosallaei et al. 2022). Commensurate with these
 conditions, these cells are repositories of dysregulated genes and
-miRNAs expression profiles in CVDs related to control conditions (Gao et
-al. 2020; Mosallaei et al. 2022).
+miRNAs expression profiles in CVDs (Gao et al. 2020; Mosallaei et al.
+2022).
 
 In recent years, the advent and use of machine learning (ML) is an
 exciting prospect for advancing scientific discoveries. Although the
@@ -243,10 +244,10 @@ In this study, we aimed to identify potential miRNA biomarkers for MI
 patients by combining and analyzing three different microarray datasets
 from PBMCs. It is suggested that the integration of omics data with
 bioinformatics and ML techniques could be a promising tool in the
-discovery of new and more accurate biomarkers for monitoring CVDs.
+discovery of new and more accurate biomarkers for monitoring MI.
 Besides, this approach can deepen our vision into the underlying
-mechanisms of CVDs and aid in the development of valid theranostic
-tools, and patient stratification.
+mechanisms of MI and aid in the development of valid diagnostic
+biomarkers, and patient stratification.
 
 \hypertarget{materials-and-methods}{%
 \section{Materials and Methods}\label{materials-and-methods}}
@@ -257,14 +258,14 @@ collection}\label{microarray-data-collection}}
 
 Microarray datasets were obtained from the Gene Expression Omnibus (GEO)
 database (\url{https://www.ncbi.nlm.nih.gov/geo/}). To obtain sufficient
-classification power between MI, healthy and CAD samples, a relatively
-large sample size was required. Therefore, GSE59867 for MI and CAD
-samples, and GSE56609 and GSE54475 for healthy samples were selected.
-All samples were produced using Affymetrix Human Gene 1.0 ST Array
-(GPL6244) platform. Only healthy, stable CAD and early-stage MI samples
-were selected from these datasets for further analyses. The basic
-information for the three datasets evaluated in the current study is
-provided in Table @ref(tab:datasets).
+classification power between MI, healthy and stable coronary artery
+disease (CAD) samples, a relatively large sample size was required.
+Therefore, GSE59867 for MI and CAD samples, and GSE56609 and GSE54475
+for healthy samples were selected. All samples were produced using
+Affymetrix Human Gene 1.0 ST Array (GPL6244) platform. Only healthy,
+stable CAD and early-stage MI samples were selected from these datasets
+for further analyses. The basic information for the three datasets
+evaluated in the current study is provided in Table @ref(tab:datasets).
 
 \begin{longtable}[]{@{}cccccc@{}}
 \caption{Basic information of the GEO microarray
@@ -367,10 +368,12 @@ all reported results are the average of 10-fold cross-validation.
 
 Two different approaches were used for selecting miRNAs for model
 training. The first approach was using the miRNAs that are
-differentially expressed. In the second approach, miRNAs were selected
-by their individual AUC-ROC. Having the result of these two different
-approaches can provide an informative comparison between the predictive
-capabilities of sets of miRNAs selected with different logics.
+differentially expressed. In the second approach, miRNAs with individual
+area under the curve of the receiver operating characteristic (AUC-ROC)
+over 0.8 for separating MI from CAD were selected. Having the result of
+these two different approaches can provide an informative comparison
+between the predictive capabilities of sets of miRNAs selected with
+different logics.
 
 \hypertarget{mirnas-in-degs}{%
 \subsubsection{miRNAs in DEGs}\label{mirnas-in-degs}}
@@ -406,9 +409,9 @@ Random Forests (RF), k-Nearest Neighbor (kNN), Gradient Boosting (GB),
 XGBoost (XGB) and Decision Tree (DT) models were trained. All models
 were trained with their pre-set parameters with 10-fold
 cross-validation. The criteria for choosing the best model were the
-highest accuracy and AUC on the test set. The best model was hyper-tuned
-with the scikit-opt package (Head et al. 2021) to get the best
-predictive performance.
+highest accuracy and AUC-ROC on the test set. The best model was
+hyper-tuned with the scikit-opt package (Head et al. 2021) to get the
+best predictive performance.
 
 \hypertarget{mirnas-with-the-highest-auc-roc}{%
 \subsubsection{miRNAs with the highest
@@ -417,16 +420,12 @@ AUC-ROC}\label{mirnas-with-the-highest-auc-roc}}
 Like the previous approach, a two-layers strategy was conducted. The
 first layer classified samples into healthy and not-healthy, and the
 separated MI and CAD samples. However, to keep the number of miRNAs as
-low as possible miRNAs were selected from the second layer (which are
-the miRNAs with the best performance in MI/CAD separation), and then
+low as possible miRNAs were selected from the second layer, and then
 their performance wase evaluated in the first layer. AUC-ROC of all
-miRNAs for classifying MI and CAD samples were calculated. To find the
-number of miRNAs with the highest predictive values, the miRNAs with the
-highest individual AUC-ROC were added to the set one by one, and the
-AUC-ROC for the set was calculated. The set with the highest AUC-ROC was
-selected for the following steps. The ROC curves for each selected miRNA
-for separating healthy samples from not-healthy and MIs from CADs were
-also plotted for further comparison.
+miRNAs for classifying MI and CAD samples were calculated and the miRNAs
+with the AUC-ROC over 0.8 were selected. The ROC curves for each
+selected miRNA for separating healthy samples from not-healthy and MI
+from CAD samples were also plotted for further comparison.
 
 \hypertarget{first-layer-for-the-detection-of-healthy-and-not-healthy-samples}{%
 \paragraph{First layer for the detection of healthy and not-healthy
@@ -434,7 +433,7 @@ samples:}\label{first-layer-for-the-detection-of-healthy-and-not-healthy-samples
 
 An SVM model with an RBF kernel was trained using the selected set of
 miRNAs. Additionally, the model was hyper-tuned to find the
-hyper-parameters for the highest AUC and accuracy. The ROC curve and
+hyper-parameters for the highest AUC-ROC and accuracy. The ROC curve and
 confusion matrix for the best model were reported.
 
 \hypertarget{second-layer-for-separating-mi-and-cad}{%
@@ -477,9 +476,9 @@ analysis}\label{differential-expression-analysis-1}}
 
 \caption{\label{tab:DEGstab}Total, up-, and down-regulated DEGs and differentially expressed miRNAs.}
 \centering
-\begin{tabu} to \linewidth {>{\raggedright\arraybackslash}p{3cm}>{\centering}X>{\centering}X>{\centering}X>{\centering\arraybackslash}p{4cm}}
+\begin{tabu} to \linewidth {>{\raggedright\arraybackslash}p{3cm}>{\centering}X>{\centering\arraybackslash}p{2.5cm}>{\centering\arraybackslash}p{2.5cm}>{\centering\arraybackslash}p{5cm}}
 \toprule
-  & DEGs & up-regulated DEGs & down-regulated DEGs & miRNAs\\
+  & Total DEGs & Up-regulated DEGs & Down-regulated DEGs & miRNAs\\
 \midrule
 MI vs. Healthy & 860 & 323 & 537 & hsa-miR-186, miR-21, miR-32\\
 CAD vs. Healthy & 670 & 262 & 408 & hsa-miR-186, miR-21, miR-32\\
@@ -500,7 +499,7 @@ summarized in Table @ref(tab:DEGstab).
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.6\linewidth]{../../DEG and DEM/Pics/venny} 
+{\centering \includegraphics[width=0.45\linewidth]{../../DEG and DEM/Pics/venny} 
 
 }
 
@@ -535,7 +534,7 @@ pathway'', ``Lipid and atherosclerosis'', and ``Hematopoietic cell
 lineage'' (Figure @ref(fig:MIHEnrich)D).
 
 \begin{figure}
-\includegraphics[width=0.95\linewidth]{../../DEG and DEM/Pics/enrich MI-Healthy} \caption{Gene Ontology (GO) and Kyoto Encyclopedia of Genes and Genomes (KEGG) pathways enriched with the MI and healthy DEGs. (A) Biological process terms. (B) Cellular component terms. (C) Molecular function terms. (D) KEGG analysis.}\label{fig:MIHEnrich}
+\includegraphics[width=0.95\linewidth]{../../DEG and DEM/Pics/Enrichment MI-Healthy} \caption{Gene Ontology (GO) and Kyoto Encyclopedia of Genes and Genomes (KEGG) pathways enriched with the MI and healthy DEGs. (A) Biological process terms. (B) Cellular component terms. (C) Molecular function terms. (D) KEGG analysis.}\label{fig:MIHEnrich}
 \end{figure}
 
 The enrichment results for DEGs of CAD versus healthy samples were as
@@ -554,7 +553,7 @@ were related to the following pathways: ``Chemokine signaling pathway'',
 (Figure @ref(fig:CADHEnrich)D).
 
 \begin{figure}
-\includegraphics[width=0.95\linewidth]{../../DEG and DEM/Pics/enrich CAD-Healthy} \caption{Gene Ontology (GO) and Kyoto Encyclopedia of Genes and Genomes (KEGG) pathways enriched with the CAD and healthy DEGs. (A) Biological process terms. (B) Cellular component terms. (C) Molecular function terms. (D) KEGG analysis.}\label{fig:CADHEnrich}
+\includegraphics[width=0.95\linewidth]{../../DEG and DEM/Pics/Enrichment CAD-Healthy} \caption{Gene Ontology (GO) and Kyoto Encyclopedia of Genes and Genomes (KEGG) pathways enriched with the CAD and healthy DEGs. (A) Biological process terms. (B) Cellular component terms. (C) Molecular function terms. (D) KEGG analysis.}\label{fig:CADHEnrich}
 \end{figure}
 
 \hypertarget{machine-learning}{%
@@ -565,17 +564,18 @@ were related to the following pathways: ``Chemokine signaling pathway'',
 
 Among all DEGs, just miR-186, miR-32, and miR-21 were detected as
 differentially expressed miRNAs. The expression profile of these three
-miRNAs is presented in Figure @ref(fig:DEMexp). Additionally, The ROC
+miRNAs is presented in Figure @ref(fig:Expall). Additionally, The ROC
 curves of each miRNA for each layer are presented in Figure
-@ref(fig:miRROC). Using the logistic regression model the AUC for
-miR-21, miR-32, and miR-186 was 0.99, 1, and 0.91 respectively (Figure
+@ref(fig:miRROC). Using the logistic regression model the AUC-ROC of
+miR-21, miR-32, and miR-186 for separating healthy and not-healthy
+samples was 0.98, 0.99, and 0.90 respectively (Figure
 @ref(fig:miRROC)A). Besides, the accuracy of each miRNA for classifying
 the samples into healthy and not-healthy groups on the test set was
 0.92, 0.98, and 0.89 for miR-21, miR-32, and miR-186, respectively.
 Moreover, the ROC curve of each miRNA for classifying MI and CAD samples
 was presented in Figure @ref(fig:miRROC)B. For miR-21, miR-32, and
-miR-186, the AUC and accuracy on the test set were 0.85; 0.7; and 0.82,
-and 0.78; 0.67; and 0.74, respectively.
+miR-186, the AUC-ROC and accuracy on the test set were 0.85; 0.70; and
+0.86, and 0.78; 0.67; and 0.74, respectively.
 
 \begin{table}
 
@@ -590,22 +590,20 @@ and 0.78; 0.67; and 0.74, respectively.
 miR-186 & 1.4 & 3.60e-25 & 0.9 & 6.76e-20 & -0.5 & 1.05e-09\\
 miR-21 & 1.4 & 1.31e-17 & 2.3 & 2.07e-47 & 0.8 & 2.96e-11\\
 miR-32 & 2.5 & 8.39e-43 & 2.2 & 3.10e-59 & -0.3 & 7.60e-04\\
-miR-155 & -0.6 & 2.49e-12 & -0.9 & 7.59e-33 & -0.2 & 2.68e-07\\
-miR-142 & 0.2 & 1.90e-01 & -0.1 & 1.70e-01 & -0.3 & 2.90e-04\\
 miR-197 & 0.5 & 2.95e-20 & 0.7 & 1.59e-47 & 0.2 & 8.58e-09\\
 miR-29A & 0.7 & 7.76e-29 & 0.1 & 1.70e-01 & -0.5 & 2.14e-10\\
-miR-320C1 & 0.8 & 4.72e-22 & 0.5 & 1.89e-30 & -0.2 & 1.84e-05\\
+miR-296 & -0.1 & 5.00e-02 & 0.1 & 2.00e-02 & 0.2 & 6.15e-06\\
 \bottomrule
 \end{tabu}
 \end{table}
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.5\linewidth]{../../ML/Pics/DEGs healthy not-healthy/DEMs Expression} 
+{\centering \includegraphics[width=0.9\linewidth]{../../ML/Pics/Expressionforall} 
 
 }
 
-\caption{Expression profile of miR-186, miR-21, and miR32 in Healthy, CAD, and MI samples.}\label{fig:DEMexp}
+\caption{Expression profile of all miRNAs in two approach in different sample classes.}\label{fig:Expall}
 \end{figure}
 
 \begin{figure}
@@ -625,8 +623,8 @@ Although single miRNAs had acceptable performance, their predictive
 value could be improved even further by using them as a set. The ROC
 curve for the SVM model with an RBF kernel trained with all three miRNAs
 is presented in Figure @ref(fig:DEMROC)A. The model had a better
-performance in classification than single miRNAs.The AUC for the model
-is 1, and its accuracy on the test set was also 1. In Figure
+performance in classification than single miRNAs.The AUC-ROC for the
+model is 1, and its accuracy on the test set was also 1. In Figure
 @ref(fig:DEMCF)A, the confusion matrix for the model is presented.
 
 \begin{figure}
@@ -652,18 +650,18 @@ is 1, and its accuracy on the test set was also 1. In Figure
 CAD:}\label{second-layer-for-separating-mi-samples-from-cad}}
 
 Different models were trained using expression values for three
-differentially miRNAs. The models' 10-fold cross-validated AUC and
+differentially miRNAs. The models' 10-fold cross-validated AUC-ROC and
 accuracy on the test set are reported in Figure @ref(fig:DEMmodels). The
-best model from both AUC and accuracy point-of-view was the SVM model
-with linear kernel. The AUC and accuracy for this model with its pre-set
-values were 0.93 and 0.82 respectively. The model was hyper-tuned for C
-and gamma hyper-parameters, and therefore the model showed better
-performance. The ROC curve of the hyper-tuned model is presented in
-Figure @ref(fig:DEMROC)B. For this model the AUC reached 0.95 and the
-accuracy improved to 0.85 (Table @ref(tab:DEGsML)). Moreover, the
-sensitivity and specificity for the model on the test set were 0.91 and
-0.71 respectively. The confusion matrix for the hyper-tuned model is
-illustrated in Figure @ref(fig:DEMCF)B.
+best model from both AUC-ROC and accuracy point-of-view was the SVM
+model with linear kernel. The AUC-ROC and accuracy for this model with
+its pre-set values were 0.93 and 0.82 respectively. The model was
+hyper-tuned for C and gamma hyper-parameters, and therefore the model
+showed better performance. The ROC curve of the hyper-tuned model is
+presented in Figure @ref(fig:DEMROC)B. For this model the AUC-ROC
+reached 0.95 and the accuracy improved to 0.85 (Table @ref(tab:DEGsML)).
+Moreover, the sensitivity and specificity for the model on the test set
+were 0.91 and 0.71 respectively. The confusion matrix for the
+hyper-tuned model is illustrated in Figure @ref(fig:DEMCF)B.
 
 \begin{figure}
 
@@ -671,7 +669,7 @@ illustrated in Figure @ref(fig:DEMCF)B.
 
 }
 
-\caption{Area under the curve (AUC) and accuracy of different models trained with three miRNAs in DEGs on the test set.}\label{fig:DEMmodels}
+\caption{Area under the receiver operating characteristic curve and accuracy of different models trained with three miRNAs in DEGs on the test set.}\label{fig:DEMmodels}
 \end{figure}
 
 \begin{table}
@@ -684,44 +682,21 @@ illustrated in Figure @ref(fig:DEMCF)B.
 \cmidrule(l{3pt}r{3pt}){3-4} \cmidrule(l{3pt}r{3pt}){5-6}
 Model & Metrics & train & test & train & test\\
 \midrule
-SVM & AUC-ROC & 0.91 & 0.93 & 0.92 & 0.95\\
-(Linear Kernel) & Accuracy & 0.83 & 0.82 & 0.84 & 0.85\\
+SVM-linear & AUC-ROC & 0.91 & 0.93 & 0.92 & 0.95\\
+ & Accuracy & 0.83 & 0.82 & 0.84 & 0.85\\
 \bottomrule
 \end{tabu}
 \end{table}
 
-\hypertarget{auc-approach}{%
-\subsubsection{AUC approach}\label{auc-approach}}
+\hypertarget{auc-roc-approach}{%
+\subsubsection{AUC-ROC approach}\label{auc-roc-approach}}
 
-After calculating the AUC for each miRNA for the classification of MI
-and CAD samples, miRNAs were sorted, and their performance was
-investigated as a set. The metric of choice for selecting the best set
-was AUC. As shown in Figure @ref(fig:AUCset), the AUC increased until
-the number of miRNAs in the set reached six, and after that, it dropped.
-The AUC for separating MI samples from CAD using these miRNAs was 0.93.
-The miRNAs in the set were miR-29a, miR-197, miR-142, miR-21, miR-155,
-and miR-320C1. The expression values of these miRNAs in healthy, CAD,
-and MI samples are presented in Figure @ref(fig:AUCexp). The ROC curve
-of the selected miRNAs for MI and CAD sample classification is
-illustrated in Figure @ref(fig:miRROC)B.
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.65\linewidth]{../../ML/Pics/AUC for cad mi mirs} 
-
-}
-
-\caption{Area under the curve (AUC) for sets containing an increasing number of miRNAs with the highest individual AUC in MI/CAD separation.}\label{fig:AUCset}
-\end{figure}
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.9\linewidth]{../../ML/Pics/ExpressionforAUC} 
-
-}
-
-\caption{Expression profile of has-miR-29A, has-miR-197, has-miR-142, has-miR-21, has-miR-155, and has-miR-320C1 in Healthy, CAD, and MI samples.}\label{fig:AUCexp}
-\end{figure}
+After calculating the AUC-ROC for each miRNA for the classification of
+MI and CAD samples, the miRNAs with AUC-ROC over 0.8 were selected. The
+selected miRNAs were miR-29a, miR-197, miR-186, miR-21, and miR-296. The
+expression values of these miRNAs in healthy, CAD, and MI samples are
+presented in Figure @ref(fig:Expall). The ROC curve of the selected
+miRNAs for both layers are illustrated in Figure @ref(fig:miRROC).
 
 \hypertarget{first-layer-for-isolation-of-healthy-and-not-healthy-samples-1}{%
 \paragraph{First layer for isolation of healthy and not-healthy
@@ -730,7 +705,7 @@ samples}\label{first-layer-for-isolation-of-healthy-and-not-healthy-samples-1}}
 Using the selected set, an SVM model with an RBF kernel was trained to
 separate healthy from not-healthy samples. The ROC curve for the model
 is presented in Figure @ref(fig:AUCROC)A and the confusion matrix is
-illustrated in Figure @ref(fig:AUCCF)A. Both AUC and accuracy for the
+illustrated in Figure @ref(fig:AUCCF)A. Both AUC-ROCand accuracy for the
 model on the test set were equal to 1.
 
 \begin{figure}
@@ -739,7 +714,7 @@ model on the test set were equal to 1.
 
 }
 
-\caption{ROC curve for the set of miRNAs selected by AUC on test set classification. (A) SVM with RBF kernel for healthy and not-healthy samples classification. (B) Logistic regression model for CAD and MI samples classification. (C) SVM with polynomial kernel for CAD and MI samples classification. }\label{fig:AUCROC}
+\caption{ROC curve for the set of miRNAs selected by AUC-ROC on test set classification. (A) SVM with RBF kernel for healthy and not-healthy samples classification. (B) Logistic regression model for CAD and MI samples classification. (C) SVM with polynomial kernel for CAD and MI samples classification. }\label{fig:AUCROC}
 \end{figure}
 
 \begin{figure}
@@ -756,28 +731,28 @@ model on the test set were equal to 1.
 samples}\label{second-layer-for-isolation-of-mi-samples-from-cad-samples}}
 
 To find the best model for training the best set, different models were
-trained using their pre-set values. Their AUC and accuracy results on
-the test set are presented in Figure @ref(fig:AUCmodels). The best model
-from the AUC point-of-view was the LR and from the accuracy
-point-of-view, it was the SVM model with a polynomial kernel. For the LR
-model the AUC and accuracy were 0.92 and 0.81, respectively; and for the
-SVM model with a polynomial kernel, the values were 0.91 and 0.84,
+trained using their pre-set values. Their AUC-ROC and accuracy results
+on the test set are presented in Figure @ref(fig:AUCmodels). The best
+model from the AUC-ROC point-of-view was the SVM with linear kernel and
+from the accuracy point-of-view, it was the SVM model with an RBF
+kernel. For the SVM-linear model the AUC-ROC and accuracy were 0.93 and
+0.82, respectively; and for the SVM-RBF, the values were 0.92 and 0.84,
 respectively. Both models were hyper-tuned and the ROC curve for their
-best performance is presented in Figure @ref(fig:AUCROC)B and C. The AUC
-and accuracy for the LR model increased to 0.94 and 0.88, respectively.
-For the SVM model with a polynomial kernel, these values increased to
-0.95 and 0.88, respectively (Table @ref(tab:AUCML)). The sensitivity for
-the LR and SVM models were 1 and 0.97, respectively; and the specificity
-for them was 0.57 and 0.64, respectively. The confusion matrix for both
+best performance is presented in Figure @ref(fig:AUCROC)B and C. The
+AUC-ROC and accuracy for the SVM-linear model modified to 0.92 and 0.88,
+respectively. For the SVM-RBF, these values increased to 0.96 and 0.94,
+respectively (Table @ref(tab:AUCML)). The sensitivity for the SVM-linear
+and SVM-RBF models were 0.91 and 0.97, respectively; and the specificity
+for them was 0.79 and 0.86, respectively. The confusion matrix for both
 models is illustrated in Figure @ref(fig:AUCCF)B and C.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.65\linewidth]{../../ML/Pics/Models AUC mirs} 
+{\centering \includegraphics[width=0.65\linewidth]{../../ML/Pics/Models AUC 5 mirs CV} 
 
 }
 
-\caption{Area under the curve (AUC) and accuracy of different models trained with three miRNAs in DEGs on the test set.}\label{fig:AUCmodels}
+\caption{Area under the receiver operating characteristic curve and accuracy of different models trained with AUC-selected miRNAs.}\label{fig:AUCmodels}
 \end{figure}
 
 \begin{table}
@@ -790,10 +765,10 @@ models is illustrated in Figure @ref(fig:AUCCF)B and C.
 \cmidrule(l{3pt}r{3pt}){3-4} \cmidrule(l{3pt}r{3pt}){5-6}
 Model & Metrics & Train & Test & Train & Test\\
 \midrule
-LR & AUC-ROC & 0.90 & 0.92 & 0.91 & 0.94\\
- & Accuracy & 0.84 & 0.81 & 0.84 & 0.88\\
-SVM & AUC-ROC & 0.90 & 0.91 & 0.91 & 0.95\\
-(Polynomial Kernel) & Accuracy & 0.86 & 0.84 & 0.86 & 0.88\\
+SVM-linear & AUC-ROC & 0.91 & 0.93 & 0.93 & 0.92\\
+ & Accuracy & 0.85 & 0.82 & 0.90 & 0.88\\
+SVM-RBF & AUC-ROC & 0.90 & 0.92 & 0.96 & 0.96\\
+ & Accuracy & 0.86 & 0.84 & 0.96 & 0.94\\
 \bottomrule
 \end{tabu}
 \end{table}
@@ -801,9 +776,9 @@ SVM & AUC-ROC & 0.90 & 0.91 & 0.91 & 0.95\\
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
 
-The prevalence of acute MI (AMI) can lead to high-rate mortality in the
-clinical setting. However, early diagnosis and application of suitable
-treatment protocols can reduce mortality and improve AMI prognosis
+The prevalence of MI can lead to high-rate mortality in the clinical
+setting. However, early diagnosis and application of suitable treatment
+protocols can reduce mortality and improve AMI prognosis
 ({``Cardiovascular Diseases ({CVDs})''} n.d.; Thygesen et al. 2018; Tsao
 et al. 2022). Studies have suggested that changes in miRNA expression
 may play a significant role in the progression of MI and the subsequent
@@ -842,32 +817,30 @@ enrichment analysis demonstrated that DEGs in both healthy/CAD and
 healthy/MI were strongly correlated to immune cell response which is a
 major cellular part of PBMCs. Here, two different sets of miRNAs were
 used as biomarker sets for sample classification. miR-21; miR-32; and
-miR-186 were selected as differentially expressed miRNAs, and miR-21;
-miR-29a; miR-142; miR155; miR-197; and miR-320c1 were selected according
-to their AUC values. As shown in Figure @ref(fig:miRROC), all other
-miRNAs selected with both approaches had AUC-ROC over 0.9 for the
-isolation of healthy and not-healthy samples except for miR-142 and
-miR-29a. Data confirmed that the real challenge is to classify CAD and
-MI samples because of close overlap. Of 8 miRNAs under investigation in
-both approaches except for miR-32, all miRNAs had an AUC-ROC over 0.8
-for the discrimination of CAD and MI samples. Besides, the high AUC-ROC
-values of miRNAs confirms their high potential as biomarkers.
+miR-186 were selected as differentially expressed miRNAs, and miR-186,
+miR-21; miR-29a; miR-197; and miR-296 were selected according to their
+AUC-ROC values. As shown in Figure @ref(fig:miRROC), all miRNAs selected
+with both approaches had AUC-ROC over 0.9 for the isolation of healthy
+and not-healthy samples except for miR-296 and miR-29a. Data confirmed
+that the real challenge is to classify CAD and MI samples because of
+close overlap. Of 6 miRNAs under investigation in both approaches except
+for miR-32, all miRNAs had an AUC-ROC over 0.8 for the discrimination of
+CAD and MI samples. Besides, the high AUC-ROC values of miRNAs confirms
+their high potential as biomarkers.
 
-ML models when trained with miRNA sets selected by both DEG and AUC
+ML models when trained with miRNA sets selected by both DEG and AUC-ROC
 approaches showed better performance in the classification than each
 miRNA. To avoid unwanted complexity and poor predictive values, a
-two-layer architecture was also designed. The first layer was for for
-the discrimination of healthy from not-healthy samples, and the second
-layer separated the CAD from MI candidates. As expected in both
-approaches, a hyper-tuned SVM model could flawlessly separates healthy
-from not-healthy samples using distinct miRNAs sets. The ML models were
-also capable of effectively separating CAD from MI patients. Although
-both miRNA sets had nearly the same AUC-ROC with their best model, the
+two-layer architecture was also designed. The first layer was for the
+discrimination of healthy from not-healthy samples, and the second layer
+separated the CAD from MI candidates. As expected, in both approaches a
+hyper-tuned SVM model could flawlessly separates healthy from
+not-healthy samples using distinct miRNAs sets. The ML models were also
+capable of effectively separating CAD from MI patients. Although both
+miRNA sets had nearly the same AUC-ROC with their best model, the
 accuracy, sensitivity, and specificity were different. The model trained
-with DEGs had better specificity, but the one trained with AUC-selected
-miRNAs had slightly better accuracy and higher sensitivity. This
-difference comes from the different strategies the selection of
-biomarkers sets.
+with AUC-selected miRNAs had better performance in all predictive
+values.
 
 Numerous studies have reported different biological processes can affect
 the expression of miRNAs in PBMCs. However, there are still
@@ -876,18 +849,19 @@ immune cells and the correlation of specific pathological conditions
 with miRNA profiles. Several studies have proved the activation of
 specific miRNA types in PBMCs under cardiovascular events (S. Li et al.
 2015; Yao et al. 2016; Liu et al. 2017; Horita, Farquharson, and Stephen
-2021; Cai et al. 2020; Zhao et al. 2018; Bhansali et al. 2022). For
-instance, there is evidence that the elevation of miR-186 suppresses the
-expression of Cystathionine-\(\gamma\)-lyase, leading to the subsequent
-secretion of pro-inflammatory cytokines and cellular lipid accumulation.
-Besides, macrophage-derived miR-186 may promote atherosclerotic plaques
-(Yao et al. 2016). In line with this claim, we found that miR-186 is
+2021; Bhansali et al. 2022). For instance, there is evidence that the
+elevation of miR-186 suppresses the expression of
+Cystathionine-\(\gamma\)-lyase, leading to the subsequent secretion of
+pro-inflammatory cytokines and cellular lipid accumulation. Besides,
+macrophage-derived miR-186 may promote atherosclerotic plaques (Yao et
+al. 2016). In line with this claim, we found that miR-186 is
 up-regulated in both CAD and MI candidates related to control
 counterparts. Surprisingly, the obtained data indicated that the
 expression of miR-186 is higher in CAD patients in comparison to MI
 (Figure @ref(fig:DEMexp)), To be specific, miR-186 is the only
-differentially expressed miRNA between CAD and MI, indicating its main
-role in the promotion of atherosclerosis.
+differentially expressed miRNA between CAD and MI, with a clear
+up-regulation in CAD, indicating its main role in the promotion of
+atherosclerosis.
 
 As mentioned before, miR-21 was also up-regulated in both MI and CAD
 patients in comparison to healthy controls. Moreover, the expression
@@ -911,8 +885,8 @@ with the activity of PBMC miR-32 under several pathologies (Zeng et al.
 cardiovascular events remained to be elucidated.
 
 Molecular analyses have indicated the regulatory role of miRNAs selected
-by the AUC approach in PBMCs after a cardiovascular event. As the only
-common miRNA of the two sets, molecular function of miR-21 in CVDs was
+by the AUC-ROC approach in PBMCs after a cardiovascular event. Two
+common miRNAs in DEGs and AUC-ROC approachs, miR-21 and miR-186, were
 covered in DEGs miRNA set. Based on numerous reports mir-29a can be
 activated in different diseases (Horita, Farquharson, and Stephen
 2021).Data analysis indicated that miR-29a is significantly up-regulated
@@ -923,29 +897,6 @@ ox-LDL was offered as a valid biomarker set for paraclinical
 classification (Huang et al. 2016). However, the role of miR-29a in the
 function of PBMCs in CAD patients has not been completely examined.
 
-According to the present data (Table @ref(tab:mirExptable)), the
-difference in miR-142 expression between MI/Healthy and CAD/Healthy was
-not significant, but these values reached statistically significant in
-MI as compared to CAD. Based on different reports, miR-142 is commonly
-active in PBMCs. This miRNA directly targets and inhibits the expression
-of Adenomatous Polyposis Coli, a negative WNT signaling pathway
-regulator, contributing to the activation of the WNT signaling pathway
-and cardiac fibroblast activation after myocardial ischemia (Cai et al.
-2020).
-
-We also noted that miR-155 is the only down-regulated miRNA among all
-miRNAs in both CAD/healthy and MI/Healthy comparisons (Table
-@ref(tab:mirExptable)). There are numerous reports on the
-down-regulation of miR-155 in PBMCs after MI or in CAD patients.
-Previous data suggested an inverse relationship between miR-155 levels
-and the severity of the coronary artery condition (Zhang et al. 2015;
-Zhao et al. 2018). Along with current data and previous findings, it is
-postulated that miR-155 has a protective effect under pathological
-conditions. This genetic element can control inflammation and thus
-reduce tissue damage through its negative feedback effects on
-inflammatory factors. These features coincide with the reduction of
-atherosclerosis (Zhang et al. 2015).
-
 Data indicated that miR-197 is also significantly up-regulated in both
 CAD/healthy and MI/healthy groups. In previous studies, it has been
 shown that miRNA-197 may play a critical role in regulating the
@@ -953,12 +904,22 @@ anti-inflammatory response of IL-35 by affecting pro/ anti-inflammatory
 cytokine secretion, M1/M2 macrophage ratio, T\(_{reg}\) lymphocyte
 proliferation, and T cell suppression suggesting the potential
 diagnostic role of miR-197 in adverse cardiovascular events (Bhansali et
-al. 2022). There are some reports about miR-320 role in the
-physiopathology of cardiac fibrosis. Mechanistically, Molecular analyses
-revealed that miR-320 might induce various effects by targeting PLEKHM3
-and IFITM1 in cardiomyocytes and cardiac fibroblasts, respectively (F.
-Li et al. 2021). However, there are no reports on miR-320c1 activity in
-the cardiovascular system or PBMCs.
+al. 2022).
+
+The findings of this study demonstrate the potential of miR-296 as a
+biomarker with high discriminatory power for distinguishing between
+samples from individuals with MI and CAD. MiR-296 has been identified as
+a key regulator in the development and advancement of atherosclerosis by
+controlling the expression of target genes associated with various
+biological processes including angiogenesis, inflammation, cholesterol
+metabolism, hypertension, cellular proliferation, and apoptosis (H. Li
+et al. 2018). In a study it has been shown that miR-296 expression
+levels are significantly increased in the PBMCs of CAD patients compared
+to healthy controls, suggesting its involvement in regulating
+pro-inflammatory cytokines like IL-6 and TNF-a (Fard et al. 2020). These
+findings suggest that miR-296 may have a significant impact on the
+pathogenesis of atherosclerosis and could potentially serve as a
+diagnostic biomarker for CAD or MI.
 
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
@@ -967,12 +928,11 @@ In summary, we derived a set of miRNA biomarkers by comparing MI samples
 to both healthy and CAD samples. We found that the SVM model performed
 best in both the first layer, which separated healthy and not-healthy
 samples, and the second layer, which classified MI/CAD samples. The set
-of miRNAs selected based on their AUC values had slightly better
-performance in the second layer. Overall, our two-layer structure
-achieved a weighted accuracy of 0.91. This demonstrates the potential
-for combining bioinformatics and machine learning techniques to identify
-novel biomarkers and gain a deeper understanding of myocardial
-infarction.
+of miRNAs selected based on their AUC-ROC values had better performance
+in the second layer. Overall, our two-layer structure achieved a
+accuracy of 0.96. This demonstrates the potential for combining
+bioinformatics and machine learning techniques to identify novel
+biomarkers and gain a deeper understanding of myocardial infarction.
 
 \hypertarget{references}{%
 \section{References}\label{references}}
@@ -990,13 +950,6 @@ Bhansali, Shipra, Amit Kumar Yadav, Chetan Bakshi, and Veena Dhawan.
 {Artery} {Disease} ({CAD}).''} \emph{Cardiovascular Drugs and Therapy},
 April. \url{https://doi.org/10.1007/s10557-022-07335-x}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-142}{}}%
-Cai, Lidong, Gong Chao, Weifeng Li, Jumo Zhu, Fangfang Li, Baozhen Qi,
-Yong Wei, et al. 2020. {``Activated {Cd4}+ {T} Cells-Derived Exosomal
-{miR}-142-3p Boosts Post-Ischemic Ventricular Remodeling by Activating
-Myofibroblast.''} \emph{Aging} 12 (8): 7380--96.
-\url{https://doi.org/10.18632/aging.103084}.
-
 \leavevmode\vadjust pre{\hypertarget{ref-75}{}}%
 Canali, Raffaella, Lucia Natarelli, Guido Leoni, Elena Azzini, Raffaella
 Comitato, Oezgur Sancak, Luca Barella, and Fabio Virgili. 2014.
@@ -1008,6 +961,14 @@ Pilot Study in Healthy Subjects.''} \emph{Genes \& Nutrition} 9 (3):
 \leavevmode\vadjust pre{\hypertarget{ref-CVD}{}}%
 {``Cardiovascular Diseases ({CVDs}).''} n.d. Accessed March 12, 2023.
 \url{https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-296a}{}}%
+Fard, Toktam Kazemi, Samareh Tavakoli, Reza Ahmadi, Nariman Moradi, Reza
+Fadaei, Asghar Mohammadi, and Soudabeh Fallah. 2020. {``Evaluation of
+{Ip10} and {miRNA} 296-a {Expression} {Levels} in {Peripheral} {Blood}
+{Mononuclear} {Cell} of {Coronary} {Artery} {Disease} {Patients} and
+{Controls}.''} \emph{DNA and Cell Biology} 39 (9): 1678--84.
+\url{https://doi.org/10.1089/dna.2020.5650}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-PBMC-miR}{}}%
 Gao, Jie, Jia Liu, Ying Zhang, BaoYi Guan, Hua Qu, Hua Chai, WenTing
@@ -1082,12 +1043,12 @@ Effect Removal Methods for Microarray Gene Expression Data Integration:
 A Survey.''} \emph{Briefings in Bioinformatics} 14 (4): 469--90.
 \url{https://doi.org/10.1093/bib/bbs037}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-320}{}}%
-Li, Fang, Shan-Shan Li, Hui Chen, Jian-Zhi Zhao, Jie Hao, Jin-Ming Liu,
-Xiu-Guang Zu, and Wei Cui. 2021. {``{miR}-320 Accelerates Chronic Heart
-Failure with Cardiac Fibrosis Through Activation of the {Il6}/{Stat3}
-Axis.''} \emph{Aging} 13 (18): 22516--27.
-\url{https://doi.org/10.18632/aging.203562}.
+\leavevmode\vadjust pre{\hypertarget{ref-296}{}}%
+Li, Heng, Heng Li, Xin-Ping Ouyang, Ting Jiang, Xi-Long Zheng, Xi-Long
+Zheng, Ping-Ping He, and Guo-Jun Zhao. 2018. {``{MicroRNA}-296: A
+Promising Target in the Pathogenesis of Atherosclerosis?''}
+\emph{Molecular Medicine} 24 (1): 12--12.
+\url{https://doi.org/10.1186/s10020-018-0012-y}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-21}{}}%
 Li, Sihui, Qian Fan, Shaolin He, Tingting Tang, Yuhua Liao, and
@@ -1231,26 +1192,11 @@ Zeng, Zl, Qingyun Zhu, Zhibo Zhao, Xuyu Zu, and Jianghua Liu. 2021.
 Molecular Medicine} 25 (18): 8588--8601.
 \url{https://doi.org/10.1111/jcmm.16861}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-155-2}{}}%
-Zhang, Yu-Hui, Liang-Hua Xia, Jia-Mei Jin, Ming Zong, Ming Chen, and Bo
-Zhang. 2015. {``Expression Level of {miR}--155 in Peripheral Blood.''}
-\emph{Asian Pacific Journal of Tropical Medicine} 8 (3): 214--19.
-\url{https://doi.org/10.1016/S1995-7645(14)60318-7}.
-
-\leavevmode\vadjust pre{\hypertarget{ref-155-3}{}}%
-Zhao, Duo, Jing Zhao, Jiangbin Sun, Yanling Su, Jinfeng Jian, Huaan Ye,
-Jiawang Lin, Zongda Yang, Jiatao Feng, and Zhiping Wang. 2018. {``The
-Expression Level of {miR}-155 in Plasma and Peripheral Blood Mononuclear
-Cells in Coronary Artery Disease Patients and the Associations of These
-Levels with the Apoptosis Rate of Peripheral Blood Mononuclear Cells.''}
-\emph{Experimental and Therapeutic Medicine}, September.
-\url{https://doi.org/10.3892/etm.2018.6797}.
-
 \end{CSLReferences}
 
 
 \bibliographystyle{spmpsci}
-\bibliography{ForArticleRefrence.bib,discussion.bib,Introduction.bib}
+\bibliography{ForArticleRefrence.bib,discussion.bib,Introduction.bib,mir296.bib}
 
 
 \end{document}
