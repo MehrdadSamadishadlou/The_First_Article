@@ -1,0 +1,957 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{45}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\url{https://doi.org/#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\bibcommenthead
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem[\protect\citeauthoryear{}{}]{CVD}
+\begin{botherref}
+Cardiovascular diseases ({CVDs}).
+\url{https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)}
+Accessed 2023-03-12
+\end{botherref}
+\endbibitem
+
+%%% 2
+\bibitem[\protect\citeauthoryear{Yap et~al.}{2023}]{Macro}
+\begin{barticle}
+\bauthor{\bsnm{Yap}, \binits{J.}},
+\bauthor{\bsnm{Irei}, \binits{J.}},
+\bauthor{\bsnm{Lozano-Gerona}, \binits{J.}},
+\bauthor{\bsnm{Vanapruks}, \binits{S.}},
+\bauthor{\bsnm{Bishop}, \binits{T.}},
+\bauthor{\bsnm{Boisvert}, \binits{W.A.}}:
+\batitle{Macrophages in cardiac remodelling after myocardial infarction}.
+\bjtitle{Nature Reviews Cardiology}
+(\byear{2023})
+\doiurl{10.1038/s41569-022-00823-5} .
+Accessed 2023-03-12
+\end{barticle}
+\endbibitem
+
+%%% 3
+\bibitem[\protect\citeauthoryear{Thygesen et~al.}{2018}]{17}
+\begin{botherref}
+\oauthor{\bsnm{Thygesen}, \binits{K.}},
+\oauthor{\bsnm{Alpert}, \binits{J.S.}},
+\oauthor{\bsnm{Jaffe}, \binits{A.S.}},
+\oauthor{\bsnm{Chaitman}, \binits{B.R.}},
+\oauthor{\bsnm{Bax}, \binits{J.J.}},
+\oauthor{\bsnm{Morrow}, \binits{D.A.}},
+\oauthor{\bsnm{White}, \binits{H.D.}},
+\oauthor{\bsnm{{The Executive Group on behalf of the Joint European Society of Cardiology (ESC)/American College of Cardiology (ACC)/American Heart Association (AHA)/World Heart Federation (WHF) Task Force for the Universal Definition of Myocardial Infarction}}}:
+Fourth {Universal} {Definition} of {Myocardial} {Infarction} (2018).
+Circulation
+\textbf{138}(20)
+(2018)
+\doiurl{10.1161/CIR.0000000000000617} .
+Accessed 2023-03-04
+\end{botherref}
+\endbibitem
+
+%%% 4
+\bibitem[\protect\citeauthoryear{Schulte et~al.}{2020}]{miR}
+\begin{barticle}
+\bauthor{\bsnm{Schulte}, \binits{C.}},
+\bauthor{\bsnm{Barwari}, \binits{T.}},
+\bauthor{\bsnm{Joshi}, \binits{A.}},
+\bauthor{\bsnm{Zeller}, \binits{T.}},
+\bauthor{\bsnm{Mayr}, \binits{M.}}:
+\batitle{Noncoding {RNAs} versus {Protein} {Biomarkers} in {Cardiovascular} {Disease}}.
+\bjtitle{Trends in Molecular Medicine}
+\bvolume{26}(\bissue{6}),
+\bfpage{583}--\blpage{596}
+(\byear{2020})
+\doiurl{10.1016/j.molmed.2020.02.001} .
+Accessed 2023-03-04
+\end{barticle}
+\endbibitem
+
+%%% 5
+\bibitem[\protect\citeauthoryear{Schulte et~al.}{2017}]{m1}
+\begin{botherref}
+\oauthor{\bsnm{Schulte}, \binits{C.}},
+\oauthor{\bsnm{Karakas}, \binits{M.}},
+\oauthor{\bsnm{Zeller}, \binits{T.}}:
+{microRNAs} in cardiovascular disease – clinical application.
+Clinical Chemistry and Laboratory Medicine (CCLM)
+\textbf{55}(5)
+(2017)
+\doiurl{10.1515/cclm-2016-0576} .
+Accessed 2023-03-12
+\end{botherref}
+\endbibitem
+
+%%% 6
+\bibitem[\protect\citeauthoryear{Kalayinia et~al.}{2021}]{m2}
+\begin{barticle}
+\bauthor{\bsnm{Kalayinia}, \binits{S.}},
+\bauthor{\bsnm{Arjmand}, \binits{F.}},
+\bauthor{\bsnm{Maleki}, \binits{M.}},
+\bauthor{\bsnm{Malakootian}, \binits{M.}},
+\bauthor{\bsnm{Singh}, \binits{C.P.}}:
+\batitle{{MicroRNAs}: roles in cardiovascular development and disease}.
+\bjtitle{Cardiovascular Pathology}
+\bvolume{50},
+\bfpage{107296}
+(\byear{2021})
+\doiurl{10.1016/j.carpath.2020.107296} .
+Accessed 2023-03-12
+\end{barticle}
+\endbibitem
+
+%%% 7
+\bibitem[\protect\citeauthoryear{Kaur et~al.}{2020}]{11-15}
+\begin{barticle}
+\bauthor{\bsnm{Kaur}, \binits{A.}},
+\bauthor{\bsnm{Mackin}, \binits{S.T.}},
+\bauthor{\bsnm{Schlosser}, \binits{K.}},
+\bauthor{\bsnm{Wong}, \binits{F.L.}},
+\bauthor{\bsnm{Elharram}, \binits{M.}},
+\bauthor{\bsnm{Delles}, \binits{C.}},
+\bauthor{\bsnm{Stewart}, \binits{D.J.}},
+\bauthor{\bsnm{Dayan}, \binits{N.}},
+\bauthor{\bsnm{Landry}, \binits{T.}},
+\bauthor{\bsnm{Pilote}, \binits{L.}}:
+\batitle{Systematic review of {microRNA} biomarkers in acute coronary syndrome and stable coronary artery disease}.
+\bjtitle{Cardiovascular Research}
+\bvolume{116}(\bissue{6}),
+\bfpage{1113}--\blpage{1124}
+(\byear{2020})
+\doiurl{10.1093/cvr/cvz302} .
+Accessed 2023-03-04
+\end{barticle}
+\endbibitem
+
+%%% 8
+\bibitem[\protect\citeauthoryear{Tanase et~al.}{}]{new2}
+\begin{botherref}
+\oauthor{\bsnm{Tanase}, \binits{D.M.}},
+\oauthor{\bsnm{Gosav}, \binits{E.M.}},
+\oauthor{\bsnm{Ouatu}, \binits{A.}},
+\oauthor{\bsnm{Badescu}, \binits{M.C.}},
+\oauthor{\bsnm{Dima}, \binits{N.}},
+\oauthor{\bsnm{Ganceanu-Rusu}, \binits{A.R.}},
+\oauthor{\bsnm{Popescu}, \binits{D.}},
+\oauthor{\bsnm{Floria}, \binits{M.}},
+\oauthor{\bsnm{Rezus}, \binits{E.}},
+\oauthor{\bsnm{Rezus}, \binits{C.}}:
+Current knowledge of {MicroRNAs} ({miRNAs}) in acute coronary syndrome ({ACS}): {ST}-elevation myocardial infarction ({STEMI}).
+\textbf{11}(10),
+1057
+\doiurl{10.3390/life11101057} .
+{MAG} {ID}: 3201762604
+\end{botherref}
+\endbibitem
+
+%%% 9
+\bibitem[\protect\citeauthoryear{Wang et~al.}{}]{new3}
+\begin{botherref}
+\oauthor{\bsnm{Wang}, \binits{G.}},
+\oauthor{\bsnm{Zhu}, \binits{J.-Q.}},
+\oauthor{\bsnm{Zhang}, \binits{J.-T.}},
+\oauthor{\bsnm{Li}, \binits{Q.}},
+\oauthor{\bsnm{Li}, \binits{Y.}},
+\oauthor{\bsnm{He}, \binits{J.}},
+\oauthor{\bsnm{Qin}, \binits{Y.-w.}},
+\oauthor{\bsnm{Qin}, \binits{Y.-W.}},
+\oauthor{\bsnm{Jing}, \binits{Q.}}:
+Circulating {microRNA}: a novel potential biomarker for early diagnosis of acute myocardial infarction in humans
+\textbf{31}(6),
+659--666
+\doiurl{10.1093/eurheartj/ehq013} .
+{MAG} {ID}: 1971726501
+\end{botherref}
+\endbibitem
+
+%%% 10
+\bibitem[\protect\citeauthoryear{Schulte et~al.}{}]{new4}
+\begin{botherref}
+\oauthor{\bsnm{Schulte}, \binits{C.}},
+\oauthor{\bsnm{Barwari}, \binits{T.}},
+\oauthor{\bsnm{Joshi}, \binits{A.}},
+\oauthor{\bsnm{Theofilatos}, \binits{K.}},
+\oauthor{\bsnm{{Konstantinos Theofilatos}}},
+\oauthor{\bsnm{Zampetaki}, \binits{A.}},
+\oauthor{\bsnm{Barallobre-Barreiro}, \binits{J.}},
+\oauthor{\bsnm{Singh}, \binits{B.}},
+\oauthor{\bsnm{{Nils A Sörensen}}},
+\oauthor{\bsnm{Sörensen}, \binits{N.A.}},
+\oauthor{\bsnm{Neumann}, \binits{J.T.}},
+\oauthor{\bsnm{{Johannes T. Neumann}}},
+\oauthor{\bsnm{{Tanja Zeller}}},
+\oauthor{\bsnm{Zeller}, \binits{T.}},
+\oauthor{\bsnm{{Dirk Westermann}}},
+\oauthor{\bsnm{Westermann}, \binits{D.}},
+\oauthor{\bsnm{Westermann}, \binits{D.}},
+\oauthor{\bsnm{{Stefan Blankenberg}}},
+\oauthor{\bsnm{Blankenberg}, \binits{S.}},
+\oauthor{\bsnm{Marber}, \binits{M.S.}},
+\oauthor{\bsnm{Liebetrau}, \binits{C.}},
+\oauthor{\bsnm{Mayr}, \binits{M.}}:
+Comparative analysis of circulating noncoding {RNAs} versus protein biomarkers in the detection of myocardial injury.
+\textbf{125}(3),
+328--340
+\doiurl{10.1161/circresaha.119.314937} .
+{MAG} {ID}: 2948607394
+\end{botherref}
+\endbibitem
+
+%%% 11
+\bibitem[\protect\citeauthoryear{Zhelankin et~al.}{}]{new5}
+\begin{botherref}
+\oauthor{\bsnm{Zhelankin}, \binits{A.V.}},
+\oauthor{\bsnm{Stonogina}, \binits{D.A.}},
+\oauthor{\bsnm{Vasiliev}, \binits{S.V.}},
+\oauthor{\bsnm{Babalyan}, \binits{K.A.}},
+\oauthor{\bsnm{Sharova}, \binits{E.I.}},
+\oauthor{\bsnm{Doludin}, \binits{Y.V.}},
+\oauthor{\bsnm{Shchekochikhin}, \binits{D.}},
+\oauthor{\bsnm{Generozov}, \binits{E.V.}},
+\oauthor{\bsnm{Generozov}, \binits{E.V.}},
+\oauthor{\bsnm{Akselrod}, \binits{A.S.}}:
+Circulating extracellular {miRNA} analysis in patients with stable {CAD} and acute coronary syndromes
+\textbf{11}(7),
+962
+\doiurl{10.3390/biom11070962} .
+{MAG} {ID}: 3173934652
+\end{botherref}
+\endbibitem
+
+%%% 12
+\bibitem[\protect\citeauthoryear{Wang et~al.}{}]{sys}
+\begin{botherref}
+\oauthor{\bsnm{Wang}, \binits{B.}},
+\oauthor{\bsnm{Li}, \binits{Y.}},
+\oauthor{\bsnm{Hao}, \binits{X.}},
+\oauthor{\bsnm{Yang}, \binits{J.}},
+\oauthor{\bsnm{Han}, \binits{X.}},
+\oauthor{\bsnm{Li}, \binits{H.}},
+\oauthor{\bsnm{Li}, \binits{T.}},
+\oauthor{\bsnm{Wang}, \binits{D.}},
+\oauthor{\bsnm{Teng}, \binits{Y.}},
+\oauthor{\bsnm{Ma}, \binits{L.}},
+\oauthor{\bsnm{Li}, \binits{Y.}},
+\oauthor{\bsnm{Zhao}, \binits{M.}},
+\oauthor{\bsnm{Wang}, \binits{X.}}:
+Comparison of the clinical value of {miRNAs} and conventional biomarkers in {AMI}: A systematic review
+\textbf{12},
+668324
+\doiurl{10.3389/fgene.2021.668324} .
+Accessed 2023-07-25
+\end{botherref}
+\endbibitem
+
+%%% 13
+\bibitem[\protect\citeauthoryear{Soler-Botija et~al.}{2019}]{36}
+\begin{barticle}
+\bauthor{\bsnm{Soler-Botija}, \binits{C.}},
+\bauthor{\bsnm{Gálvez-Montón}, \binits{C.}},
+\bauthor{\bsnm{Bayés-Genís}, \binits{A.}}:
+\batitle{Epigenetic {Biomarkers} in {Cardiovascular} {Diseases}}.
+\bjtitle{Frontiers in Genetics}
+\bvolume{10},
+\bfpage{950}
+(\byear{2019})
+\doiurl{10.3389/fgene.2019.00950} .
+Accessed 2023-03-12
+\end{barticle}
+\endbibitem
+
+%%% 14
+\bibitem[\protect\citeauthoryear{Gao et~al.}{2020}]{PBMC-miR}
+\begin{barticle}
+\bauthor{\bsnm{Gao}, \binits{J.}},
+\bauthor{\bsnm{Liu}, \binits{J.}},
+\bauthor{\bsnm{Zhang}, \binits{Y.}},
+\bauthor{\bsnm{Guan}, \binits{B.}},
+\bauthor{\bsnm{Qu}, \binits{H.}},
+\bauthor{\bsnm{Chai}, \binits{H.}},
+\bauthor{\bsnm{Wang}, \binits{W.}},
+\bauthor{\bsnm{Ma}, \binits{X.}},
+\bauthor{\bsnm{Shi}, \binits{D.}}:
+\batitle{{PBMCs}-{Derived} {microRNA} {Signature} as a {Prethrombotic} {Status} {Discriminator} in {Stable} {Coronary} {Artery} {Disease}}.
+\bjtitle{Thrombosis and Haemostasis}
+\bvolume{120}(\bissue{01}),
+\bfpage{121}--\blpage{131}
+(\byear{2020})
+\doiurl{10.1055/s-0039-1700518} .
+Accessed 2023-03-12
+\end{barticle}
+\endbibitem
+
+%%% 15
+\bibitem[\protect\citeauthoryear{Mosallaei et~al.}{2022}]{Meder6}
+\begin{barticle}
+\bauthor{\bsnm{Mosallaei}, \binits{M.}},
+\bauthor{\bsnm{Ehtesham}, \binits{N.}},
+\bauthor{\bsnm{Rahimirad}, \binits{S.}},
+\bauthor{\bsnm{Saghi}, \binits{M.}},
+\bauthor{\bsnm{Vatandoost}, \binits{N.}},
+\bauthor{\bsnm{Khosravi}, \binits{S.}}:
+\batitle{{PBMCs}: a new source of diagnostic and prognostic biomarkers}.
+\bjtitle{Archives of Physiology and Biochemistry}
+\bvolume{128}(\bissue{4}),
+\bfpage{1081}--\blpage{1087}
+(\byear{2022})
+\doiurl{10.1080/13813455.2020.1752257} .
+Accessed 2023-03-04
+\end{barticle}
+\endbibitem
+
+%%% 16
+\bibitem[\protect\citeauthoryear{Torun et~al.}{2023}]{ML-Bio}
+\begin{barticle}
+\bauthor{\bsnm{Torun}, \binits{F.M.}},
+\bauthor{\bsnm{Virreira~Winter}, \binits{S.}},
+\bauthor{\bsnm{Doll}, \binits{S.}},
+\bauthor{\bsnm{Riese}, \binits{F.M.}},
+\bauthor{\bsnm{Vorobyev}, \binits{A.}},
+\bauthor{\bsnm{Mueller-Reif}, \binits{J.B.}},
+\bauthor{\bsnm{Geyer}, \binits{P.E.}},
+\bauthor{\bsnm{Strauss}, \binits{M.T.}}:
+\batitle{Transparent {Exploration} of {Machine} {Learning} for {Biomarker} {Discovery} from {Proteomics} and {Omics} {Data}}.
+\bjtitle{Journal of Proteome Research}
+\bvolume{22}(\bissue{2}),
+\bfpage{359}--\blpage{367}
+(\byear{2023})
+\doiurl{10.1021/acs.jproteome.2c00473} .
+Accessed 2023-03-12
+\end{barticle}
+\endbibitem
+
+%%% 17
+\bibitem[\protect\citeauthoryear{Reel et~al.}{2021}]{ML}
+\begin{barticle}
+\bauthor{\bsnm{Reel}, \binits{P.S.}},
+\bauthor{\bsnm{Reel}, \binits{S.}},
+\bauthor{\bsnm{Pearson}, \binits{E.}},
+\bauthor{\bsnm{Trucco}, \binits{E.}},
+\bauthor{\bsnm{Jefferson}, \binits{E.}}:
+\batitle{Using machine learning approaches for multi-omics data analysis: {A} review}.
+\bjtitle{Biotechnology Advances}
+\bvolume{49},
+\bfpage{107739}
+(\byear{2021})
+\doiurl{10.1016/j.biotechadv.2021.107739} .
+Accessed 2023-03-12
+\end{barticle}
+\endbibitem
+
+%%% 18
+\bibitem[\protect\citeauthoryear{{R Core Team}}{2022}]{R}
+\begin{bbook}
+\bauthor{\bsnm{{R Core Team}}}:
+\bbtitle{R: A Language and Environment for Statistical Computing}.
+\bpublisher{R Foundation for Statistical Computing},
+\blocation{Vienna, Austria}
+(\byear{2022}).
+\bcomment{R Foundation for Statistical Computing}.
+\burl{https://www.R-project.org/}
+\end{bbook}
+\endbibitem
+
+%%% 19
+\bibitem[\protect\citeauthoryear{{RStudio Team}}{2020}]{RStudio}
+\begin{bbook}
+\bauthor{\bsnm{{RStudio Team}}}:
+\bbtitle{RStudio: Integrated Development Environment for R}.
+\bpublisher{RStudio, PBC.},
+\blocation{Boston, MA}
+(\byear{2020}).
+\bcomment{RStudio, PBC.}
+\burl{http://www.rstudio.com/}
+\end{bbook}
+\endbibitem
+
+%%% 20
+\bibitem[\protect\citeauthoryear{Wickham}{2016}]{ggplot}
+\begin{bbook}
+\bauthor{\bsnm{Wickham}, \binits{H.}}:
+\bbtitle{Ggplot2: Elegant Graphics for Data Analysis}.
+\bpublisher{Springer}, \blocation{???}
+(\byear{2016}).
+\burl{https://ggplot2.tidyverse.org}
+\end{bbook}
+\endbibitem
+
+%%% 21
+\bibitem[\protect\citeauthoryear{Maciejak et~al.}{2015}]{67}
+\begin{barticle}
+\bauthor{\bsnm{Maciejak}, \binits{A.}},
+\bauthor{\bsnm{Kiliszek}, \binits{M.}},
+\bauthor{\bsnm{Michalak}, \binits{M.}},
+\bauthor{\bsnm{Tulacz}, \binits{D.}},
+\bauthor{\bsnm{Opolski}, \binits{G.}},
+\bauthor{\bsnm{Matlak}, \binits{K.}},
+\bauthor{\bsnm{Dobrzycki}, \binits{S.}},
+\bauthor{\bsnm{Segiet}, \binits{A.}},
+\bauthor{\bsnm{Gora}, \binits{M.}},
+\bauthor{\bsnm{Burzynska}, \binits{B.}}:
+\batitle{Gene expression profiling reveals potential prognostic biomarkers associated with the progression of heart failure}.
+\bjtitle{Genome Medicine}
+\bvolume{7}(\bissue{1}),
+\bfpage{26}
+(\byear{2015})
+\doiurl{10.1186/s13073-015-0149-z}
+\end{barticle}
+\endbibitem
+
+%%% 22
+\bibitem[\protect\citeauthoryear{Matone et~al.}{2015}]{09}
+\begin{barticle}
+\bauthor{\bsnm{Matone}, \binits{A.}},
+\bauthor{\bsnm{O'Grada}, \binits{C.M.}},
+\bauthor{\bsnm{Dillon}, \binits{E.T.}},
+\bauthor{\bsnm{Morris}, \binits{C.}},
+\bauthor{\bsnm{Ryan}, \binits{M.F.}},
+\bauthor{\bsnm{Walsh}, \binits{M.}},
+\bauthor{\bsnm{Gibney}, \binits{E.R.}},
+\bauthor{\bsnm{Brennan}, \binits{L.}},
+\bauthor{\bsnm{Gibney}, \binits{M.J.}},
+\bauthor{\bsnm{Morine}, \binits{M.J.}},
+\bauthor{\bsnm{Roche}, \binits{H.M.}}:
+\batitle{Body mass index mediates inflammatory response to acute dietary challenges}.
+\bjtitle{Molecular Nutrition \& Food Research}
+\bvolume{59}(\bissue{11}),
+\bfpage{2279}--\blpage{2292}
+(\byear{2015})
+\doiurl{10.1002/mnfr.201500184} .
+Accessed 2022-10-19
+\end{barticle}
+\endbibitem
+
+%%% 23
+\bibitem[\protect\citeauthoryear{Canali et~al.}{2014}]{75}
+\begin{barticle}
+\bauthor{\bsnm{Canali}, \binits{R.}},
+\bauthor{\bsnm{Natarelli}, \binits{L.}},
+\bauthor{\bsnm{Leoni}, \binits{G.}},
+\bauthor{\bsnm{Azzini}, \binits{E.}},
+\bauthor{\bsnm{Comitato}, \binits{R.}},
+\bauthor{\bsnm{Sancak}, \binits{O.}},
+\bauthor{\bsnm{Barella}, \binits{L.}},
+\bauthor{\bsnm{Virgili}, \binits{F.}}:
+\batitle{Vitamin {C} supplementation modulates gene expression in peripheral blood mononuclear cells specifically upon an inflammatory stimulus: a pilot study in healthy subjects}.
+\bjtitle{Genes \& Nutrition}
+\bvolume{9}(\bissue{3}),
+\bfpage{390}
+(\byear{2014})
+\doiurl{10.1007/s12263-014-0390-x} .
+Accessed 2022-10-02
+\end{barticle}
+\endbibitem
+
+%%% 24
+\bibitem[\protect\citeauthoryear{McCall et~al.}{2010}]{fRMA}
+\begin{barticle}
+\bauthor{\bsnm{McCall}, \binits{M.N.}},
+\bauthor{\bsnm{Bolstad}, \binits{B.M.}},
+\bauthor{\bsnm{Irizarry}, \binits{R.A.}}:
+\batitle{Frozen robust multiarray analysis ({fRMA})}.
+\bjtitle{Biostatistics}
+\bvolume{11}(\bissue{2}),
+\bfpage{242}--\blpage{253}
+(\byear{2010})
+\doiurl{10.1093/biostatistics/kxp059} .
+Accessed 2022-09-10
+\end{barticle}
+\endbibitem
+
+%%% 25
+\bibitem[\protect\citeauthoryear{Lazar et~al.}{2013}]{BER}
+\begin{barticle}
+\bauthor{\bsnm{Lazar}, \binits{C.}},
+\bauthor{\bsnm{Meganck}, \binits{S.}},
+\bauthor{\bsnm{Taminau}, \binits{J.}},
+\bauthor{\bsnm{Steenhoff}, \binits{D.}},
+\bauthor{\bsnm{Coletta}, \binits{A.}},
+\bauthor{\bsnm{Molter}, \binits{C.}},
+\bauthor{\bsnm{Weiss-Solis}, \binits{D.Y.}},
+\bauthor{\bsnm{Duque}, \binits{R.}},
+\bauthor{\bsnm{Bersini}, \binits{H.}},
+\bauthor{\bsnm{Nowe}, \binits{A.}}:
+\batitle{Batch effect removal methods for microarray gene expression data integration: a survey}.
+\bjtitle{Briefings in Bioinformatics}
+\bvolume{14}(\bissue{4}),
+\bfpage{469}--\blpage{490}
+(\byear{2013})
+\doiurl{10.1093/bib/bbs037} .
+Accessed 2022-09-01
+\end{barticle}
+\endbibitem
+
+%%% 26
+\bibitem[\protect\citeauthoryear{McCall et~al.}{2011}]{Barcode}
+\begin{barticle}
+\bauthor{\bsnm{McCall}, \binits{M.N.}},
+\bauthor{\bsnm{Uppal}, \binits{K.}},
+\bauthor{\bsnm{Jaffee}, \binits{H.A.}},
+\bauthor{\bsnm{Zilliox}, \binits{M.J.}},
+\bauthor{\bsnm{Irizarry}, \binits{R.A.}}:
+\batitle{The {Gene} {Expression} {Barcode}: leveraging public data repositories to begin cataloging the human and murine transcriptomes}.
+\bjtitle{Nucleic Acids Research}
+\bvolume{39}(\bissue{suppl\_1}),
+\bfpage{1011}--\blpage{1015}
+(\byear{2011})
+\doiurl{10.1093/nar/gkq1259} .
+Accessed 2022-09-12
+\end{barticle}
+\endbibitem
+
+%%% 27
+\bibitem[\protect\citeauthoryear{Yu et~al.}{2012}]{cluster}
+\begin{barticle}
+\bauthor{\bsnm{Yu}, \binits{G.}},
+\bauthor{\bsnm{Wang}, \binits{L.-G.}},
+\bauthor{\bsnm{Han}, \binits{Y.}},
+\bauthor{\bsnm{He}, \binits{Q.-Y.}}:
+\batitle{clusterprofiler: an r package for comparing biological themes among gene clusters}.
+\bjtitle{OMICS: A Journal of Integrative Biology}
+\bvolume{16}(\bissue{5}),
+\bfpage{284}--\blpage{287}
+(\byear{2012})
+\doiurl{10.1089/omi.2011.0118}
+\end{barticle}
+\endbibitem
+
+%%% 28
+\bibitem[\protect\citeauthoryear{Harris et~al.}{2020}]{numpy}
+\begin{barticle}
+\bauthor{\bsnm{Harris}, \binits{C.R.}},
+\bauthor{\bsnm{Millman}, \binits{K.J.}},
+\bauthor{\bsnm{Walt}, \binits{S.J.}},
+\bauthor{\bsnm{Gommers}, \binits{R.}},
+\bauthor{\bsnm{Virtanen}, \binits{P.}},
+\bauthor{\bsnm{Cournapeau}, \binits{D.}},
+\bauthor{\bsnm{Wieser}, \binits{E.}},
+\bauthor{\bsnm{Taylor}, \binits{J.}},
+\bauthor{\bsnm{Berg}, \binits{S.}},
+\bauthor{\bsnm{Smith}, \binits{N.J.}},
+\bauthor{\bsnm{Kern}, \binits{R.}},
+\bauthor{\bsnm{Picus}, \binits{M.}},
+\bauthor{\bsnm{Hoyer}, \binits{S.}},
+\bauthor{\bsnm{Kerkwijk}, \binits{M.H.}},
+\bauthor{\bsnm{Brett}, \binits{M.}},
+\bauthor{\bsnm{Haldane}, \binits{A.}},
+\bauthor{\bsnm{R{\'{i}}o}, \binits{J.F.}},
+\bauthor{\bsnm{Wiebe}, \binits{M.}},
+\bauthor{\bsnm{Peterson}, \binits{P.}},
+\bauthor{\bsnm{G{\'{e}}rard-Marchant}, \binits{P.}},
+\bauthor{\bsnm{Sheppard}, \binits{K.}},
+\bauthor{\bsnm{Reddy}, \binits{T.}},
+\bauthor{\bsnm{Weckesser}, \binits{W.}},
+\bauthor{\bsnm{Abbasi}, \binits{H.}},
+\bauthor{\bsnm{Gohlke}, \binits{C.}},
+\bauthor{\bsnm{Oliphant}, \binits{T.E.}}:
+\batitle{Array programming with {NumPy}}.
+\bjtitle{Nature}
+\bvolume{585}(\bissue{7825}),
+\bfpage{357}--\blpage{362}
+(\byear{2020})
+\doiurl{10.1038/s41586-020-2649-2}
+\end{barticle}
+\endbibitem
+
+%%% 29
+\bibitem[\protect\citeauthoryear{{W}es {M}c{K}inney}{2010}]{Pandas}
+\begin{bchapter}
+\bauthor{\bsnm{{M}c{K}inney}}:
+\bctitle{{D}ata {S}tructures for {S}tatistical {C}omputing in {P}ython}.
+In: \beditor{\bsnm{{W}alt}},
+\beditor{\bsnm{{M}illman}} (eds.)
+\bbtitle{{P}roceedings of the 9th {P}ython in {S}cience {C}onference},
+pp. \bfpage{56}--\blpage{61}
+(\byear{2010}).
+\doiurl{10.25080/Majora-92bf1922-00a}
+\end{bchapter}
+\endbibitem
+
+%%% 30
+\bibitem[\protect\citeauthoryear{Pedregosa et~al.}{2011}]{scikit-learn}
+\begin{barticle}
+\bauthor{\bsnm{Pedregosa}, \binits{F.}},
+\bauthor{\bsnm{Varoquaux}, \binits{G.}},
+\bauthor{\bsnm{Gramfort}, \binits{A.}},
+\bauthor{\bsnm{Michel}, \binits{V.}},
+\bauthor{\bsnm{Thirion}, \binits{B.}},
+\bauthor{\bsnm{Grisel}, \binits{O.}},
+\bauthor{\bsnm{Blondel}, \binits{M.}},
+\bauthor{\bsnm{Prettenhofer}, \binits{P.}},
+\bauthor{\bsnm{Weiss}, \binits{R.}},
+\bauthor{\bsnm{Dubourg}, \binits{V.}},
+\bauthor{\bsnm{Vanderplas}, \binits{J.}},
+\bauthor{\bsnm{Passos}, \binits{A.}},
+\bauthor{\bsnm{Cournapeau}, \binits{D.}},
+\bauthor{\bsnm{Brucher}, \binits{M.}},
+\bauthor{\bsnm{Perrot}, \binits{M.}},
+\bauthor{\bsnm{Duchesnay}, \binits{E.}}:
+\batitle{Scikit-learn: Machine learning in {P}ython}.
+\bjtitle{Journal of Machine Learning Research}
+\bvolume{12},
+\bfpage{2825}--\blpage{2830}
+(\byear{2011})
+\end{barticle}
+\endbibitem
+
+%%% 31
+\bibitem[\protect\citeauthoryear{Head et~al.}{2021}]{scikitopt}
+\begin{botherref}
+\oauthor{\bsnm{Head}, \binits{T.}},
+\oauthor{\bsnm{Kumar}, \binits{M.}},
+\oauthor{\bsnm{Nahrstaedt}, \binits{H.}},
+\oauthor{\bsnm{Louppe}, \binits{G.}},
+\oauthor{\bsnm{Shcherbatyi}, \binits{I.}}:
+Scikit-optimize/scikit-optimize.
+\doiurl{10.5281/zenodo.5565057} .
+\url{https://doi.org/10.5281/zenodo.5565057}
+\end{botherref}
+\endbibitem
+
+%%% 32
+\bibitem[\protect\citeauthoryear{Tsao et~al.}{2022}]{18}
+\begin{botherref}
+\oauthor{\bsnm{Tsao}, \binits{C.W.}},
+\oauthor{\bsnm{Aday}, \binits{A.W.}},
+\oauthor{\bsnm{Almarzooq}, \binits{Z.I.}},
+\oauthor{\bsnm{Alonso}, \binits{A.}},
+\oauthor{\bsnm{Beaton}, \binits{A.Z.}},
+\oauthor{\bsnm{Bittencourt}, \binits{M.S.}},
+\oauthor{\bsnm{Boehme}, \binits{A.K.}},
+\oauthor{\bsnm{Buxton}, \binits{A.E.}},
+\oauthor{\bsnm{Carson}, \binits{A.P.}},
+\oauthor{\bsnm{Commodore-Mensah}, \binits{Y.}},
+\oauthor{\bsnm{Elkind}, \binits{M.S.V.}},
+\oauthor{\bsnm{Evenson}, \binits{K.R.}},
+\oauthor{\bsnm{Eze-Nliam}, \binits{C.}},
+\oauthor{\bsnm{Ferguson}, \binits{J.F.}},
+\oauthor{\bsnm{Generoso}, \binits{G.}},
+\oauthor{\bsnm{Ho}, \binits{J.E.}},
+\oauthor{\bsnm{Kalani}, \binits{R.}},
+\oauthor{\bsnm{Khan}, \binits{S.S.}},
+\oauthor{\bsnm{Kissela}, \binits{B.M.}},
+\oauthor{\bsnm{Knutson}, \binits{K.L.}},
+\oauthor{\bsnm{Levine}, \binits{D.A.}},
+\oauthor{\bsnm{Lewis}, \binits{T.T.}},
+\oauthor{\bsnm{Liu}, \binits{J.}},
+\oauthor{\bsnm{Loop}, \binits{M.S.}},
+\oauthor{\bsnm{Ma}, \binits{J.}},
+\oauthor{\bsnm{Mussolino}, \binits{M.E.}},
+\oauthor{\bsnm{Navaneethan}, \binits{S.D.}},
+\oauthor{\bsnm{Perak}, \binits{A.M.}},
+\oauthor{\bsnm{Poudel}, \binits{R.}},
+\oauthor{\bsnm{Rezk-Hanna}, \binits{M.}},
+\oauthor{\bsnm{Roth}, \binits{G.A.}},
+\oauthor{\bsnm{Schroeder}, \binits{E.B.}},
+\oauthor{\bsnm{Shah}, \binits{S.H.}},
+\oauthor{\bsnm{Thacker}, \binits{E.L.}},
+\oauthor{\bsnm{VanWagner}, \binits{L.B.}},
+\oauthor{\bsnm{Virani}, \binits{S.S.}},
+\oauthor{\bsnm{Voecks}, \binits{J.H.}},
+\oauthor{\bsnm{Wang}, \binits{N.-Y.}},
+\oauthor{\bsnm{Yaffe}, \binits{K.}},
+\oauthor{\bsnm{Martin}, \binits{S.S.}},
+\oauthor{\bsnm{{on behalf of the American Heart Association Council on Epidemiology and Prevention Statistics Committee and Stroke Statistics Subcommittee}}}:
+Heart {Disease} and {Stroke} {Statistics}—2022 {Update}: {A} {Report} {From} the {American} {Heart} {Association}.
+Circulation
+\textbf{145}(8)
+(2022)
+\doiurl{10.1161/CIR.0000000000001052} .
+Accessed 2023-03-04
+\end{botherref}
+\endbibitem
+
+%%% 33
+\bibitem[\protect\citeauthoryear{Laggerbauer and Engelhardt}{2022}]{23}
+\begin{barticle}
+\bauthor{\bsnm{Laggerbauer}, \binits{B.}},
+\bauthor{\bsnm{Engelhardt}, \binits{S.}}:
+\batitle{{MicroRNAs} as therapeutic targets in cardiovascular disease}.
+\bjtitle{Journal of Clinical Investigation}
+\bvolume{132}(\bissue{11}),
+\bfpage{159179}
+(\byear{2022})
+\doiurl{10.1172/JCI159179} .
+Accessed 2023-03-04
+\end{barticle}
+\endbibitem
+
+%%% 34
+\bibitem[\protect\citeauthoryear{Khan et~al.}{2022}]{24}
+\begin{barticle}
+\bauthor{\bsnm{Khan}, \binits{A.A.}},
+\bauthor{\bsnm{Gupta}, \binits{V.}},
+\bauthor{\bsnm{Mahapatra}, \binits{N.R.}}:
+\batitle{Key regulatory {miRNAs} in lipid homeostasis: {Implications} for cardiometabolic diseases and development of novel therapeutics}.
+\bjtitle{Drug Discovery Today}
+\bvolume{27}(\bissue{8}),
+\bfpage{2170}--\blpage{2180}
+(\byear{2022})
+\doiurl{10.1016/j.drudis.2022.05.003} .
+Accessed 2023-03-04
+\end{barticle}
+\endbibitem
+
+%%% 35
+\bibitem[\protect\citeauthoryear{Hapke et~al.}{2022}]{Meder23}
+\begin{barticle}
+\bauthor{\bsnm{Hapke}, \binits{N.}},
+\bauthor{\bsnm{Heinrichs}, \binits{M.}},
+\bauthor{\bsnm{Ashour}, \binits{D.}},
+\bauthor{\bsnm{Vogel}, \binits{E.}},
+\bauthor{\bsnm{Hofmann}, \binits{U.}},
+\bauthor{\bsnm{Frantz}, \binits{S.}},
+\bauthor{\bsnm{Campos~Ramos}, \binits{G.}}:
+\batitle{Identification of a novel cardiac epitope triggering {T}-cell responses in patients with myocardial infarction}.
+\bjtitle{Journal of Molecular and Cellular Cardiology}
+\bvolume{173},
+\bfpage{25}--\blpage{29}
+(\byear{2022})
+\doiurl{10.1016/j.yjmcc.2022.09.001} .
+Accessed 2023-03-04
+\end{barticle}
+\endbibitem
+
+%%% 36
+\bibitem[\protect\citeauthoryear{Li et~al.}{2018}]{296}
+\begin{barticle}
+\bauthor{\bsnm{Li}, \binits{H.}},
+\bauthor{\bsnm{Li}, \binits{H.}},
+\bauthor{\bsnm{Ouyang}, \binits{X.-P.}},
+\bauthor{\bsnm{Jiang}, \binits{T.}},
+\bauthor{\bsnm{Zheng}, \binits{X.-L.}},
+\bauthor{\bsnm{{Xi-Long Zheng}}},
+\bauthor{\bsnm{He}, \binits{P.-P.}},
+\bauthor{\bsnm{Zhao}, \binits{G.-J.}}:
+\batitle{{MicroRNA}-296: a promising target in the pathogenesis of atherosclerosis?}
+\bjtitle{Molecular Medicine}
+\bvolume{24}(\bissue{1}),
+\bfpage{12}--\blpage{12}
+(\byear{2018})
+\doiurl{10.1186/s10020-018-0012-y} .
+\bcomment{MAG ID: 2801710951}
+\end{barticle}
+\endbibitem
+
+%%% 37
+\bibitem[\protect\citeauthoryear{Yao et~al.}{2016}]{186}
+\begin{barticle}
+\bauthor{\bsnm{Yao}, \binits{Y.}},
+\bauthor{\bsnm{Zhang}, \binits{X.}},
+\bauthor{\bsnm{Chen}, \binits{H.-p.}},
+\bauthor{\bsnm{Li}, \binits{L.}},
+\bauthor{\bsnm{Xie}, \binits{W.}},
+\bauthor{\bsnm{Lan}, \binits{G.}},
+\bauthor{\bsnm{Zhao}, \binits{Z.-w.}},
+\bauthor{\bsnm{Zheng}, \binits{X.-L.}},
+\bauthor{\bsnm{Wang}, \binits{Z.-b.}},
+\bauthor{\bsnm{Tang}, \binits{C.-k.}}:
+\batitle{{MicroRNA}-186 promotes macrophage lipid accumulation and secretion of pro-inflammatory cytokines by targeting cystathionine $\gamma$-lyase in {THP}-1 macrophages}.
+\bjtitle{Atherosclerosis}
+\bvolume{250},
+\bfpage{122}--\blpage{132}
+(\byear{2016})
+\doiurl{10.1016/j.atherosclerosis.2016.04.030} .
+Accessed 2023-03-04
+\end{barticle}
+\endbibitem
+
+%%% 38
+\bibitem[\protect\citeauthoryear{Li et~al.}{2015}]{21}
+\begin{barticle}
+\bauthor{\bsnm{Li}, \binits{S.}},
+\bauthor{\bsnm{Fan}, \binits{Q.}},
+\bauthor{\bsnm{He}, \binits{S.}},
+\bauthor{\bsnm{Tang}, \binits{T.}},
+\bauthor{\bsnm{Liao}, \binits{Y.}},
+\bauthor{\bsnm{Xie}, \binits{J.}}:
+\batitle{{MicroRNA}-21 {Negatively} {Regulates} {Treg} {Cells} {Through} a {TGF}-$\beta1$/{Smad}-{Independent} {Pathway} in {Patients} with {Coronary} {Heart} {Disease}}.
+\bjtitle{Cellular Physiology and Biochemistry}
+\bvolume{37}(\bissue{3}),
+\bfpage{866}--\blpage{878}
+(\byear{2015})
+\doiurl{10.1159/000430214} .
+Accessed 2023-03-04
+\end{barticle}
+\endbibitem
+
+%%% 39
+\bibitem[\protect\citeauthoryear{Liu et~al.}{2017}]{32-2}
+\begin{barticle}
+\bauthor{\bsnm{Liu}, \binits{J.}},
+\bauthor{\bsnm{Xiao}, \binits{X.}},
+\bauthor{\bsnm{Shen}, \binits{Y.}},
+\bauthor{\bsnm{Chen}, \binits{L.}},
+\bauthor{\bsnm{Xu}, \binits{C.}},
+\bauthor{\bsnm{Zhao}, \binits{H.}},
+\bauthor{\bsnm{Wu}, \binits{Y.}},
+\bauthor{\bsnm{Zhang}, \binits{Q.}},
+\bauthor{\bsnm{Zhong}, \binits{J.}},
+\bauthor{\bsnm{Tang}, \binits{Z.}},
+\bauthor{\bsnm{Liu}, \binits{C.}},
+\bauthor{\bsnm{Zhao}, \binits{Q.}},
+\bauthor{\bsnm{Zheng}, \binits{Y.}},
+\bauthor{\bsnm{Cao}, \binits{R.}},
+\bauthor{\bsnm{Zu}, \binits{X.}}:
+\batitle{{MicroRNA}-32 promotes calcification in vascular smooth muscle cells: {Implications} as a novel marker for coronary artery calcification}.
+\bjtitle{PLOS ONE}
+\bvolume{12}(\bissue{3}),
+\bfpage{0174138}
+(\byear{2017})
+\doiurl{10.1371/journal.pone.0174138} .
+Accessed 2023-03-04
+\end{barticle}
+\endbibitem
+
+%%% 40
+\bibitem[\protect\citeauthoryear{Zeng et~al.}{2021}]{magic}
+\begin{barticle}
+\bauthor{\bsnm{Zeng}, \binits{Z.}},
+\bauthor{\bsnm{Zhu}, \binits{Q.}},
+\bauthor{\bsnm{Zhao}, \binits{Z.}},
+\bauthor{\bsnm{Zu}, \binits{X.}},
+\bauthor{\bsnm{Liu}, \binits{J.}}:
+\batitle{Magic and mystery of {microRNA}‐32}.
+\bjtitle{Journal of Cellular and Molecular Medicine}
+\bvolume{25}(\bissue{18}),
+\bfpage{8588}--\blpage{8601}
+(\byear{2021})
+\doiurl{10.1111/jcmm.16861} .
+Accessed 2023-03-04
+\end{barticle}
+\endbibitem
+
+%%% 41
+\bibitem[\protect\citeauthoryear{Wang et~al.}{2020}]{32}
+\begin{barticle}
+\bauthor{\bsnm{Wang}, \binits{D.}},
+\bauthor{\bsnm{Zeng}, \binits{T.}},
+\bauthor{\bsnm{Lin}, \binits{Z.}},
+\bauthor{\bsnm{Yan}, \binits{L.}},
+\bauthor{\bsnm{Wang}, \binits{F.}},
+\bauthor{\bsnm{Tang}, \binits{L.}},
+\bauthor{\bsnm{Wang}, \binits{L.}},
+\bauthor{\bsnm{Tang}, \binits{D.}},
+\bauthor{\bsnm{Chen}, \binits{P.}},
+\bauthor{\bsnm{Yang}, \binits{M.}}:
+\batitle{Long non-coding {RNA} {SNHG5} regulates chemotherapy resistance through the {miR}-32/{DNAJB9} axis in acute myeloid leukemia}.
+\bjtitle{Biomedicine \& Pharmacotherapy}
+\bvolume{123},
+\bfpage{109802}
+(\byear{2020})
+\doiurl{10.1016/j.biopha.2019.109802} .
+Accessed 2023-03-04
+\end{barticle}
+\endbibitem
+
+%%% 42
+\bibitem[\protect\citeauthoryear{Horita et~al.}{2021}]{29aa}
+\begin{barticle}
+\bauthor{\bsnm{Horita}, \binits{M.}},
+\bauthor{\bsnm{Farquharson}, \binits{C.}},
+\bauthor{\bsnm{Stephen}, \binits{L.A.}}:
+\batitle{The role of {miR}‐29 family in disease}.
+\bjtitle{Journal of Cellular Biochemistry}
+\bvolume{122}(\bissue{7}),
+\bfpage{696}--\blpage{715}
+(\byear{2021})
+\doiurl{10.1002/jcb.29896} .
+Accessed 2023-03-04
+\end{barticle}
+\endbibitem
+
+%%% 43
+\bibitem[\protect\citeauthoryear{Huang et~al.}{2016}]{29a}
+\begin{barticle}
+\bauthor{\bsnm{Huang}, \binits{Y.-Q.}},
+\bauthor{\bsnm{Cai}, \binits{A.-P.}},
+\bauthor{\bsnm{Chen}, \binits{J.-Y.}},
+\bauthor{\bsnm{Huang}, \binits{C.}},
+\bauthor{\bsnm{Li}, \binits{J.}},
+\bauthor{\bsnm{Feng}, \binits{Y.-Q.}}:
+\batitle{The {Relationship} of {Plasma} {miR}-29a and {Oxidized} {Low} {Density} {Lipoprotein} with {Atherosclerosis}}.
+\bjtitle{Cellular Physiology and Biochemistry}
+\bvolume{40}(\bissue{6}),
+\bfpage{1521}--\blpage{1528}
+(\byear{2016})
+\doiurl{10.1159/000453202} .
+Accessed 2023-03-04
+\end{barticle}
+\endbibitem
+
+%%% 44
+\bibitem[\protect\citeauthoryear{Bhansali et~al.}{2022}]{197}
+\begin{barticle}
+\bauthor{\bsnm{Bhansali}, \binits{S.}},
+\bauthor{\bsnm{Yadav}, \binits{A.K.}},
+\bauthor{\bsnm{Bakshi}, \binits{C.}},
+\bauthor{\bsnm{Dhawan}, \binits{V.}}:
+\batitle{Interleukin-35 {Mitigates} ox-{LDL}-{Induced} {Proatherogenic} {Effects} via {Modulating} {miRNAs} {Associated} with {Coronary} {Artery} {Disease} ({CAD})}.
+\bjtitle{Cardiovascular Drugs and Therapy}
+(\byear{2022})
+\doiurl{10.1007/s10557-022-07335-x} .
+Accessed 2023-03-04
+\end{barticle}
+\endbibitem
+
+%%% 45
+\bibitem[\protect\citeauthoryear{Fard et~al.}{2020}]{296a}
+\begin{barticle}
+\bauthor{\bsnm{Fard}, \binits{T.K.}},
+\bauthor{\bsnm{Tavakoli}, \binits{S.}},
+\bauthor{\bsnm{Ahmadi}, \binits{R.}},
+\bauthor{\bsnm{Moradi}, \binits{N.}},
+\bauthor{\bsnm{Fadaei}, \binits{R.}},
+\bauthor{\bsnm{Mohammadi}, \binits{A.}},
+\bauthor{\bsnm{Fallah}, \binits{S.}}:
+\batitle{Evaluation of {IP10} and {miRNA} 296-a {Expression} {Levels} in {Peripheral} {Blood} {Mononuclear} {Cell} of {Coronary} {Artery} {Disease} {Patients} and {Controls}}.
+\bjtitle{DNA and Cell Biology}
+\bvolume{39}(\bissue{9}),
+\bfpage{1678}--\blpage{1684}
+(\byear{2020})
+\doiurl{10.1089/dna.2020.5650} .
+\bcomment{MAG ID: 3045883439}
+\end{barticle}
+\endbibitem
+
+\end{thebibliography}

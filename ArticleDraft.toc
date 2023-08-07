@@ -6,22 +6,22 @@
 \contentsline {subsection}{\numberline {2.4}Functional and pathway enrichment analyses}{4}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}ML procedure}{4}{subsection.2.5}%
 \contentsline {subsubsection}{\numberline {2.5.1}miRNAs in DEGs}{4}{subsubsection.2.5.1}%
-\contentsline {paragraph}{\numberline {2.5.1.1}First layer for isolation of healthy and not-healthy samples:}{4}{paragraph.2.5.1.1}%
-\contentsline {paragraph}{\numberline {2.5.1.2}Second layer for separating MI and CAD samples:}{4}{paragraph.2.5.1.2}%
+\contentsline {paragraph}{\numberline {2.5.1.1}First layer for the isolation of healthy and not-healthy samples:}{4}{paragraph.2.5.1.1}%
+\contentsline {paragraph}{\numberline {2.5.1.2}Second layer for separating the MI and CAD samples:}{4}{paragraph.2.5.1.2}%
 \contentsline {subsubsection}{\numberline {2.5.2}miRNAs with the highest AUC-ROC}{5}{subsubsection.2.5.2}%
-\contentsline {paragraph}{\numberline {2.5.2.1}First layer for isolation of healthy and not-healthy samples:}{5}{paragraph.2.5.2.1}%
-\contentsline {paragraph}{\numberline {2.5.2.2}Second layer for separating MI and CAD samples:}{5}{paragraph.2.5.2.2}%
+\contentsline {paragraph}{\numberline {2.5.2.1}First layer for the isolation of healthy and not-healthy samples:}{5}{paragraph.2.5.2.1}%
+\contentsline {paragraph}{\numberline {2.5.2.2}Second layer for separating the MI and CAD samples:}{5}{paragraph.2.5.2.2}%
 \contentsline {section}{\numberline {3}Results}{5}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Pre-processing}{5}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Differential expression analysis}{5}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}GO and KEGG enrichment analyses of the DEGs}{7}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Machine Learning}{7}{subsection.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1}miRNAs in DEGs}{7}{subsubsection.3.4.1}%
-\contentsline {paragraph}{\numberline {3.4.1.1}First layer for healthy not-healthy isolation:}{10}{paragraph.3.4.1.1}%
-\contentsline {paragraph}{\numberline {3.4.1.2}Second layer for separating MI samples from CAD:}{10}{paragraph.3.4.1.2}%
+\contentsline {paragraph}{\numberline {3.4.1.1}First layer for the isolation of healthy and not-healthy samples:}{10}{paragraph.3.4.1.1}%
+\contentsline {paragraph}{\numberline {3.4.1.2}Second layer for separating the MI and CAD samples:}{10}{paragraph.3.4.1.2}%
 \contentsline {subsubsection}{\numberline {3.4.2}AUC-ROC approach}{12}{subsubsection.3.4.2}%
-\contentsline {paragraph}{\numberline {3.4.2.1}First layer for healthy not-healthy isolation:}{12}{paragraph.3.4.2.1}%
-\contentsline {paragraph}{\numberline {3.4.2.2}Second layer for separating MI samples from CAD:}{12}{paragraph.3.4.2.2}%
+\contentsline {paragraph}{\numberline {3.4.2.1}First layer for the isolation of healthy and not-healthy samples:}{12}{paragraph.3.4.2.1}%
+\contentsline {paragraph}{\numberline {3.4.2.2}Second layer for separating the MI and CAD samples:}{12}{paragraph.3.4.2.2}%
 \contentsline {section}{\numberline {4}Discussion}{13}{section.4}%
 \contentsline {section}{\numberline {5}Conclusion}{18}{section.5}%
 \contentsline {section}{References}{18}{section*.2}%

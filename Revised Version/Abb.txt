@@ -1,0 +1,24 @@
+CVD: Cardiovascular disease 
+MI: Myocardial infarction 
+cTns: Cardiac troponins 
+miRNA: microRNA 
+PBMC: Peripheral blood mononuclear cell 
+ML: Machine learning 
+GEO: Gene Expression Omnibus 
+PCA: Principal component analysis 
+RLE: Relative log expression 
+FDR: False discovery rate 
+DEGs: Differentially expressed genes 
+KEGG: Kyoto Encyclopedia of Genes and Genomes 
+GO: Gene Ontology  
+BP: Biological process 
+CC: Cellular component 
+MF: Molecular function 
+SVM: Support vector machine 
+LR: Logistic regression 
+RF: Random forests
+kNN: K-nearest neighbor 
+GB: Gradient boosting 
+XGB: XGBoost 
+DT: Decision tree 
+AUC-ROC: Area under the receiver operating characteristic curve 
